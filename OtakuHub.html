@@ -45,11 +45,17 @@
 		    //then pass in a second function for it to do when its done geting the information sucessfully
 			getUserList(username, function(data){
 				document.write(JSON.stringify(data));
+				document.write("<br>")
+				$.each(data,  function(){
+   
+                document.write(this.anime.series_title+"<br>");
+              });
 			})
 		  }
 		});
 		// function that gets users anime list from animelist
 		//parammeters are the username and a function
+		//return values
 		//the function will be preformmed if the call is done sucessfully and data is retrieved.
 		function getUserList(username, callback){
 			url="http://myanimelist.net/malappinfo.php?u="+ +username +"&status=all&type=anime";
@@ -62,7 +68,7 @@
 			.success(function(r){
 			  console.log("sucess")
 			  //console.log(r.query.results);
-			  callback(r.query.results)
+			  callback(r.query.results.myanimelist)
 			  
 			})  
 			.fail(function(r){
@@ -71,7 +77,14 @@
 			});
 		
 		}
-			
+		//function that will retrieve more detail information for each anime
+		//should probably take a list of the names of the animes
+		//a index number of which item in list to use for checking anime
+		//a callback function
+		//will probbaly have to recursivly call itself and keep passing an array of the data its retrieved
+		//and when its done doing all calls send the data to call back function
+		//returns a 
+		function getAnimeData(){}
 		</script>
 	</body> 
 	
