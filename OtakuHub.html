@@ -84,7 +84,26 @@
 		//will probbaly have to recursivly call itself and keep passing an array of the data its retrieved
 		//and when its done doing all calls send the data to call back function
 		//returns a 
-		function getAnimeData(){}
+		function getAnimeData(animelist, i, callback){
+			url="http://cdn.animenewsnetwork.com/encyclopedia/api.xml?title=~"+encodeURIComponent(animename);
+			query ='select anime from xml where url="'+url+'"';
+			 var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
+
+			$.getJSON(yqlAPI, function(){
+			      //console.log("sucess");
+			  })
+			.success(function(r){
+			  console.log("sucess")
+			  //console.log(r.query.results);
+			 // callback(r.query.results)
+			  
+			})  
+			.fail(function(r){
+			  console.log("fail");
+			  console.log(r);
+			});
+
+		}
 		</script>
 	</body> 
 	
