@@ -14,12 +14,15 @@
 			<center> <font size="6"> Otaku Hub Anime Recommender </font> </center>
             <div class="col-lg-4"></div>
             <div class="col-lg-4">
+			<form id = "UserName"> 
                 <div class="input-group">
-                    <input type="text" class="form-control text-center" placeholder = "MyAnimelist Username" > 
+                    <input type="text" class="form-control text-center" placeholder = "MyAnimelist Username" input name = "AL-USER" > 
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+                        <!-- Remove onClick not work as planned -->
+						<button class="btn btn-default" button type="submit" value = "Submit" onClick="myfunc()" > GO!</button>
+					</span>
                 </div><!-- /input-group -->
+			 </form> 
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4"></div>
         </div><!-- /.row -->
@@ -29,7 +32,17 @@
 		<div class="Info" style="padding-top: 250px">
 			<center> <font size="4">  || About Us || About Recommender || FAQ || </font> </center>
 		</div> 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+		
+		<!-- the function works but dont know (it gets the input) 
+		function myfunc()
+		{
+			var val= document.UserName.AL-USER.value
+			document.formname.elementname
+		
+		}
+			
+		</script>
 	</body> 
 	
 	
