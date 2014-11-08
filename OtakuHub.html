@@ -41,17 +41,26 @@
 		  if(formId=="UserName")
 		  {
 		    var username= self.AL.value; //retrieve data in field
+		    console.log(username)
 		    //call get userlist function which does assyncronous call to yql api to get users list
 		    //then pass in a second function for it to do when its done geting the information sucessfully
 			getUserList(username, function(data){
 				document.write(JSON.stringify(data));
 				document.write("<br>")
 				var animeList="";
-				$.each(data,  function()
+				if($.isArray(data.anime))
 				{
-   					animeList+="title=~"+encodeURIComponent(this.anime.series_title)+"&";
-                	document.write(this.anime.series_title+"<br>");
-              	});
+					$.each(data.anime,  function()
+					{
+	   					animeList+="title=~"+encodeURI(this.series_title)+"&";
+	                	document.write(this.series_title+"<br>");
+	              	});
+	             }
+				else
+				{
+					animeList+="title=~"+encodeURI(data.anime.series_title)+"&";
+					document.write(data.anime.series_title+"<br>")
+				}
               	animeList=animeList.substr(0,animeList.length-1)
               	console.log(animeList);
 
@@ -71,8 +80,8 @@
 		//return values
 		//the function will be preformmed if the call is done sucessfully and data is retrieved.
 		function getUserList(username, callback){
-			url="http://myanimelist.net/malappinfo.php?u="+ +username +"&status=all&type=anime";
-			query ='select anime from xml where url="'+url+'"';
+			url="http://myanimelist.net/malappinfo.php?u="+username +"&status=all&type=anime";
+			query ='select * from xml where url="'+url+'"';
 			 var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
 
 			$.getJSON(yqlAPI, function(){
@@ -98,15 +107,15 @@
 		function getAnimeData(animelist, callback)
 		{
 			url="http://cdn.animenewsnetwork.com/encyclopedia/api.xml?"+animelist;
-			query ='select anime from xml where url="'+url+'"';
+			query ='select ann from xml where url="'+url+'"';
 			 var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
-
+			 console.log(yqlAPI);
 			$.getJSON(yqlAPI, function(){
 			      //console.log("sucess");
 			  })
 			.success(function(r){
 			  console.log("sucess")
-			  console.log(r.query.results);
+			  console.log(r.query);
 			  callback(r.query.results.ann)
 			  
 			})  
