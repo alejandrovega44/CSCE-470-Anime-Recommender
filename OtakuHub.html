@@ -6,6 +6,7 @@
 	<meta name ="viewpoint" content = "width=device-width, initial-scale = 1.0"> 
 	<link href  = "css/bootstrap.min.css" rel = "stylesheet"> 
 	<link href  = "css/styles.css" rel = "stylesheet"> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<head> </head> 
 	
 	<body>
@@ -16,10 +17,10 @@
             <div class="col-lg-4">
 			<form id = "UserName"> 
                 <div class="input-group">
-                    <input type="text" class="form-control text-center" placeholder = "MyAnimelist Username" input name = "AL-USER" > 
+                    <input type="text" class="form-control text-center" placeholder = "MyAnimelist Username" input name = "AL" > 
                     <span class="input-group-btn">
                         <!-- Remove onClick not work as planned -->
-						<button class="btn btn-default" button type="submit" value = "Submit" onClick="myfunc()" > GO!</button>
+						<button class="btn btn-default" button type="submit" value = "Submit" > GO!</button>
 					</span>
                 </div><!-- /input-group -->
 			 </form> 
@@ -32,13 +33,42 @@
 		<div class="Info" style="padding-top: 250px">
 			<center> <font size="4">  || About Us || About Recommender || FAQ || </font> </center>
 		</div> 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
-		
-		<!-- the function works but dont know (it gets the input) 
-		function myfunc()
-		{
-			var val= document.UserName.AL-USER.value
-			document.formname.elementname
+		<script>
+		$( "form" ).submit(function( event ) {
+            event.preventDefault();
+		    var self = this;
+		    var formId = this.id;
+		  if(formId=="UserName")
+		  {
+		    var username= self.AL.value; //retrieve data in field
+		    //call get userlist function which does assyncronous call to yql api to get users list
+		    //then pass in a second function for it to do when its done geting the information sucessfully
+			getUserList(username, function(data){
+				document.write(JSON.stringify(data));
+			})
+		  }
+		});
+		// function that gets users anime list from animelist
+		//parammeters are the username and a function
+		//the function will be preformmed if the call is done sucessfully and data is retrieved.
+		function getUserList(username, callback){
+			url="http://myanimelist.net/malappinfo.php?u="+ +username +"&status=all&type=anime";
+			query ='select anime from xml where url="'+url+'"';
+			 var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
+
+			$.getJSON(yqlAPI, function(){
+			      //console.log("sucess");
+			  })
+			.success(function(r){
+			  console.log("sucess")
+			  //console.log(r.query.results);
+			  callback(r.query.results)
+			  
+			})  
+			.fail(function(r){
+			  console.log("fail");
+			  console.log(r);
+			});
 		
 		}
 			
