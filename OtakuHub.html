@@ -34,6 +34,7 @@
 			<center> <font size="4">  || About Us || About Recommender || FAQ || </font> </center>
 		</div> 
 		<script>
+		//I need to add catching for errors
 		$( "form" ).submit(function( event ) {
             event.preventDefault();
 		    var self = this;
@@ -61,16 +62,18 @@
 					animeList+="title=~"+encodeURI(data.anime.series_title)+"&";
 					document.write(data.anime.series_title+"<br>")
 				}
-              	animeList=animeList.substr(0,animeList.length-1)
+				//this removes extra "&" at the end
+              	animeList=animeList.substr(0,animeList.length-1);
               	console.log(animeList);
 
               	document.write("<br> This is AnimeData")
 				getAnimeData(animeList,function(data){
-					$.each(data.anime, function(){
-						if (this.precision==="TV" && this.type==="TV") {};
-	                	document.write(this.anime+"<br>");
+					if(data.anime != null)
+						$.each(data.anime, function(){
+							if (this.precision==="TV" && this.type==="TV")
+		                		document.write(this.name+"<br>");
 
-					})//close of each
+						})//close of each
 				})//close of getanimedata aunonomous function
 			}) //close autonmous getUserList function 
 		  }// close form id
@@ -90,7 +93,13 @@
 			.success(function(r){
 			  console.log("sucess")
 			  //console.log(r.query.results);
-			  callback(r.query.results.myanimelist)
+			  if (typeof r.query.results.myanimelist == 'undefined') 
+			  {
+			  	//add throw an error
+			  	console.log("returned null: data wasn't found for specific user")
+			  }
+			  else
+			  	callback(r.query.results.myanimelist)
 			  
 			})  
 			.fail(function(r){
@@ -107,7 +116,7 @@
 		function getAnimeData(animelist, callback)
 		{
 			url="http://cdn.animenewsnetwork.com/encyclopedia/api.xml?"+animelist;
-			query ='select ann from xml where url="'+url+'"';
+			query ='select * from xml where url="'+url+'"';
 			 var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
 			 console.log(yqlAPI);
 			$.getJSON(yqlAPI, function(){
@@ -115,8 +124,13 @@
 			  })
 			.success(function(r){
 			  console.log("sucess")
-			  console.log(r.query);
-			  callback(r.query.results.ann)
+		  	  if (r.query.results == null) 
+			  {
+			  	//add throw an error
+			  	console.log("returned null: data wasn't found for specific anime/s")
+			  }
+			  else
+			  	callback(r.query.results.ann)
 			  
 			})  
 			.fail(function(r){
