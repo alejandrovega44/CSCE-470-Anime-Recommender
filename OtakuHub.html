@@ -6,7 +6,6 @@
 	<meta name ="viewpoint" content = "width=device-width, initial-scale = 1.0"> 
 	<link href  = "css/bootstrap.min.css" rel = "stylesheet"> 
 	<link href  = "css/styles.css" rel = "stylesheet"> 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<head> </head> 
 	
 	<body>
@@ -32,8 +31,11 @@
 		
 		<div class="Info" style="padding-top: 250px">
 			<center> <font size="4">  || About Us || About Recommender || FAQ || </font> </center>
-		</div> 
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/userdata_functions.js"></script> 
 		<script>
+		var debug=1; //variable used to turn off various elements that are printed for testing purpouses
 		//I need to add catching for errors
 		$( "form" ).submit(function( event ) {
             event.preventDefault();
@@ -42,103 +44,43 @@
 		  if(formId=="UserName")
 		  {
 		    var username= self.AL.value; //retrieve data in field
-		    console.log(username)
+		    if (debug) console.log(username)
 		    //call get userlist function which does assyncronous call to yql api to get users list
 		    //then pass in a second function for it to do when its done geting the information sucessfully
 			getUserList(username, function(data){
-				document.write(JSON.stringify(data));
-				document.write("<br>")
+				if (debug) document.write(JSON.stringify(data));
+				if (debug) document.write("<br>")
 				var animeList="";
-				if($.isArray(data.anime))
+				if($.isArray(data.anime)) //if the user has more than one anime in his list
 				{
 					$.each(data.anime,  function()
 					{
 	   					animeList+="title=~"+encodeURI(this.series_title)+"&";
-	                	document.write(this.series_title+"<br>");
+	                	if (debug) document.write(this.series_title+"<br>");
 	              	});
 	             }
-				else
+				else //if user has one anime in his list 
 				{
 					animeList+="title=~"+encodeURI(data.anime.series_title)+"&";
-					document.write(data.anime.series_title+"<br>")
+					if (debug) document.write(data.anime.series_title+"<br>")
 				}
 				//this removes extra "&" at the end
               	animeList=animeList.substr(0,animeList.length-1);
-              	console.log(animeList);
+              	if (debug) console.log(animeList);
 
-              	document.write("<br> This is AnimeData <br>")
+              	if (debug) document.write("<br> This is AnimeData <br>")
 				getAnimeData(animeList,function(data){
 					if(data.anime != null)
 						$.each(data.anime, function(){
 							if (this.precision==="TV" && this.type==="TV")
-		                		document.write(this.name+"<br>");
+		                		if (debug) document.write(this.name+"<br>");
 
 						})//close of each
 				})//close of getanimedata aunonomous function
 			}) //close autonmous getUserList function 
 		  }// close form id
 		});
-		// function that gets users anime list from animelist
-		//parammeters are the username and a function
-		//return values
-		//the function will be preformmed if the call is done sucessfully and data is retrieved.
-		function getUserList(username, callback){
-			url="http://myanimelist.net/malappinfo.php?u="+username +"&status=all&type=anime";
-			query ='select * from xml where url="'+url+'"';
-			 var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
 
-			$.getJSON(yqlAPI, function(){
-			      //console.log("sucess");
-			  })
-			.success(function(r){
-			  console.log("sucess")
-			  //console.log(r.query.results);
-			  if (typeof r.query.results.myanimelist == 'undefined') 
-			  {
-			  	//add throw an error
-			  	console.log("returned null: data wasn't found for specific user")
-			  }
-			  else
-			  	callback(r.query.results.myanimelist)
-			  
-			})  
-			.fail(function(r){
-			  console.log("fail");
-			  console.log(r);
-			});
-		
-		}
-		//function that will retrieve more detail information for each anime
-		//a string with the names of animes alrady formated for this specific api call
-		//a callback function
-		//and when its done doing all calls send the data to call back function
-		//returns the data
-		function getAnimeData(animelist, callback)
-		{
-			url="http://cdn.animenewsnetwork.com/encyclopedia/api.xml?"+animelist;
-			query ='select * from xml where url="'+url+'"';
-			 var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
-			 console.log(yqlAPI);
-			$.getJSON(yqlAPI, function(){
-			      //console.log("sucess");
-			  })
-			.success(function(r){
-			  console.log("sucess")
-		  	  if (r.query.results == null) 
-			  {
-			  	//add throw an error
-			  	console.log("returned null: data wasn't found for specific anime/s")
-			  }
-			  else
-			  	callback(r.query.results.ann)
-			  
-			})  
-			.fail(function(r){
-			  console.log("fail");
-			  console.log(r);
-			});
-
-		}
 		</script>
 	</body> 
 	
