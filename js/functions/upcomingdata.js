@@ -5,7 +5,9 @@ function retrieveAnimeChart (callback)
 	url="http://anichart.net/"+season;
 	var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=
 	'+ url +'&requestType=json';
-
+	//use following stuff in yql
+	//select * from html where url="http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=http://anichart.net/winter&requestType=text" and xpath='//div[@class="card ng-scope"]'
+      
 	$.getJSON(yqlAPI, function(){
 	      //console.log("sucess");
 	  })
