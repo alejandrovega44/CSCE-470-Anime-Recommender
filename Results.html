@@ -2,13 +2,29 @@
 <!DOCTYPE html> 
 
 <html> 
-	<title> Otaku Hub Anime Recommender </title> 
+	<title> Otaku Hub Anime Recommender Results </title> 
 	<meta name ="viewpoint" content = "width=device-width, initial-scale = 1.0"> 
 	<link href  = "css/bootstrap.min.css" rel = "stylesheet"> 
 	<link href  = "css/styles.css" rel = "stylesheet"> 
 	<head></head> 
 	
 	<body>
+	<div class="row" style="padding-top: 20px" >
+            <div class="col-lg-3" ></div>
+            <div class="col-lg-3" style = "float:right;">
+			<form id = "UserName" method="GET" action="Results.html"> 
+                <div class="input-group pull-right">
+                    <input type="text" class="form-control text-center" placeholder = "MyAnimelist Username" input name = "AL" > 
+                    <span class="input-group-btn">
+                        <!-- Remove onClick not work as planned -->
+						<button class="btn btn-default" button type="submit" value = "Submit" > GO!</button>
+					</span>
+                </div><!-- /input-group -->
+			 </form> 
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-3"></div>
+        </div><!-- /.row -->
+	
 	
 	<div class="Info" style="padding-top: 50px">
 			<center> <font size="6">Your Anime Recommendations </font> </center>
