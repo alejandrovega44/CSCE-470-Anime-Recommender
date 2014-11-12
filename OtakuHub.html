@@ -14,7 +14,7 @@
 			<center> <font size="6"> Otaku Hub Anime Recommender </font> </center>
             <div class="col-lg-4"></div>
             <div class="col-lg-4">
-			<form id = "UserName"> 
+			<form id = "UserName" method="GET" action="Results.html"> 
                 <div class="input-group">
                     <input type="text" class="form-control text-center" placeholder = "MyAnimelist Username" input name = "AL" > 
                     <span class="input-group-btn">
@@ -71,7 +71,7 @@
 		var debug=0; //variable used to turn off various elements that are printed for testing purpouses
 		//I need to add catching for errors
 		$( "form" ).submit(function( event ) {
-            event.preventDefault();
+           // event.preventDefault();
 		    var self = this;
 		    var formId = this.id;
 		  if(formId=="UserName")
