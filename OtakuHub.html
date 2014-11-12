@@ -33,12 +33,6 @@
 			<center> <font size="4">  || About Us || About Recommender || FAQ || </font> </center>
 		</div>
 		
-		<!--trying to display table same as how you did it but not working --->
-  <table id = "Anime" class="table table-striped table-hover " style = "display:true;">
-	  <tbody>
-	  </tbody>
-  </table> 
-		
 			
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -48,7 +42,7 @@
 		<!-- this is the only way I that is working for me --> 
 		function CreateTable(animelist)
 		{
-			maxRows = 0; 
+			var maxRows = 0; 
 			var $contents=$(".table > tbody");
 			$contents.empty();
 			var temp = "<tr>";
@@ -64,6 +58,7 @@
 				}
 			
 			}
+			
 			$contents.append(temp);
 				
 		}

@@ -9,18 +9,24 @@
 	<head></head> 
 	
 	<body>
-	  <table id = "Anime" class="table table-striped table-hover " style = "display:true;">
+	
+	<div class="Info" style="padding-top: 50px">
+			<center> <font size="6">Your Anime Recommendations </font> </center>
+	</div>
+		
+	<div class = "AnimeTable" style="padding-top: 30px"> 
+	  <table id = "Anime" table class="table table-striped table-hover" style = "display:true;">
     	  <tbody>
     	  </tbody>
       </table> 
+	</div>
+  
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/functions/userdata.js"></script> 
+	<script src="js/functions/UI.js"></script> 
+	<script>
 		
-		<h1></h1>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="js/functions/userdata.js"></script> 
-		<script src="js/functions/UI.js"></script> 
-		<script>
-		
-		<!-- this is the only way I that is working for me --> 
 
         var queryDict = {}
         location.search.substr(1).split("&").forEach(function(item) {
@@ -53,8 +59,33 @@
 					animeArr.push(data.anime.series_title)
 				}
 				
-				CreateTable(animeArr);
+				function numRows(animelist)
+				{
+					var numRows = 0;
+					var maxRows = 0;					
+					for(i = 0; i < animelist.length; i++)
+					{
+						maxRows += 1;
+						if(maxRows == 3)
+						{
+							maxRows = 0;
+							numRows += 1;
+						}
+					}
+					return numRows; 
+				}
 				
+				function setRowColor(numRows)
+				{
+					var AnimeTable = document.getElementById("Anime");
+					var rows = AnimeTable.getElementsByTagName("tr");
+					rows[0].style.backgroundColor = "#003F87";
+				}
+				
+				CreateTable(animeArr); 
+				var Rows = numRows(animeArr);
+				document.getElementById("Anime").style.textAlign="center";
+				setRowColor(Rows);
 				
 				//this removes extra "&" at the end
               	animeList=animeList.substr(0,animeList.length-1);
