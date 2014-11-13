@@ -94,3 +94,30 @@ function retrieveData(object)
         }
     }
 }
+function retrievePics(callback){
+	//found using the following
+//https://phantomjscloud.com/site/docs.html#/demo#demo
+//var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=http://anichart.net/fall&requestType=json';
+	season="winter"; //this will change, can be : winter/spring/summer/fall different anime seasons
+	url="http://anichart.net/"+season;
+	var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl='+ url +'&requestType=json';
+
+	$.getJSON(yqlAPI, function(){
+	      //console.log("sucess");
+	  })
+	.success(function(r){
+	 var string =r.pageContent;
+	 var found_strings =string.match(/background-image:url\('(.+\')/g);
+	 var configuered_s=[];
+	  $.each(found_strings, function(){
+	    temp = this.replace('background-image:url(\'','');
+	    temp = temp.substr(0,temp.length-1);
+	    configuered_s.push(temp);
+	 }); 
+	  callback(configuered_s);
+	})  
+	.fail(function(r){
+	  console.log("fail on anichart.net data");
+	});
+
+}
