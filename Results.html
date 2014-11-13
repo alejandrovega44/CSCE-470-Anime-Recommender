@@ -88,6 +88,12 @@
 							numRows += 1;
 						}
 					}
+					
+					if(maxRows == 1) 
+					{
+						numRows = 1; 
+					}
+					
 					return numRows; 
 				}
 				
@@ -95,7 +101,6 @@
 				{
 					var AnimeTable = document.getElementById("Anime");
 					var rows = AnimeTable.getElementsByTagName("tr");
-					rows[0].style.backgroundColor = "#909090";
 					for(i = 0; i < numRows; i++)
 					{
 						if(i%2 == 0)
