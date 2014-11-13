@@ -3,11 +3,17 @@ function retrieveAnimeChart (callback)
 {
 	season="winter"; //this will change, can be : winter/spring/summer/fall different anime seasons
 	url="http://anichart.net/"+season;
-	var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=
-	'+ url +'&requestType=json';
+	
+	//var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=
+	//'+ url +'&requestType=json';
+
 	//use following stuff in yql
-	//select * from html where url="http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=http://anichart.net/winter&requestType=text" and xpath='//div[@class="card ng-scope"]'
-      
+	//select * from html where url="" and xpath='//div[@class="card ng-scope"]'
+    mainurl='http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl='+ 
+    url+'&requestType=text';  
+	query ='select * from html where url="'+ mainurl+'" and xpath="//div[@class=\'card ng-scope\']"';
+	var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
+ 
 	$.getJSON(yqlAPI, function(){
 	      //console.log("sucess");
 	  })
