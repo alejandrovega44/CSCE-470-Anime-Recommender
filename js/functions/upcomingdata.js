@@ -31,31 +31,51 @@ function retrieveAnimeChart (callback)
 function parseData (data) {
 
 	var temp=0;
-	$.each(data, function(){
+	var Data={};
+	var debug=1;
 
+	$.each(data, function(){
 		if(this.div[5] != null)
 		{
-			console.log(temp);
-			console.log(this.div[0].p); // generes
-			console.log(this.div[3].a.content); //name of anime
-			console.log(this.div[3].a.href); //link to more data in anichart
-			console.log(this.div[4].div[0].a.content); //company wrote anime
-			console.log(this.div[4].div[0].a.href); //company link
+			if(debug)console.log(temp);
+			if(debug)console.log(this.div[0].p); // generes
+	        temp_data.generes = this.div[0].p;
+			if(debug)console.log(this.div[3].a.content); //name of anime
+			if(debug)console.log(this.div[3].a.href); //link to more data in anichart
+			temp_data.moreInfo=this.div[3].a.href;
+			temp_data.company={"name": this.div[4].div[0].a.content, "link": this.div[4].div[0].a.href};
+			if(debug)console.log(this.div[4].div[0].a.content); //company wrote anime
+			if(debug)console.log(this.div[4].div[0].a.href); //company link
 			if(this.div[4].div[2] != null)
 			{
 				if(this.div[4].div[0].a.href != null)
-					console.log(this.div[4].div[1].p.content); //desc
+				{
+					if(debug)console.log(this.div[4].div[1].p.content); //desc
+					temp_data.desc = this.div[4].div[1].p.content;
+				}
 				else
-					console.log(this.div[4].div[1].p); //this is second season 
+				{
+					if(debug)console.log(this.div[4].div[1].p); //this is second season 
+					temp_data.desc = this.div[4].div[1].p;
+				}
+	         	temp_array=[];
 				$.each(this.div[4].div[2].span,function(){
-					console.log(this.content); //return type Example: "Action" | ", ecchi" <--- with comaa
+					if(debug)console.log(this.content); //return type Example: "Action" | ", ecchi" <--- with comaa
+					temp_array.append(this.content);
 				});
+	          	temp_data.a_generes=temp_array;
 			}
+			PPL_data={};
 			$.each(this.div[5].div, function(){
 				var temp =retrieveData(this);
 				if (temp != null)
-					console.log(temp);
+				{
+					if(debug) console.log(temp);
+	             	PPL_data[temp.name]=temp.title;
+				}
 			}) ; //contains an array of objects insid
+	        temp_data.ppl = MISC_data;
+        	Data[this.div[3].a.content]=temp_data;
 		}
 		temp++;
 	});// close of main each
