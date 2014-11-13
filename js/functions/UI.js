@@ -1,18 +1,27 @@
 function CreateTable(animelist)
 {
-	maxRows = 0; 
+	maxCols = 0; 
+	row=1;
 	var $contents=$(".table > tbody");
 	$contents.empty();
-	var temp = "<tr>";
+	//class="success" green
+	//class="info"
+	var temp = "<tr class=\'info\'>";
 	for(i = 0; i < animelist.length; i++)
 	{
 		temp += '<td>' + animelist[i] + '</td>';
-		maxRows += 1;
-		if(maxRows == 3)
+		maxCols += 1;
+		if(maxCols == 3)
 		{
+			row++;
 			temp += '</tr>';
-			temp += '<tr>'; 
-			maxRows = 0; 
+			temp += '<tr';
+			if(row%2==0)
+				 temp+=' class=\'success\' >';
+			else
+				 temp+=' class=\'info\' >';
+
+			maxCols = 0; 
 		}
 	
 	}
