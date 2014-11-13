@@ -95,10 +95,9 @@
 				{
 					var AnimeTable = document.getElementById("Anime");
 					var rows = AnimeTable.getElementsByTagName("tr");
-					
+					rows[0].style.backgroundColor = "#909090";
 					for(i = 0; i < numRows; i++)
 					{
-						
 						if(i%2 == 0)
 						{
 							rows[i].style.backgroundColor = "#909090";
@@ -114,7 +113,7 @@
 				CreateTable(animeArr); 
 				var Rows = numRows(animeArr);
 				document.getElementById("Anime").style.textAlign="center";
-				 document.getElementById("Anime").style.fontWeight = "bold";
+				document.getElementById("Anime").style.fontWeight = "bold";
 				setRowColor(Rows);
 				
 				//this removes extra "&" at the end
