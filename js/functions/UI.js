@@ -44,16 +44,19 @@ function PopulateWithAnimeData(animelist)
 	$contents.append(temp);
 		
 }
+//http://jsbin.com/heyixonoho/1/edit?output
 function createRow(data)
 {
 	string =
-	"<div class='well'>"+
-	"<table class='table'> " +
+	"<div>"+ //class='well'
+	"<table class='table table-striped'> " +
 	  "<tbody>"+
-	  "<td><img src='" + data.picUrl +"'></td><td><h4>"+ data.a_name +"</h4><b>Genre:</b> "+
-	  data.generes +
-
-	  "</td>"+
+	  "<td><img src='" + data.picUrl +"'></td><td><h4>"+ data.a_name +"</h4><div class='divider'></div><b>Genre:</b> "+
+	  data.generes;
+	  if(data.desc != null)
+	  string+="<textarea style='height:100px;'>"+ data.desc +"</textarea>";
+	 
+	 string+= "</td>"+
 	  "</tbody>"+
      "</table></div>";
      return string;
