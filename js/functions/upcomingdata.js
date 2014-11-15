@@ -3,7 +3,7 @@ function retrieveAnimeChart (callback)
 {
 	season="winter"; //this will change, can be : winter/spring/summer/fall different anime seasons
 	url="http://anichart.net/"+season;
-	
+	debug=0;
 	//var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=
 	//'+ url +'&requestType=json';
 
@@ -18,9 +18,9 @@ function retrieveAnimeChart (callback)
 	      //console.log("sucess");
 	  })
 	.success(function(r){
-	  console.log(r.query.results.div); //r.content is html of website 
+	  if(debug) console.log(r.query.results.div); //r.content is html of website 
 	  						//r.pageContentPlainText retursn the text of website
-	  callback(r.query.results.div);
+	  callback(parseData(r.query.results.div));
 	  
 	})  
 	.fail(function(r){
@@ -28,19 +28,18 @@ function retrieveAnimeChart (callback)
 	});
 }
 
-function CreateData () {
-	//retrieveAnimeChart(function(data));
-	/*
-	if I try to create a list of anime with using a then done promise
-	where we call retrieveAnimeChart and then parseData on it and return the data
-	then we will call retrieve pics and we wait for both to fnish
-	when they both finish we will then go through the elements returned by parseData and 
-	get the .index value for each and check the array at each index and add it to the items
-	*/
-	$.when(retrieveAnimeChart(parseData),retrievePics).done(function(data, picsdata){
-		console.log(data);
-		console.log(picsdata);
-	})
+//creates objects that contain all the data need for each anime
+function CreateData (callback) {
+	retrieveAnimeChart(function(data){
+		retrievePics(function(picsdata){
+			$.each(data, function(){
+				this.picUrl =picsdata[this.i];
+			})
+			console.log(data);
+			callback(data);
+		});
+	});
+
 }
 
 //need to find what will use to parse this data
@@ -55,6 +54,7 @@ function parseData (data) {
 		{
 			var temp_data={};
 			if(debug)console.log(temp);
+			temp_data.a_name = this.div[3].a.content;
 			temp_data.i = temp;
 			if(debug)console.log(this.div[0].p); // generes
 	        temp_data.generes = this.div[0].p;
@@ -113,7 +113,7 @@ function retrieveData(object)
         }
     }
 }
-function retrievePics(){
+function retrievePics(callback){
 	//found using the following
 	//https://phantomjscloud.com/site/docs.html#/demo#demo
 	//var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=http://anichart.net/fall&requestType=json';
@@ -133,7 +133,7 @@ function retrievePics(){
 	    temp = temp.substr(0,temp.length-1);
 	    configuered_s.push(temp);
 	 }); 
-	  return configuered_s;
+	  callback(configuered_s);
 	})  
 	.fail(function(r){
 	  console.log("fail on anichart.net data");
