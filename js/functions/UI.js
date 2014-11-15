@@ -30,7 +30,8 @@ function PopulateWithAnimeData(animelist)
 	// <img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px">
 	$.each(animelist,function()
 	{
-		temp += '<td><div class="well"><img src="' + this.picUrl + '">'+ this.a_name +'</div> </td>';
+		//temp += '<td><div class="well"><img src="' + this.picUrl + '">'+ this.a_name +'</div> </td>';
+		temp += '<td>'+ createRow(this) + '</td>';
 		maxRows += 1;
 		if(maxRows == 3)
 		{
@@ -42,4 +43,18 @@ function PopulateWithAnimeData(animelist)
 	});
 	$contents.append(temp);
 		
+}
+function createRow(data)
+{
+	string =
+	"<div class='well'>"+
+	"<table class='table'> " +
+	  "<tbody>"+
+	  "<td><img src='" + data.picUrl +"'></td><td><h4>"+ data.a_name +"</h4><b>Genre:</b> "+
+	  data.generes +
+
+	  "</td>"+
+	  "</tbody>"+
+     "</table></div>";
+     return string;
 }
