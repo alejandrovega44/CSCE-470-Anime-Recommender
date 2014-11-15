@@ -27,17 +27,35 @@ function retrieveAnimeChart (callback)
 	  console.log("fail on anichart.net data");
 	});
 }
+
+function CreateData () {
+	//retrieveAnimeChart(function(data));
+	/*
+	if I try to create a list of anime with using a then done promise
+	where we call retrieveAnimeChart and then parseData on it and return the data
+	then we will call retrieve pics and we wait for both to fnish
+	when they both finish we will then go through the elements returned by parseData and 
+	get the .index value for each and check the array at each index and add it to the items
+	*/
+	$.when(retrieveAnimeChart(parseData),retrievePics).done(function(data, picsdata){
+		console.log(data);
+		console.log(picsdata);
+	})
+}
+
 //need to find what will use to parse this data
 function parseData (data) {
 
 	var temp=0;
 	var Data={};
-	var debug=1;
+	var debug=0;
 
 	$.each(data, function(){
 		if(this.div[5] != null)
 		{
+			var temp_data={};
 			if(debug)console.log(temp);
+			temp_data.i = temp;
 			if(debug)console.log(this.div[0].p); // generes
 	        temp_data.generes = this.div[0].p;
 			if(debug)console.log(this.div[3].a.content); //name of anime
@@ -61,7 +79,7 @@ function parseData (data) {
 	         	temp_array=[];
 				$.each(this.div[4].div[2].span,function(){
 					if(debug)console.log(this.content); //return type Example: "Action" | ", ecchi" <--- with comaa
-					temp_array.append(this.content);
+					temp_array.push(this.content);
 				});
 	          	temp_data.a_generes=temp_array;
 			}
@@ -74,11 +92,12 @@ function parseData (data) {
 	             	PPL_data[temp.name]=temp.title;
 				}
 			}) ; //contains an array of objects insid
-	        temp_data.ppl = MISC_data;
+	        temp_data.ppl = PPL_data;
         	Data[this.div[3].a.content]=temp_data;
 		}
 		temp++;
 	});// close of main each
+	return Data;
 }
 //used to retrieve data that is inside specific sections
 //hopefully to retrieve data related to directo or char deisgn n such
@@ -94,10 +113,10 @@ function retrieveData(object)
         }
     }
 }
-function retrievePics(callback){
+function retrievePics(){
 	//found using the following
-//https://phantomjscloud.com/site/docs.html#/demo#demo
-//var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=http://anichart.net/fall&requestType=json';
+	//https://phantomjscloud.com/site/docs.html#/demo#demo
+	//var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=http://anichart.net/fall&requestType=json';
 	season="winter"; //this will change, can be : winter/spring/summer/fall different anime seasons
 	url="http://anichart.net/"+season;
 	var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl='+ url +'&requestType=json';
@@ -114,7 +133,7 @@ function retrievePics(callback){
 	    temp = temp.substr(0,temp.length-1);
 	    configuered_s.push(temp);
 	 }); 
-	  callback(configuered_s);
+	  return configuered_s;
 	})  
 	.fail(function(r){
 	  console.log("fail on anichart.net data");
