@@ -36,25 +36,33 @@ function getUserList(username, callback)
 //returns the data
 function getAnimeData(animelist, callback)
 {
+	var debug=1;
+	//http://goessner.net/download/prj/jsonxml/
 	url="http://cdn.animenewsnetwork.com/encyclopedia/api.xml?"+animelist;
-	query ='select * from xml where url="'+url+'"';
-	 var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
-	 console.log(yqlAPI);
-	$.getJSON(yqlAPI, function(){
+	 if(debug)console.log(animelist);
+	/*$.getJSON(url, function(){
 	      //console.log("sucess");
-	  })
-	.success(function(r){
+	  })*/
+	var request = $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'xml',
+	});
+	request.success(function(r){
 	  console.log("sucess")
-  	  if (r.query.results == null) 
+  	  if (r == null) 
 	  {
 	  	//add throw an error
 	  	console.log("returned null: data wasn't found for specific anime/s")
 	  }
 	  else
-	  	callback(r.query.results.ann)
+	  {
+	  	if(debug) console.log(r);
+	  	callback(r)
+	  }
 	  
 	})  
-	.fail(function(r){
+	request.fail(function(r){
 	  console.log("fail");
 	  console.log(r);
 	});

@@ -51,13 +51,25 @@ function createRow(data)
 	"<div>"+ //class='well'
 	"<table class='table table-striped'> " +
 	  "<tbody>"+
-	  "<td><img src='" + data.picUrl +"'></td><td><h4>"+ data.a_name +"</h4><div class='divider'></div><b>Genre:</b> "+
-	  data.generes;
+	  "<td><img src='" + data.picUrl +"'></td><td><a href='"+ data.moreInfo +"'><h4>"+ data.a_name +"</h4></a><div class='divider'></div><b>Genre:</b> "+
+	  data.generes + "<br>";
 	  if(data.desc != null)
-	  string+="<textarea style='height:100px;'>"+ data.desc +"</textarea>";
-	 
+	  	string+="<textarea style='height:100px;'>"+ data.desc +"</textarea>";
+	  if(data.company != null)
+	  	string+= "<br> <b>Company: </b><a href='"+ data.company.link + "'>"+ data.company.name +"</a>";
+	  if(data.ppl != null)
+	  	string+="<br> Other"+ CreateOtherData(data.ppl);
 	 string+= "</td>"+
 	  "</tbody>"+
      "</table></div>";
      return string;
+}
+function CreateOtherData(ppl_object)
+{
+	var string="";
+	for (var key in ppl_object)
+	{
+		string+="<br> <b>"+ ppl_object[key] + ": </b>" + key;
+	}
+	return string;
 }

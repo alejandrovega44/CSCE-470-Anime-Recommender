@@ -28,17 +28,16 @@
                 
             });
             
-		var debug=0; //variable used to turn off various elements that are printed for testing purpouses
+		var debug=1; //variable used to turn off various elements that are printed for testing purpouses
 		    //I need to add catching for errors
 				    var username= queryDict["AL"]; //retrieve data in field
 		    if (debug) console.log(username)
 		    //call get userlist function which does assyncronous call to yql api to get users list
 		    //then pass in a second function for it to do when its done geting the information sucessfully
 			getUserList(username, function(data){
-				if (debug) document.write(JSON.stringify(data));
-				if (debug) document.write("<br>")
+				if (debug) console.log(JSON.stringify(data));
 				var animeList="";
-				var animeArr = [] 
+				var animeArr = []; 
 				if($.isArray(data.anime)) //if the user has more than one anime in his list
 				{
 					$.each(data.anime,  function()
@@ -52,7 +51,7 @@
 					animeList+="title=~"+encodeURI(data.anime.series_title)+"&";
 					animeArr.push(data.anime.series_title)
 				}
-				
+				if(debug) console.log("number of animes is:"+ animeArr.length);
 				CreateTable(animeArr);
 				
 				
@@ -60,14 +59,17 @@
               	animeList=animeList.substr(0,animeList.length-1);
               	if (debug) console.log(animeList);
 
-              	if (debug) document.write("<br> This is AnimeData <br>")
+              	if (debug) console.log("<br> This is AnimeData <br>")
 				getAnimeData(animeList,function(data){
 					if(data.anime != null)
+					{
+						if(debug) console.log(data.anime);
 						$.each(data.anime, function(){
 							if (this.precision==="TV" && this.type==="TV")
-		                		if (debug) document.write(this.name+"<br>");
+		                		if (debug) console.log(this.name);
 
 						})//close of each
+					}
 				})//close of getanimedata aunonomous function
 			}) //close autonmous getUserList function 
 

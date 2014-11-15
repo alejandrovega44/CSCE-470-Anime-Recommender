@@ -66,7 +66,8 @@ function parseData (data) {
 			if(debug)console.log(this.div[4].div[0].a.href); //company link
 			if(this.div[4].div[2] != null)
 			{
-				if(this.div[4].div[0].a.href != null)
+				//if(this.div[4].div[0].a.href != null)
+				if(this.div[4].div[1].p.content != null)
 				{
 					if(debug)console.log(this.div[4].div[1].p.content); //desc
 					temp_data.desc = this.div[4].div[1].p.content;
