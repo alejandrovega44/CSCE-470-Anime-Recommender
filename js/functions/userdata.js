@@ -58,7 +58,9 @@ function getAnimeData(animelist, callback)
 	  else
 	  {
 	  	if(debug) console.log(r);
-	  	callback(r)
+		    var json = xml2json(r);
+	  	if(debug) console.log(json);
+	  	callback(json)
 	  }
 	  
 	})  
