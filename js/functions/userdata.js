@@ -29,6 +29,7 @@ function getUserList(username, callback)
 	});
 
 }
+
 //function that will retrieve more detail information for each anime
 //a string with the names of animes alrady formated for this specific api call
 //a callback function
@@ -58,9 +59,8 @@ function getAnimeData(animelist, callback)
 	  else
 	  {
 	  	if(debug) console.log(r);
-		    var json = xml2json(r);
-	  	if(debug) console.log(json);
-	  	callback(json)
+		if(debug) console.log(xmlToJson(r));
+	  	callback(xmlToJson(r).ann)
 	  }
 	  
 	})  

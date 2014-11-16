@@ -53,26 +53,35 @@
 					animeArr.push(data.anime.series_title)
 				}
 				if(debug) console.log("number of animes is:"+ animeArr.length);
-				CreateTable(animeArr);
+				if(!debug) CreateTable(animeArr);
 				
 				
 				//this removes extra "&" at the end
               	animeList=animeList.substr(0,animeList.length-1);
               	if (debug) console.log(animeList);
-
+              	var currentData=[];
               	if (debug) console.log("<br> This is AnimeData <br>")
 				getAnimeData(animeList,function(data){
 					if(data.anime != null)
 					{
 						if(debug) console.log(data.anime);
 						$.each(data.anime, function(){
-							if (this.precision==="TV" && this.type==="TV")
-		                		if (debug) console.log(this.name);
+							if (this["@attributes"].precision==="TV" && this["@attributes"].type==="TV")
+							{
+								if (debug) console.log(this["@attributes"].name);
+								if ($.inArray(this["@attributes"].name, animeArr))
+								{
+									currentData.push(this);
+								} 
+							}
+		                		
 
 						})//close of each
+						if(debug) console.log(data.warning["#text"]);
 					}
-				})//close of getanimedata aunonomous function
-			}) //close autonmous getUserList function 
+					if(debug) CreateTable_v(currentData);
+				});//close of getanimedata aunonomous function
+			}); //close autonmous getUserList function 
 
 		</script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
