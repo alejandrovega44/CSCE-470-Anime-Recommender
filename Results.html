@@ -42,11 +42,14 @@
 				var animeRating = [];
 				if($.isArray(data.anime)) //if the user has more than one anime in his list
 				{
+					var counter=0;
+					//need to account for 50 animes create a new request
 					$.each(data.anime,  function()
 					{
 	   					animeList+="title=~"+encodeURI(this.series_title)+"&";
 	                	animeArr.push(this.series_title);
 	                	animeRating.push(this.my_score);
+	                	counter++;
 	              	});
 	             }
 				else //if user has one anime in his list 
@@ -63,7 +66,9 @@
               	if (debug) console.log(animeList);
               	if (debug) console.log(animeArr);
               	var currentData=[];
-              	if (debug) console.log("<br> This is AnimeData <br>")
+              	if (debug) console.log("<br> This is AnimeData <br>");
+              	//need to create a function that calls the api as many times as needed and creates
+              	//a object that has all the data needed and then calls the callback function
 				getAnimeData(animeList,function(data){
 					if(data.anime != null)
 					{
