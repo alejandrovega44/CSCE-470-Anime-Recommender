@@ -46,6 +46,7 @@
 					//need to account for 50 animes create a new request
 					$.each(data.anime,  function()
 					{
+						if(counter == 50) return false;
 	   					animeList+="title=~"+encodeURI(this.series_title)+"&";
 	                	animeArr.push(this.series_title);
 	                	animeRating.push(this.my_score);
