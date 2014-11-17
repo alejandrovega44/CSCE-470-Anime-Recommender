@@ -93,7 +93,10 @@ function CreateTable_v(animelist)
 		 //have to account for mutiple companies
 		  temp+='<br>Staff <textarea style=\'height:100px;\'>' +
 		  RetrieveStaff(this["staff"]) +
-		  '</textarea></td>';
+		  '</textarea>'+
+		  '<br> userRating:'+ this.rating +
+		  '<br> Genres: ' + JSON.stringify(RetrieveGenre(this["info"])) + 
+		  '</td>';
 		maxRows += 1;
 		if(maxRows == 3)
 		{
@@ -118,6 +121,18 @@ function RetrieveDesc(info)
 			}	
 	});
 	return string;
+}
+function RetrieveGenre(info)
+{
+	var Genre=[];
+	$.each(info,function(){
+		if(this["@attributes"].type != null)
+			if(this["@attributes"].type == "Genres")
+			{
+				Genre.push(this["#text"]);
+			}	
+	});
+	return Genre;
 }
 function RetrieveStaff(staff)
 {

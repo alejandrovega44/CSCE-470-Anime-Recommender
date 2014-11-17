@@ -39,12 +39,14 @@
 				if (debug) console.log(JSON.stringify(data));
 				var animeList="";
 				var animeArr = []; 
+				var animeRating = [];
 				if($.isArray(data.anime)) //if the user has more than one anime in his list
 				{
 					$.each(data.anime,  function()
 					{
 	   					animeList+="title=~"+encodeURI(this.series_title)+"&";
 	                	animeArr.push(this.series_title);
+	                	animeRating.push(this.my_score);
 	              	});
 	             }
 				else //if user has one anime in his list 
@@ -59,6 +61,7 @@
 				//this removes extra "&" at the end
               	animeList=animeList.substr(0,animeList.length-1);
               	if (debug) console.log(animeList);
+              	if (debug) console.log(animeArr);
               	var currentData=[];
               	if (debug) console.log("<br> This is AnimeData <br>")
 				getAnimeData(animeList,function(data){
@@ -68,9 +71,11 @@
 						$.each(data.anime, function(){
 							if (this["@attributes"].precision==="TV" && this["@attributes"].type==="TV")
 							{
-								if (debug) console.log(this["@attributes"].name);
-								if ($.inArray(this["@attributes"].name, animeArr))
+								if (debug) console.log("'"+this["@attributes"].name+"'");
+								if ($.inArray(this["@attributes"].name, animeArr) >=-1)
 								{
+									if (debug) console.log("'"+this["@attributes"].name+"'");
+									this.rating =animeRating[$.inArray(this["@attributes"].name, animeArr)];
 									currentData.push(this);
 								} 
 							}
