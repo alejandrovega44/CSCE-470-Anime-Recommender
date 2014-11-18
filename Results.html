@@ -98,11 +98,13 @@
 						                });
 						            }
 						        else
-						            console.log(data.warning["#text"]); 
+						            if(typeof data.warning != "undefined")
+						            	console.log(data.warning["#text"]); 
 						        
 						    }
 					}
 					if(debug) CreateTable_v(currentData);
+					console.log(CreateObjects(currentData));
 				});//close of getanimedata aunonomous function
 			}); //close autonmous getUserList function 
 

@@ -29,6 +29,20 @@ function getUserList(username, callback)
 	});
 
 }
+//function will recursively create a list of all the animes the user watches
+//takes an in array of animenames that has been formated for the call
+//callback function that will taken in all the data
+function RetrieveAnimeData(ArrayAnimeNames,callback)
+{
+	
+	if ($.isArray(ArrayAnimeNames))
+	{
+
+	}
+	else
+		getAnimeData(ArrayAnimeNames,callback);
+
+}
 
 //function that will retrieve more detail information for each anime
 //a string with the names of animes alrady formated for this specific api call

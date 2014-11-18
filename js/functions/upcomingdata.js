@@ -3,7 +3,7 @@ function retrieveAnimeChart (callback)
 {
 	season="winter"; //this will change, can be : winter/spring/summer/fall different anime seasons
 	url="http://anichart.net/"+season;
-	debug=0;
+	debug=1;
 	//var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=
 	//'+ url +'&requestType=json';
 
@@ -11,13 +11,15 @@ function retrieveAnimeChart (callback)
 	//select * from html where url="" and xpath='//div[@class="card ng-scope"]'
     mainurl='http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl='+ 
     url+'&requestType=text';  
+     if(debug) console.log(mainurl);
 	query ='select * from html where url="'+ mainurl+'" and xpath="//div[@class=\'card ng-scope\']"';
-	var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
- 
+	var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + '&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
+ 	 if(debug) console.log(yqlAPI);
 	$.getJSON(yqlAPI, function(){
 	      //console.log("sucess");
 	  })
 	.success(function(r){
+	  if(debug) console.log(r); 
 	  if(debug) console.log(r.query.results.div); //r.content is html of website 
 	  						//r.pageContentPlainText retursn the text of website
 	  callback(parseData(r.query.results.div));
@@ -42,7 +44,7 @@ function CreateData (callback) {
 
 }
 
-//need to find what will use to parse this data
+//parse html from anichart and creates objects with data about each anime
 function parseData (data) {
 
 	var temp=0;
