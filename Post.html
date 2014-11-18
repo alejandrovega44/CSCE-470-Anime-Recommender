@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>Python-jQuery Example</title>
+    <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+    <script>
+        $(function()
+        {
+            $.ajax({
+                url: "http://uakk632bb565.av512.koding.io/project/app.py",
+                 type: "POST",
+                 data: {foo: 'bar', bar: 'foo'},
+                 success: function(response){
+                    $("#div").html(response);
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div id="div">Default Stuff</div>
+</body>
+</html>
