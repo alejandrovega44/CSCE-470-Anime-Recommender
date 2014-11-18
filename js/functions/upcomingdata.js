@@ -3,7 +3,7 @@ function retrieveAnimeChart (callback)
 {
 	season="winter"; //this will change, can be : winter/spring/summer/fall different anime seasons
 	url="http://anichart.net/"+season;
-	debug=1;
+	debug=0;
 	//var yqlAPI = 'http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl=
 	//'+ url +'&requestType=json';
 
@@ -11,15 +11,13 @@ function retrieveAnimeChart (callback)
 	//select * from html where url="" and xpath='//div[@class="card ng-scope"]'
     mainurl='http://api.phantomjscloud.com/single/browser/v1/a-demo-key-with-low-quota-per-ip-address/?targetUrl='+ 
     url+'&requestType=text';  
-     if(debug) console.log(mainurl);
 	query ='select * from html where url="'+ mainurl+'" and xpath="//div[@class=\'card ng-scope\']"';
-	var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + '&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
- 	 if(debug) console.log(yqlAPI);
+	var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
+ 
 	$.getJSON(yqlAPI, function(){
 	      //console.log("sucess");
 	  })
 	.success(function(r){
-	  if(debug) console.log(r); 
 	  if(debug) console.log(r.query.results.div); //r.content is html of website 
 	  						//r.pageContentPlainText retursn the text of website
 	  callback(parseData(r.query.results.div));
@@ -142,4 +140,22 @@ function retrievePics(callback){
 	  console.log("fail on anichart.net data");
 	});
 
+}
+function Create_RetrievedAnime_Objects(animelist)
+{
+	var objects={};
+	$.each(animelist,function(){
+		 var temp={};
+		 temp.a_name =this["@attributes"].name;
+		 temp.desc =RetrieveDesc(this["info"]) ;
+		 
+		 if(typeof this["credit"].company == "Object") 
+		 	temp.company =this["credit"].company["#text"]; 
+		 //have to account for mutiple companies
+		  temp.ppl=RetrieveStaff(this["staff"]);
+		  temp.userRating =this.rating;
+		  temp.a_genres =RetrieveGenre(this["info"]);
+		  objects[temp.a_name]= temp;
+	});
+		return objects;
 }

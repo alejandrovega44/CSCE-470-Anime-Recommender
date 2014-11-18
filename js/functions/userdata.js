@@ -84,3 +84,21 @@ function getAnimeData(animelist, callback)
 	});
 
 }
+function Create_UserAnime_Objects(animelist)
+{
+	var objects={};
+	$.each(animelist,function(){
+		 var temp={};
+		 temp.a_name =this["@attributes"].name;
+		 temp.desc =RetrieveDesc(this["info"]) ;
+		 
+		 if(typeof this["credit"].company == "Object") 
+		 	temp.company =this["credit"].company["#text"]; 
+		 //have to account for mutiple companies
+		  temp.ppl=RetrieveStaff(this["staff"]);
+		  temp.userRating =this.rating;
+		  temp.a_genres =RetrieveGenre(this["info"]);
+		  objects[temp.a_name]= temp;
+	});
+		return objects;
+}

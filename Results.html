@@ -17,8 +17,10 @@
 		<h1></h1>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="js/functions/userdata.js"></script> 
+		<script src="js/functions/upcomingdata.js"></script> 
 		<script src="js/functions/UI.js"></script> 
 		<script src="js/functions/xml2json.js"></script> 
+		<script src="js/functions/functions.js"></script> 
 		<script>
 		
 		<!-- this is the only way I that is working for me --> 
@@ -29,7 +31,7 @@
                 
             });
             
-		var debug=1; //variable used to turn off various elements that are printed for testing purpouses
+		var debug=0; //variable used to turn off various elements that are printed for testing purpouses
 		    //I need to add catching for errors
 				    var username= queryDict["AL"]; //retrieve data in field
 		    if (debug) console.log(username)
@@ -104,7 +106,11 @@
 						    }
 					}
 					if(debug) CreateTable_v(currentData);
-					console.log(CreateObjects(currentData));
+					if(debug) console.log(Create_UserAnime_Objects(currentData));
+					CreateData(function(RetrievedAnime){
+						callDatabase(Create_UserAnime_Objects(currentData), RetrievedAnime);
+
+					});
 				});//close of getanimedata aunonomous function
 			}); //close autonmous getUserList function 
 
