@@ -89,13 +89,13 @@ function parseData (data) {
 				});
 	          	temp_data.a_generes=temp_array;
 			}
-			PPL_data={};
+			PPL_data="";
 			$.each(this.div[5].div, function(){
 				var temp =retrieveData(this);
 				if (temp != null)
 				{
 					if(debug) console.log(temp);
-	             	PPL_data[temp.name]=temp.title;
+					PPL_data+="\n"+temp.title +" : "+temp.name;
 				}
 			}) ; //contains an array of objects insid
 	        temp_data.ppl = PPL_data;
