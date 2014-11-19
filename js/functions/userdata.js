@@ -104,13 +104,21 @@ function Create_UserAnime_Objects(animelist)
 		 	console.log("no company" +this["credit"]);
 		 }
 		 //have to account for mutiple companies
-		  temp.ppl=RetrieveStaff(this["staff"]);
+		  temp.ppl=RetrieveStaff_obj(this["staff"]);
 		  temp.userRating =this.rating;
 		  temp.a_genres =RetrieveGenre(this["info"]);
 		  objects[temp.a_name]= temp;
 	});
 	console.log(objects);
 		return objects;
+}
+function RetrieveStaff_obj(staff)
+{
+	var temp=[];
+	$.each(staff, function(){
+		temp.push( {"title": this.task["#text"] , "name": this.person["#text"] });
+	});
+	return temp;
 }
 function RetrieveCompanies(credits)
 {
