@@ -91,14 +91,33 @@ function Create_UserAnime_Objects(animelist)
 		 var temp={};
 		 temp.a_name =this["@attributes"].name;
 		 temp.desc =RetrieveDesc(this["info"]) ;
-		 
-		 if(typeof this["credit"].company == "Object") 
+		 if($.isArray(this["credit"]))
+		 {
+		 	temp.company =RetrieveCompanies(this["credit"]);
+		 }
+		 else if(typeof this["credit"].company != "undefined") 
+		 {
 		 	temp.company =this["credit"].company["#text"]; 
+		 }
+		 else
+		 {
+		 	console.log("no company" +this["credit"]);
+		 }
 		 //have to account for mutiple companies
 		  temp.ppl=RetrieveStaff(this["staff"]);
 		  temp.userRating =this.rating;
 		  temp.a_genres =RetrieveGenre(this["info"]);
 		  objects[temp.a_name]= temp;
 	});
+	console.log(objects);
 		return objects;
+}
+function RetrieveCompanies(credits)
+{
+	var temp=[];
+	$.each(credits, function(){
+		if(typeof this.company != "undefined")
+			temp.push(this.company["#text"]);
+	});
+	return temp;
 }
