@@ -16,8 +16,6 @@ class Recommender(object):
 		self.GenGenre = {} 
 		self.UserGenre = {} 
 		self.UserComp = {} 
-		self.UserTF_IDF = {} 
-		self.GenDesc_TF_IDF = {} 
 		
 	def read_line(self, json_string):
 		return ast.literal_eval(json_string)
@@ -44,6 +42,7 @@ class Recommender(object):
 		ppl_dict = {} 
 		genre_dict = {} 
 		s_list = [] 
+		company_dict = {} 
 		
 		#Dict associated with given keys (GeneratedAnime) 
 		Gen = Animelist[1]
@@ -97,12 +96,18 @@ class Recommender(object):
 				
 			
 			if "company" in g_dict.keys():
-				comp_dict =  g_dict["company"]
+				comp_dict =  g_dict["company"] 
 				if "name" in comp_dict.keys():
 					g_comp.append(comp_dict["name"])
+					company_dict[g_anime] = g_comp 
+					g_comp = [] 
+				elif "name" not in comp_dict.keys():
+					company_dict[g_anime] = 1
+					
+			
 		
 		#processing data retrieved
-		self.initCompany(g_comp, GenType)
+		self.initCompany(company_dict, GenType)
 		self.initDesc(desc_dict, GenType) 
 		self.initStaff(ppl_dict, GenType)
 		self.initGenres(genre_dict, GenType)
@@ -197,7 +202,6 @@ class Recommender(object):
 					self.UserDesc[words] = 1
 				else:
 					self.UserDesc[words] += 1
-			# print self.UserDesc
 		
 		temp = {} 
 		desc_dict = {} 
@@ -235,7 +239,7 @@ class Recommender(object):
 			
 			
 	def initCompany(self, comp_dict, type):
-		
+		c_dict = {} 
 		#getting raw counts of each token 
 		if type == "UserAnime": 
 			for name in comp_dict:
@@ -243,19 +247,26 @@ class Recommender(object):
 					self.UserComp[name] = 1 
 				else:
 					self.UserComp[name] += 1
-			print self.UserComp 
+			 
 				
 		if type == "GeneratedAnime": 
-			for name in comp_dict:
-				if name not in self.GenComp:
-					self.GenComp[name] = 1 
-				else:
-					self.GenComp[name] += 1
-			
-		
-		
+			for key in comp_dict.keys():
+				c_list = comp_dict[key] 
+				if c_list != 1: 
+					for comp in c_list:
+						if comp not in c_dict: 
+							c_dict[comp] = 1
+						else: 	
+							c_dict[comp] += 1
+					self.GenComp[key] = c_dict
+					c_dict = {} 
+				if c_list == 1:
+					self.GenComp[key] = 1
+	
+	#havent developed a good implementation 
 	def initRatings():
 		pass
+		
 	def initGenres(self, genre_list, type):
 		genre_dict = {} 
 		if type == "GeneratedAnime":
@@ -275,9 +286,6 @@ class Recommender(object):
 					self.UserGenre[genre] = 1 
 				else:
 					self.UserGenre[genre] += 1
-		
-			
-					
 
 	def initStaff(self, staff_list, type):
 		#getting raw counts of each token 
@@ -302,6 +310,61 @@ class Recommender(object):
 					self.UserStaff[s] = 1 
 				else:
 					self.UserStaff[s] += 1
+					
+
+	def TFIDF(self, user_dict, gen_dict, type):
+		total_dict = {} 
+		type_dict = {} 
+		total_type_dict = {} 
+		temp = {} 
+		Return_Dict = {} 
+		
+		for key in user_dict.keys():
+			if key not in total_dict:
+				total_dict[key] = 1
+			else:
+				total_dict[key] += 1
+				
+		for key in gen_dict.keys():
+			g_dict = gen_dict[key]
+			if g_dict != 1:
+				for word in g_dict.keys():
+					if word not in temp:
+						temp[word] = 1 
+					else:
+						temp[word] += 1
+				total_type_dict[key] = temp 
+				temp = {} 
+		
+		# had to do this, for loop above was duplicating items when i initialized temp to genre_dict
+		for key in total_type_dict.keys():
+			dict = total_type_dict[key] 
+			for word in total_dict.keys():
+				if word not in dict:
+					dict[word] = 1
+				else:
+					dict[word] += 1 
+			total_type_dict[key] = dict 
+		
+		for anime in total_type_dict.keys():
+			g_list = total_type_dict[anime] 
+			curr_list = gen_dict[anime]
+			for words in curr_list: 
+				tf_all = g_list[words]
+				div = 2/float(tf_all)
+				idf_val = abs(log((div),10))
+				tf_curr = 1+abs(log(curr_list[words],10))
+				tf_idf = tf_curr * idf_val
+				curr_list[words] = tf_idf 
+			Return_Dict[anime] = curr_list 
+		
+		print "\nTF IDF Scores for Generated: " + type, "\n"
+		for key in Return_Dict.keys():
+			print key, Return_Dict[key]
+		
+		return Return_Dict
+						
+				
 			
 if __name__ == "__main__":
 
@@ -310,6 +373,10 @@ if __name__ == "__main__":
 	Animelist = rec.read_json_file(file)
 	UserList = rec.initUserAnime(Animelist)
 	GenList = rec.initGenAnime(Animelist)
+	rec.TFIDF(rec.UserDesc, rec.GenDesc, "Description")
+	rec.TFIDF(rec.UserGenre, rec.GenGenre, "Genres")
+	rec.TFIDF(rec.UserStaff, rec.GenStaff, "Staff")
+	rec.TFIDF(rec.UserComp, rec.GenComp, "Companies")
 	
 	
 	
