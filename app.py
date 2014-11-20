@@ -13,15 +13,15 @@ fo = open("Output.txt", "rw+")
 fo.seek(0)
 fo.truncate()
 
-UserAnime = "UserAnime "
-GenAnime = "GeneratedAnime " 
+UserAnime = "UserAnime"
+GenAnime = "GeneratedAnime" 
 str = data["UserAnime"].value
 # Write a line at the end of the file.
 fo.seek(0, 2)
 line = fo.write(UserAnime)
-line = fo.write( str )
+line = fo.write( " " + str )
 str = data["RetrievedAnime"].value
 fo.seek(0, 2)
-line = fo.write("\n\n")
+line = fo.write("\n")
 line = fo.write(GenAnime)
-line = fo.write( str )
+line = fo.write( " " + str )
