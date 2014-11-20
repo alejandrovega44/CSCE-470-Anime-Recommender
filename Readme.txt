@@ -24,5 +24,7 @@ from the terminal enter
 
 When you open the outputfile, outputs that you will see consist of tf idf scores of descriptions of generated anime, genre, companies, staff. 
 
+The file Parse Data Output contains the outputs for the ParseData.py script 
+
 At this stage, the code only calculated tf idf scores will use cosine. Additionally the output score previously mentioned will be multiplied by a given
 alpha value and added together to get a better approximation for the users anime preferences 
