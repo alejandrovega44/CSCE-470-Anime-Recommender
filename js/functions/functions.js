@@ -7,7 +7,8 @@ function callDatabase(UserAnime, RetrievedAnime)
 
 	console.log(hostname+folder_path+"app.py");
 	$.ajax({
-	   url: "http://uakk632bb565.av512.koding.io/project/app.py",
+	   //url: "http://uakk632bb565.av512.koding.io/project/app.py",
+	   url: hostname+folder_path+"app.py",
 	    type: "POST",
 	    data: {"UserAnime": JSON.stringify(UserAnime), "RetrievedAnime": JSON.stringify(RetrievedAnime)},
 	    success: function(response){
