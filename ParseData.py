@@ -335,28 +335,36 @@ class Recommender(object):
 						temp[word] += 1
 				total_type_dict[key] = temp 
 				temp = {} 
+			if g_dict == 1:
+				total_type_dict[key] = 1
 		
 		# had to do this, for loop above was duplicating items when i initialized temp to genre_dict
 		for key in total_type_dict.keys():
 			dict = total_type_dict[key] 
-			for word in total_dict.keys():
-				if word not in dict:
-					dict[word] = 1
-				else:
-					dict[word] += 1 
-			total_type_dict[key] = dict 
+			if dict != 1:
+				for word in total_dict.keys():
+					if word not in dict:
+						dict[word] = 1
+					else:
+						dict[word] += 1 
+				total_type_dict[key] = dict 
+			if dict == 1: 
+				total_type_dict[key] = 1
 		
 		for anime in total_type_dict.keys():
 			g_list = total_type_dict[anime] 
 			curr_list = gen_dict[anime]
-			for words in curr_list: 
-				tf_all = g_list[words]
-				div = 2/float(tf_all)
-				idf_val = abs(log((div),10))
-				tf_curr = 1+abs(log(curr_list[words],10))
-				tf_idf = tf_curr * idf_val
-				curr_list[words] = tf_idf 
-			Return_Dict[anime] = curr_list 
+			if curr_list != 1:
+				for words in curr_list: 
+					tf_all = g_list[words]
+					div = 2/float(tf_all)
+					idf_val = abs(log((div),10))
+					tf_curr = 1+abs(log(curr_list[words],10))
+					tf_idf = tf_curr * idf_val
+					curr_list[words] = tf_idf 
+				Return_Dict[anime] = curr_list 
+			if curr_list == 1:
+				Return_Dict[anime] = 1 
 		
 		print "\nTF IDF Scores for Generated: " + type, "\n"
 		for key in Return_Dict.keys():
