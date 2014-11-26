@@ -18,7 +18,8 @@ function callDatabase(UserAnime, RetrievedAnime)
 	       {
 	       	var temp=[];
 	       	var self;
-	       	$.each(response,function(){
+		console.log(response);
+	       /*	$.each(response,function(){
 	       		self= this;
 	       		$.each(RetrievedAnime,function(){
 	       			if(this.i == self )
@@ -28,7 +29,7 @@ function callDatabase(UserAnime, RetrievedAnime)
 	       			}
 	       		});
 	       	});
-	       	PopulateWithAnimeData(temp);
+	       	PopulateWithAnimeData(temp);*/
 	       }
 	       console.log(response);
 	       

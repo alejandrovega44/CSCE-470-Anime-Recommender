@@ -28,3 +28,6 @@ The file Parse Data Output contains the outputs for the ParseData.py script
 
 At this stage, the code only calculated tf idf scores will use cosine. Additionally the output score previously mentioned will be multiplied by a given
 alpha value and added together to get a better approximation for the users anime preferences 
+
+install
+	http://learn.koding.com/guides/installing-mysql/

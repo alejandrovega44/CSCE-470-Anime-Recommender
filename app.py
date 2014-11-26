@@ -9,7 +9,7 @@ data = cgi.FieldStorage()
 print "Content-Type: text/html\n"
 print "User Animelist: " + data["UserAnime"].value
 print "Generated Anim: " + data["RetrievedAnime"].value
-fo = open("Output.txt", "rw+")
+fo = open("output.txt", "rw+")
 fo.seek(0)
 fo.truncate()
 
