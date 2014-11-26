@@ -31,3 +31,6 @@ alpha value and added together to get a better approximation for the users anime
 
 install
 	http://learn.koding.com/guides/installing-mysql/
+exectute sql:
+	 mysql -u {username} -p < tablse.sql 
+	will ask for password after type in password and will create table and database for you
