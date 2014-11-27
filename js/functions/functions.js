@@ -48,7 +48,7 @@ function PopulateDatabase(RetrievedAnime)
 	console.log(hostname+folder_path+"app.py");
 	$.ajax({
 	   //url: "http://uakk632bb565.av512.koding.io/project/app.py",
-	   url: hostname+folder_path+"/php/save.py",
+	   url: hostname+folder_path+"php/save.php",
 	    type: "POST",
 	    data: {"RetrievedAnime": JSON.stringify(RetrievedAnime)},
 	    success: function(response){
