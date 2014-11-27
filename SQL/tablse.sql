@@ -2,10 +2,9 @@
 USE UpcomingData; 
 CREATE TABLE info (
 
-	id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,  
 	data LONGTEXT NOT NULL,
-
-	PRIMARY KEY (id)
+	hash VARCHAR(40) NOT NULL,
+	PRIMARY KEY (hash)
 
 );
 

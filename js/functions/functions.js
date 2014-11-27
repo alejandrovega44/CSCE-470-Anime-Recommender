@@ -53,7 +53,7 @@ function PopulateDatabase(RetrievedAnime)
 	    data: {"RetrievedAnime": JSON.stringify(RetrievedAnime)},
 	    success: function(response){
 	       console.log("Sucess");
-	       console.log(response);
+	      alert(response);
 	       
 	   }
 	});

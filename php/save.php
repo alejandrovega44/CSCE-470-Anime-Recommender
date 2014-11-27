@@ -1,11 +1,9 @@
 <?php
 include_once 'connect.php';
 //https://gist.github.com/jonsuh/3739844
-$debug = true;
+$debug = false;
 $W_O =false;
 if(!$debug) $q = $_POST['RetrievedAnime'];
- echo "connection established";
-
 if($debug && $W_O)
 {
 	echo "writing to file" ;
@@ -19,15 +17,26 @@ if($debug && !$W_O)
  $converted = json_decode( $q);
 //use the php object and create it to a string 
 //and send that to to the insert for each item
-
+//using hash so it wont accept duplicates
+$temp = false;
  foreach($converted as $value) {
 	$value= mysql_real_escape_string(json_encode($value));
-	echo $value;
-	echo "\n";
-	$result=mysql_query("INSERT INTO $table (data) VALUES ('$value')")or die(mysql_error());
+	$hash= sha1($value);
+	$query="INSERT INTO $table (data,hash) VALUES ('$value', '$hash')";
+	$result=mysql_query($query)or die(mysql_error());
+	if(mysql_errno())
+	{
+    		$temp=true;
+		echo "MySQL error ".mysql_errno().": "
+         	.mysql_error()."\n<br>When executing <br>\n$query\n<br>";
+
+	}
+}
+if(!$temp)
+{
+	echo "successfully inserted data";
 }
 
 // we will then have a db full of the records that have the data we want
 
-//$result=mysql_query("INESRT INTO '$table' (data) Values('$data')")or die(mysql_error());
 ?>
