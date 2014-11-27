@@ -27,10 +27,8 @@ function PopulateWithAnimeData(animelist)
 	var $contents=$(".table > tbody");
 	$contents.empty();
 	var temp = "<tr>";
-	// <img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px">
 	$.each(animelist,function()
 	{
-		//temp += '<td><div class="well"><img src="' + this.picUrl + '">'+ this.a_name +'</div> </td>';
 		temp += '<td>'+ createRow(this) + '</td>';
 		maxRows += 1;
 		if(maxRows == 3)
@@ -48,7 +46,7 @@ function PopulateWithAnimeData(animelist)
 function createRow(data)
 {
 	string =
-	"<div>"+ //class='well'
+	"<div>"+ 
 	"<table class='table table-striped'> " +
 	  "<tbody>"+
 	  "<td><img src='" + data.picUrl +"'></td><td><a href='"+ data.moreInfo +"'><h4>"+ data.a_name +"</h4></a><div class='divider'></div><b>Genre:</b> "+

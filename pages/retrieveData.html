@@ -17,8 +17,11 @@
 	<script src="js/functions/UI.js"></script>
 	<script src="js/functions/functions.js"></script>
 	<script type="text/javascript">
-		//CreateData(PopulateWithAnimeData);
-		CreateData(PopulateDatabase);
+		CreateData(function(data){
+			
+			PopulateWithAnimeData(data)
+			PopulateDatabase(data)
+		});
 	</script>
 	<Sc
 </html> 
