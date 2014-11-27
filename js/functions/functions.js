@@ -37,3 +37,26 @@ function callDatabase(UserAnime, RetrievedAnime)
 	});
         
 }
+//populate server with upcoming anime from ani chart
+function PopulateDatabase(RetrievedAnime)
+{
+	var hostname = document.location.origin;
+	var folder_path = document.location.pathname;
+	temp = folder_path.lastIndexOf("/");
+	folder_path = folder_path.substr(0, temp+1);
+
+	console.log(hostname+folder_path+"app.py");
+	$.ajax({
+	   //url: "http://uakk632bb565.av512.koding.io/project/app.py",
+	   url: hostname+folder_path+"/php/save.py",
+	    type: "POST",
+	    data: {"RetrievedAnime": JSON.stringify(RetrievedAnime)},
+	    success: function(response){
+	       console.log("Sucess");
+	       console.log(response);
+	       
+	   }
+	});
+        
+}
+
