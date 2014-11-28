@@ -14,7 +14,6 @@ function callDatabase(UserAnime)
 	       {
 	       	var temp=[];
 	       	var self;
-			console.log(response);
 	       }
 	       console.log(response);
 	       

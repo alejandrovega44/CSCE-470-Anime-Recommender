@@ -2,15 +2,34 @@
 
 import cgi, cgitb
 import os 
+from functions import Functions
 cgitb.enable()  # for troubleshooting
 
 #the cgi library gets vars from html
 data = cgi.FieldStorage()
 #this is the actual output
+debug = True
+writeFile = False
 print "Content-Type: text/html\n"
-print "User Animelist: " + data["UserAnime"].value
-data["RetrievedAnime"]=(os.popen('php ./php/pull.php').readline())
-print "User RetrievedAnime: " +data["RetrievedAnime"]
+if not debug:
+    print "User Animelist: " + data["UserAnime"].value
+temp=(os.popen('php ./../php/pull.php').readline())
+ 
+if debug and writeFile:
+    U_f = open('./UserAnime', 'w')
+    U_f.write(data["UserAnime"].value)
+    U_f.close()
+    R_f= open('./RetrievedAnime','w')
+    R_f.write(temp)
+    R_f.close()
+elif debug and not writeFile:
+    U_f=open('./UserAnime', 'r')
+    line=U_f.read()
+    R_f=open('./RetrievedAnime','r')
+    line2=R_f.read()
+
+line = Functions.read_line(line)
+line2 = Functions.read_line(line2)
 """
 	fo = open("output.txt", "rw+")
 	fo.seek(0)
