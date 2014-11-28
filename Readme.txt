@@ -41,3 +41,7 @@ exectute sql:
 
 To populate the database you first have to setup the mysql database and have to have php installed
 then if you open up the retrieveData.html in your browser and don't recieve an error in the console.log your database has been populated
+
+http://learn.koding.com/guides/install-mongodb/
+
+http://api.mongodb.org/python/current/installation.html
