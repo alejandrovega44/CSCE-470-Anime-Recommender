@@ -14,7 +14,7 @@
 			<center> <font size="6"> Otaku Hub Anime Recommender </font> </center>
             <div class="col-lg-4"></div>
             <div class="col-lg-4">
-			<form id = "UserName" method="GET" action="Results.html"> 
+			<form id = "UserName" method="GET" action="/pages/Results.html"> 
                 <div class="input-group">
                     <input type="text" class="form-control text-center" placeholder = "MyAnimelist Username" input name = "AL" > 
                     <span class="input-group-btn">
@@ -33,7 +33,6 @@
 			<center> <font size="4">  || About Us || About Recommender || FAQ || </font> </center>
 		</div>
 		
-		<!--trying to display table same as how you did it but not working --->
   <table id = "Anime" class="table table-striped table-hover " style = "display:true;">
 	  <tbody>
 	  </tbody>
@@ -42,63 +41,6 @@
 			
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="js/userdata.js"></script> 
-		<script>
-		
-
-		
-		var debug=0; //variable used to turn off various elements that are printed for testing purpouses
-		//I need to add catching for errors
-		$( "form" ).submit(function( event ) {
-           // event.preventDefault();
-		    var self = this;
-		    var formId = this.id;
-		  if(formId=="UserName")
-		  {
-		    var username= self.AL.value; //retrieve data in field
-		    if (debug) console.log(username)
-		    //call get userlist function which does assyncronous call to yql api to get users list
-		    //then pass in a second function for it to do when its done geting the information sucessfully
-			getUserList(username, function(data){
-				if (debug) document.write(JSON.stringify(data));
-				if (debug) document.write("<br>")
-				var animeList="";
-				var animeArr = [] 
-				if($.isArray(data.anime)) //if the user has more than one anime in his list
-				{
-					$.each(data.anime,  function()
-					{
-	   					animeList+="title=~"+encodeURI(this.series_title)+"&";
-	                	animeArr.push(this.series_title);
-	              	});
-	             }
-				else //if user has one anime in his list 
-				{
-					animeList+="title=~"+encodeURI(data.anime.series_title)+"&";
-					animeArr.push(data.anime.series_title)
-				}
-				
-				CreateTable(animeArr);
-				
-				
-				//this removes extra "&" at the end
-              	animeList=animeList.substr(0,animeList.length-1);
-              	if (debug) console.log(animeList);
-
-              	if (debug) document.write("<br> This is AnimeData <br>")
-				getAnimeData(animeList,function(data){
-					if(data.anime != null)
-						$.each(data.anime, function(){
-							if (this.precision==="TV" && this.type==="TV")
-		                		if (debug) document.write(this.name+"<br>");
-
-						})//close of each
-				})//close of getanimedata aunonomous function
-			}) //close autonmous getUserList function 
-		  }// close form id
-		});
-
-		</script>
 	</body> 
 	
 	

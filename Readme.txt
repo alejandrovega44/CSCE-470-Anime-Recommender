@@ -1,7 +1,11 @@
 CSCE-470 Project 
 
 Anime Recommender that will recommend user new anime seasons 
-
+Currently using:
+	PHP
+	MYSQL
+	Phython
+	Bootstrap html/js/css
 Algorithm Check Point:
 
 To test the execution of this code you will need the following files: ParseData.py & Output.json 
@@ -34,3 +38,6 @@ install
 exectute sql:
 	 mysql -u {username} -p < tablse.sql 
 	will ask for password after type in password and will create table and database for you
+
+To populate the database you first have to setup the mysql database and have to have php installed
+then if you open up the retrieveData.html in your browser and don't recieve an error in the console.log your database has been populated

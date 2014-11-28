@@ -32,7 +32,7 @@
             
 		var debug=0; //variable used to turn off various elements that are printed for testing purpouses
 		    //I need to add catching for errors
-				    var username= queryDict["AL"]; //retrieve data in field
+			var username= queryDict["AL"]; //retrieve data in field
 		    if (debug) console.log(username)
 		    //call get userlist function which does assyncronous call to yql api to get users list
 		    //then pass in a second function for it to do when its done geting the information sucessfully
@@ -106,10 +106,7 @@
 					}
 					if(debug) CreateTable_v(currentData);
 					if(debug) console.log(Create_UserAnime_Objects(currentData));
-					CreateData(function(RetrievedAnime){
-						callDatabase(Create_UserAnime_Objects(currentData), RetrievedAnime);
-
-					});
+					callDatabase(Create_UserAnime_Objects(currentData));
 				});//close of getanimedata aunonomous function
 			}); //close autonmous getUserList function 
 

@@ -18,6 +18,7 @@ if($debug && !$W_O)
 //use the php object and create it to a string 
 //and send that to to the insert for each item
 //using hash so it wont accept duplicates
+//add a title column and add it as a primary key
 $temp = false;
  foreach($converted as $value) {
 	$value= mysql_real_escape_string(json_encode($value));
