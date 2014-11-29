@@ -30,12 +30,18 @@ function PopulateDatabase(RetrievedAnime)
 	folder_path = folder_path.substr(0, temp+1);
 
 	$.ajax({
-	   url: hostname+folder_path+"../php/save.php",
+	   url: hostname+folder_path+"../py/monodb/save.py", ///monodb/save.py
 	    type: "POST",
 	    data: {"RetrievedAnime": JSON.stringify(RetrievedAnime)},
 	    success: function(response){
 	       console.log("Sucess");
-	      alert(response);
+	      if(response == "Db created succesfully")
+		alert(response);
+	      else
+		{
+			alert("error/duplicates check console.log for details");
+			console.log(response);
+		}
 	       
 	   }
 	});
