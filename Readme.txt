@@ -2,8 +2,7 @@ CSCE-470 Project
 
 Anime Recommender that will recommend user new anime seasons 
 Currently using:
-	PHP
-	MYSQL
+	MongoDB
 	Phython
 	Bootstrap html/js/css
 Algorithm Check Point:
@@ -33,15 +32,14 @@ The file Parse Data Output contains the outputs for the ParseData.py script
 At this stage, the code only calculated tf idf scores will use cosine. Additionally the output score previously mentioned will be multiplied by a given
 alpha value and added together to get a better approximation for the users anime preferences 
 
-install
-	http://learn.koding.com/guides/installing-mysql/
-exectute sql:
-	 mysql -u {username} -p < tablse.sql 
-	will ask for password after type in password and will create table and database for you
-
-To populate the database you first have to setup the mysql database and have to have php installed
-then if you open up the retrieveData.html in your browser and don't recieve an error in the console.log your database has been populated
 
 http://learn.koding.com/guides/install-mongodb/
 
 http://api.mongodb.org/python/current/installation.html
+
+to populate your datbase you must run your mongodb server
+and then open in your browser the retrieveData.html in your browser and don't recieve an error
+
+pip install -U textblob nltk
+python -m textblob.download_corpora
+
