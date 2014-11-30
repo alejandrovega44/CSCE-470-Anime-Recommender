@@ -5,7 +5,8 @@ import os
 from functions import Functions
 from pymongo import MongoClient
 from textblob.classifiers import NaiveBayesClassifier
-#cgitb.enable()  # for troubleshooting
+import json
+cgitb.enable()  # for troubleshooting
 
 #the cgi library gets vars from html
 data = cgi.FieldStorage()
@@ -20,8 +21,9 @@ collection_Anime= db.Anime #get table named <insert name>  inside db named <inse
 #create upcoming anime dictionary 
 UpcomingData={}
 for items in collection_Anime.find():
+    del items["_id"]
     UpcomingData[items["a_name"]]=items
-
+   
 #print "Content-Type: text/html\n"
 if not debug:
     UserData= Functions.read_line( data["UserAnime"].value)
@@ -45,4 +47,4 @@ for anime in classifyData:
         return_type[AnimeNames[i]]=UpcomingData[AnimeNames[i]]
     i+=1
 #send back in json object the dictionary of relevant items
-print json.dumps(return_type)
+#print json.dumps(return_type).encode("UTF-8")
