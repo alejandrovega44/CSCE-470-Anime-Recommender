@@ -8,14 +8,15 @@ function callDatabase(UserAnime)
 	   url: hostname+folder_path+"../py/app.py",
 	    type: "POST",
 	    data: {"UserAnime": JSON.stringify(UserAnime)},
+	    //dataType: 'json',
 	    success: function(response){
 	       console.log("Sucess");
+	       console.log(response)
 	       if(response != null)
 	       {
 	       	relevantNewAnime=JSON.stringify(response)
 	       	PopulateWithAnimeData(relevantNewAnime);
 	       }
-	       console.log(response);
 	       
 	   }
 	});
