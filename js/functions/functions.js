@@ -1,5 +1,6 @@
 function callDatabase(UserAnime)
 {
+	var debug =1;
 	var hostname = document.location.origin;
 	var folder_path = document.location.pathname;
 	temp = folder_path.lastIndexOf("/");
@@ -11,7 +12,7 @@ function callDatabase(UserAnime)
 	    //dataType: 'json',
 	    success: function(response){
 	       console.log("Sucess");
-	       console.log(response)
+	       if (debug) document.write(response);
 	       if(response != null)
 	       {
 	       	relevantNewAnime=JSON.stringify(response)
