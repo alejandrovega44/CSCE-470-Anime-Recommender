@@ -22,7 +22,7 @@ UpcomingData={}
 for items in collection_Anime.find():
     UpcomingData[items["a_name"]]=items
 
-print "Content-Type: text/html\n"
+#print "Content-Type: text/html\n"
 if not debug:
     UserData= Functions.read_line( data["UserAnime"].value)
  
@@ -34,10 +34,15 @@ elif debug and not writeFile:
     U_f=open('./UserAnime', 'r')
     line=U_f.read()
     UserData= Functions.read_line(line)
-cl = NaiveBayesClassifier(Functions.classify(UserData))
 
+cl = NaiveBayesClassifier(Functions.classify(UserData))
+AnimeNames= UpcomingData.keys()
 classifyData=Functions.newAnime(UpcomingData)
+i=0
+return_type={} #dictionary that will store all relevant animes be used to send back
 for anime in classifyData:
-    print anime
-    print cl.classify(anime)
-cl.show_informative_features(5)
+    if cl.classify(anime) == "relevant":
+        return_type[AnimeNames[i]]=UpcomingData[AnimeNames[i]]
+    i+=1
+#send back in json object the dictionary of relevant items
+print json.dumps(return_type)

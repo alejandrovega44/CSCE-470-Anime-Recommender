@@ -12,8 +12,8 @@ function callDatabase(UserAnime)
 	       console.log("Sucess");
 	       if(response != null)
 	       {
-	       	var temp=[];
-	       	var self;
+	       	relevantNewAnime=JSON.stringify(response)
+	       	PopulateWithAnimeData(relevantNewAnime);
 	       }
 	       console.log(response);
 	       
