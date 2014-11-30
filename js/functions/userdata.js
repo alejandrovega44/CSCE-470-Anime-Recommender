@@ -29,20 +29,7 @@ function getUserList(username, callback)
 	});
 
 }
-//function will recursively create a list of all the animes the user watches
-//takes an in array of animenames that has been formated for the call
-//callback function that will taken in all the data
-function RetrieveAnimeData(ArrayAnimeNames,callback)
-{
-	
-	if ($.isArray(ArrayAnimeNames))
-	{
 
-	}
-	else
-		getAnimeData(ArrayAnimeNames,callback);
-
-}
 //function will do multiple calls to api to retrieve data for various animes
 //will take an array of strings that contain title=~name 
 //callback
@@ -51,15 +38,20 @@ function animeDataCalls(array_animetitles,callback)
 	var apiCallData=[]; 
 	if(array_animetitles.length == 1)
 		callback(getAnimeData(array_animetitles[0]))
+	else if (array_animetitles.length == 0) 
+	{
+		alert("User has not watched/rated any anime");
+		
+	}
 	else
-		{
-			for (var i = 0; i < array_animetitles.length; i++) {
-				getAnimeData(array_animetitles[i], function(r){
-					apiCallData.push(r);
-				});
-			};
-			callback(apiCallData); 
-		}
+	{
+		for (var i = 0; i < array_animetitles.length; i++) {
+			getAnimeData(array_animetitles[i], function(r){
+				apiCallData.push(r);
+			});
+		};
+		callback(apiCallData); 
+	}
 
 }
 
