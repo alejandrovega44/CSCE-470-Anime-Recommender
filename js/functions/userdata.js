@@ -43,6 +43,25 @@ function RetrieveAnimeData(ArrayAnimeNames,callback)
 		getAnimeData(ArrayAnimeNames,callback);
 
 }
+//function will do multiple calls to api to retrieve data for various animes
+//will take an array of strings that contain title=~name 
+//callback
+function animeDataCalls(array_animetitles,callback)
+{
+	var apiCallData=[]; 
+	if(array_animetitles.length == 1)
+		callback(getAnimeData(array_animetitles[0]))
+	else
+		{
+			for (var i = 0; i < array_animetitles.length; i++) {
+				getAnimeData(array_animetitles[i], function(r){
+					apiCallData.push(r);
+				});
+			};
+			callback(apiCallData); 
+		}
+
+}
 
 //function that will retrieve more detail information for each anime
 //a string with the names of animes alrady formated for this specific api call

@@ -38,6 +38,7 @@
 		    //then pass in a second function for it to do when its done geting the information sucessfully
 			getUserList(username, function(data){
 				if (debug) console.log(JSON.stringify(data));
+				var animeRequests=[];
 				var animeList="";
 				var animeArr = []; 
 				var animeRating = [];
@@ -47,25 +48,37 @@
 					//need to account for 50 animes create a new request
 					$.each(data.anime,  function()
 					{
-						if(counter == 50) return false;
+						if(counter%15== 0)
+						{
+							//this removes extra "&" at the end
+              				animeList=animeList.substr(0,animeList.length-1)
+							animeRequests.push(animeList);
+							animeList="";
+						}
 	   					animeList+="title=~"+encodeURI(this.series_title)+"&";
 	                	animeArr.push(this.series_title);
 	                	animeRating.push(this.my_score);
 	                	counter++;
 	              	});
+					if(counter < 15)
+					{
+						//this removes extra "&" at the end
+          				animeList=animeList.substr(0,animeList.length-1)
+						animeRequests.push(animeList);
+						animeList="";
+					}
 	             }
 				else //if user has one anime in his list 
 				{
 					animeList+="title=~"+encodeURI(data.anime.series_title)+"&";
+					//this removes extra "&" at the end
+              		animeList=animeList.substr(0,animeList.length-1)
+					animeRequests.push(animeList);
 					animeArr.push(data.anime.series_title)
 				}
 				if(debug) console.log("number of animes is:"+ animeArr.length);
 				if(!debug) CreateTable(animeArr);
 				
-				
-				//this removes extra "&" at the end
-              	animeList=animeList.substr(0,animeList.length-1);
-              	if (debug) console.log(animeList);
               	if (debug) console.log(animeArr);
               	var currentData=[];
               	if (debug) console.log("<br> This is AnimeData <br>");
