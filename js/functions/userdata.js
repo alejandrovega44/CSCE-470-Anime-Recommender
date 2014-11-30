@@ -37,22 +37,66 @@ function animeDataCalls(array_animetitles,callback)
 {
 	var apiCallData=[]; 
 	if(array_animetitles.length == 1)
-		callback(getAnimeData(array_animetitles[0]))
+	{
+		getAnimeData(array_animetitles[0], function(r){
+			apiCallData.push(r);
+			callback(apiCallData);
+		});
+		
+	}
 	else if (array_animetitles.length == 0) 
 	{
 		alert("User has not watched/rated any anime");
-		
+
 	}
 	else
 	{
+		var promises=[];
 		for (var i = 0; i < array_animetitles.length; i++) {
-			getAnimeData(array_animetitles[i], function(r){
-				apiCallData.push(r);
-			});
+			promises.push(getAnimeData_n(array_animetitles[i]));
 		};
-		callback(apiCallData); 
+		$.when.apply($, promises).then(function() {
+		         var temp=arguments; // The array of resolved objects as a pseudo-array
+			callback(temp);		         
+		})
 	}
 
+}
+
+//function that will retrieve more detail information for each anime
+//a string with the names of animes alrady formated for this specific api call
+//a callback function
+//and when its done doing all calls send the data to call back function
+//returns the data
+function getAnimeData_n(animelist)
+{
+	var debug=1;
+	var deferred = $.Deferred();
+	url="http://cdn.animenewsnetwork.com/encyclopedia/api.xml?"+animelist;
+	var request = $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'xml',
+	success: function(r){
+  	  if (r == null) 
+	  {
+	  	//add throw an error
+	  	console.log("returned null: data wasn't found for specific anime/s")
+	  }
+	  else
+	  {
+	  	if(debug) console.log(r);
+		if(debug) console.log(xmlToJson(r));
+	  	deferred.resolve(xmlToJson(r).ann);
+	  }
+	  
+	},  
+	fail: function(r){
+	  console.log("fail");
+	  console.log(r);
+	}
+	})
+	  return deferred.promise();
 }
 
 //function that will retrieve more detail information for each anime
@@ -63,19 +107,17 @@ function animeDataCalls(array_animetitles,callback)
 function getAnimeData(animelist, callback)
 {
 	var debug=1;
+	if (debug) console.log(animelist);
 	//http://goessner.net/download/prj/jsonxml/
 	url="http://cdn.animenewsnetwork.com/encyclopedia/api.xml?"+animelist;
 	 if(debug)console.log(animelist);
-	/*$.getJSON(url, function(){
-	      //console.log("sucess");
-	  })*/
 	var request = $.ajax({
     url: url,
     type: 'GET',
     dataType: 'xml',
 	});
 	request.success(function(r){
-	  console.log("sucess")
+	  if (debug) console.log("sucess of geting anime data for old animes")
   	  if (r == null) 
 	  {
 	  	//add throw an error
@@ -93,7 +135,7 @@ function getAnimeData(animelist, callback)
 	  console.log("fail");
 	  console.log(r);
 	});
-
+	
 }
 function Create_UserAnime_Objects(animelist)
 {

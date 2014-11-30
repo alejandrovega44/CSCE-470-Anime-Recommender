@@ -23,14 +23,28 @@
 		<script src="../js/functions/functions.js"></script> 
 		<script>
 		
+		// Put somewhere in your scripting environment
+		if (jQuery.when.all===undefined) {
+		    jQuery.when.all = function(deferreds) {
+		        var deferred = new jQuery.Deferred();
+		        $.when.apply(jQuery, deferreds).then(
+		            function() {
+		                deferred.resolve(Array.prototype.slice.call(arguments));
+		            },
+		            function() {
+		                deferred.fail(Array.prototype.slice.call(arguments));
+		            });
 
-        var queryDict = {}
+		        return deferred;
+		    }
+		}
+		        var queryDict = {}
         location.search.substr(1).split("&").forEach(function(item) {
                 queryDict[item.split("=")[0]] = item.split("=")[1]
                 
             });
             
-		var debug=0; //variable used to turn off various elements that are printed for testing purpouses
+		var debug=1; //variable used to turn off various elements that are printed for testing purpouses
 		    //I need to add catching for errors
 			var username= queryDict["AL"]; //retrieve data in field
 		    if (debug) console.log(username)
@@ -48,7 +62,7 @@
 					//need to account for 50 animes create a new request
 					$.each(data.anime,  function()
 					{
-						if(counter%15== 0)
+						if(counter%15== 0 && counter!=0)
 						{
 							//this removes extra "&" at the end
               				animeList=animeList.substr(0,animeList.length-1)
@@ -82,41 +96,48 @@
               	if (debug) console.log(animeArr);
               	var currentData=[];
               	if (debug) console.log("<br> This is AnimeData <br>");
+
               	//need to create a function that calls the api as many times as needed and creates
               	//a object that has all the data needed and then calls the callback function
-				getAnimeData(animeList,function(data){
-					if(data.anime != null)
-					{
-						if(debug) console.log(data.anime);
-						$.each(data.anime, function(){
-							if (this["@attributes"].precision==="TV" && this["@attributes"].type==="TV")
-							{
-								//if (debug) console.log("'"+this["@attributes"].name+"'");
-								found =$.inArray(this["@attributes"].name, animeArr);
-								if (found >-1)
+				animeDataCalls(animeRequests,function(response){
+					console.log("entering response");
+					$.each(response, function(){
+						console.log(this);
+						var data=this;
+						if(data.anime != null)
+						{
+							if(debug) console.log(data.anime);
+							$.each(data.anime, function(){
+								if (this["@attributes"].precision==="TV" && this["@attributes"].type==="TV")
 								{
-									if (debug) console.log("'"+this["@attributes"].name+"'");
-									this.rating =animeRating[$.inArray(this["@attributes"].name, animeArr)];
-									currentData.push(this);
-								} 
-							}
-		                		
+									//if (debug) console.log("'"+this["@attributes"].name+"'");
+									found =$.inArray(this["@attributes"].name, animeArr);
+									if (found >-1)
+									{
+										if (debug) console.log("'"+this["@attributes"].name+"'");
+										this.rating =animeRating[$.inArray(this["@attributes"].name, animeArr)];
+										currentData.push(this);
+									} 
+								}
+			                		
 
-						});//close of each
-						if(debug) 
-						    {
-						        if( $.isArray(data.warning))
-						            {
-						                $.each(data.warning,function(){
-						                    console.log(this["#text"]);
-						                });
-						            }
-						        else
-						            if(typeof data.warning != "undefined")
-						            	console.log(data.warning["#text"]); 
-						        
-						    }
-					}
+							});//close of each
+							if(debug) 
+							    {
+							        if( $.isArray(data.warning))
+							            {
+							                $.each(data.warning,function(){
+							                    console.log(this["#text"]);
+							                });
+							            }
+							        else
+							            if(typeof data.warning != "undefined")
+							            	console.log(data.warning["#text"]); 
+							        
+							    }
+						}
+					});
+					if(debug) console.log(currentData);
 					if(debug) CreateTable_v(currentData);
 					if(debug) console.log(Create_UserAnime_Objects(currentData));
 					callDatabase(Create_UserAnime_Objects(currentData));
