@@ -9,12 +9,33 @@
 	<head></head> 
 	
 	<body>
-	  <table id = "Anime" class="table table-striped table-hover " style = "display:true;">
-    	  <tbody>
-    	  </tbody>
-      </table> 
-		
-		<h1></h1>
+	<div class="row" style="padding-top: 20px" >
+            <div class="col-lg-3" ></div>
+            <div class="col-lg-3" style = "float:right;">
+			<form id = "UserName" method="GET" action="Results.html"> 
+                <div class="input-group pull-right">
+                    <input type="text" class="form-control text-center" placeholder = "MyAnimelist Username" input name = "AL" > 
+                    <span class="input-group-btn">
+                        <!-- Remove onClick not work as planned -->
+						<button class="btn btn-default" button type="submit" value = "Submit" > GO!</button>
+					</span>
+                </div><!-- /input-group -->
+			 </form> 
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-3"></div>
+        </div><!-- /.row -->
+	
+	<div class="container">
+		<div class  ="Info" style="padding-top: 50px">
+				
+		</div>
+			
+		<div class = "AnimeTable" style="padding-top: 30px"> 
+		  <table id = "Anime" table class="table table-striped table-hover" style = "display:true;">
+	    	  <tbody>
+	    	  </tbody>
+	      </table> 
+		</div>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="../js/functions/userdata.js"></script> 
 		<script src="../js/functions/upcomingdata.js"></script> 
@@ -24,16 +45,20 @@
 		<script>
 		
 
-        var queryDict = {}
+		var queryDict = {}
         location.search.substr(1).split("&").forEach(function(item) {
                 queryDict[item.split("=")[0]] = item.split("=")[1]
                 
             });
             
-		var debug=0; //variable used to turn off various elements that are printed for testing purpouses
+		var debug=1;//variable used to turn off various elements that are printed for testing purpouses
 		    //I need to add catching for errors
 			var username= queryDict["AL"]; //retrieve data in field
 		    if (debug) console.log(username)
+			var $UserInfo = $(".Info");
+			var Username = '<center> <h1>' + " Anime Recommendations For : " + username + '</h1> </center>'; 
+			$UserInfo.append(Username);
+
 		    //call get userlist function which does assyncronous call to yql api to get users list
 		    //then pass in a second function for it to do when its done geting the information sucessfully
 			getUserList(username, function(data){
@@ -48,7 +73,7 @@
 					//need to account for 50 animes create a new request
 					$.each(data.anime,  function()
 					{
-						if(counter%15== 0)
+						if(counter%15== 0 && counter!=0)
 						{
 							//this removes extra "&" at the end
               				animeList=animeList.substr(0,animeList.length-1)
@@ -82,41 +107,48 @@
               	if (debug) console.log(animeArr);
               	var currentData=[];
               	if (debug) console.log("<br> This is AnimeData <br>");
+
               	//need to create a function that calls the api as many times as needed and creates
               	//a object that has all the data needed and then calls the callback function
-				getAnimeData(animeList,function(data){
-					if(data.anime != null)
-					{
-						if(debug) console.log(data.anime);
-						$.each(data.anime, function(){
-							if (this["@attributes"].precision==="TV" && this["@attributes"].type==="TV")
-							{
-								//if (debug) console.log("'"+this["@attributes"].name+"'");
-								found =$.inArray(this["@attributes"].name, animeArr);
-								if (found >-1)
+				animeDataCalls(animeRequests,function(response){
+					console.log("entering response");
+					$.each(response, function(){
+						console.log(this);
+						var data=this;
+						if(data.anime != null)
+						{
+							if(debug) console.log(data.anime);
+							$.each(data.anime, function(){
+								if (this["@attributes"].precision==="TV" && this["@attributes"].type==="TV")
 								{
-									if (debug) console.log("'"+this["@attributes"].name+"'");
-									this.rating =animeRating[$.inArray(this["@attributes"].name, animeArr)];
-									currentData.push(this);
-								} 
-							}
-		                		
+									//if (debug) console.log("'"+this["@attributes"].name+"'");
+									found =$.inArray(this["@attributes"].name, animeArr);
+									if (found >-1)
+									{
+										if (debug) console.log("'"+this["@attributes"].name+"'");
+										this.rating =animeRating[$.inArray(this["@attributes"].name, animeArr)];
+										currentData.push(this);
+									} 
+								}
+			                		
 
-						});//close of each
-						if(debug) 
-						    {
-						        if( $.isArray(data.warning))
-						            {
-						                $.each(data.warning,function(){
-						                    console.log(this["#text"]);
-						                });
-						            }
-						        else
-						            if(typeof data.warning != "undefined")
-						            	console.log(data.warning["#text"]); 
-						        
-						    }
-					}
+							});//close of each
+							if(debug) 
+							    {
+							        if( $.isArray(data.warning))
+							            {
+							                $.each(data.warning,function(){
+							                    console.log(this["#text"]);
+							                });
+							            }
+							        else
+							            if(typeof data.warning != "undefined")
+							            	console.log(data.warning["#text"]); 
+							        
+							    }
+						}
+					});
+					if(debug) console.log(currentData);
 					if(debug) CreateTable_v(currentData);
 					if(debug) console.log(Create_UserAnime_Objects(currentData));
 					callDatabase(Create_UserAnime_Objects(currentData));
