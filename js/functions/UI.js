@@ -66,10 +66,11 @@ function createRow(data)
 //creates a string to output
 function CreateOtherData(ppl_object)
 {
+//name and title
 	var string="";
-	for (var key in ppl_object)
+	for ( key in ppl_object)
 	{
-		string+="<br> <b>"+ ppl_object[key] + ": </b>" + key;
+		string+="<br> <b>"+ ppl_object[key]["title"] + ": </b>" +ppl_object[ key]["name"];
 	}
 	return string;
 }
