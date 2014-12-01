@@ -41,10 +41,10 @@ cl = NaiveBayesClassifier(train)
 AnimeNames= UpcomingData.keys()
 classifyData=Functions.newAnime(UpcomingData)
 i=0
-return_type={} #dictionary that will store all relevant animes be used to send back
+return_type=[] #dictionary that will store all relevant animes be used to send back
 for anime in classifyData:
     if cl.classify(anime) == "relevant":
-        return_type[AnimeNames[i]]=UpcomingData[AnimeNames[i]]
+        return_type.append(UpcomingData[AnimeNames[i]])
     i+=1
 #send back in json object the dictionary of relevant items
 print json.dumps(return_type).encode("UTF-8")
