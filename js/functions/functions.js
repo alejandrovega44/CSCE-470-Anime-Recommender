@@ -1,6 +1,6 @@
 function callDatabase(UserAnime)
 {
-	var debug =1;
+	var debug =0;
 	var hostname = document.location.origin;
 	var folder_path = document.location.pathname;
 	temp = folder_path.lastIndexOf("/");
@@ -16,7 +16,7 @@ function callDatabase(UserAnime)
 	       if(response != null)
 	       {
 	       	relevantNewAnime=JSON.stringify(response)
-	       	PopulateWithAnimeData(relevantNewAnime);
+//	       	PopulateWithAnimeData(relevantNewAnime);
 	       }
 	       
 	   }

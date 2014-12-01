@@ -43,13 +43,13 @@ class Functions(object):
 	        string+=genre
 	     else:
 		string+=genre +" "
-	 return string
+	 return string.encode("UTF-8")
     @staticmethod
     def newAnime(NewAnime):
         test=[]
 	for Anime in NewAnime: 
 	    if not NewAnime[Anime]["generes"] == "":
-	       test.append(NewAnime[Anime]["generes"])
+	       test.append(NewAnime[Anime]["generes"].encode("UTF-8"))
         return test
 if __name__ == '__main__':
     pass
