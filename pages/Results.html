@@ -1,4 +1,3 @@
-
 <!DOCTYPE html> 
 
 <html> 
@@ -51,7 +50,7 @@
                 
             });
             
-		var debug=1;//variable used to turn off various elements that are printed for testing purpouses
+		var debug=0;//variable used to turn off various elements that are printed for testing purpouses
 		    //I need to add catching for errors
 			var username= queryDict["AL"]; //retrieve data in field
 		    if (debug) console.log(username)
@@ -102,7 +101,6 @@
 					animeArr.push(data.anime.series_title)
 				}
 				if(debug) console.log("number of animes is:"+ animeArr.length);
-				if(!debug) CreateTable(animeArr);
 				
               	if (debug) console.log(animeArr);
               	var currentData=[];

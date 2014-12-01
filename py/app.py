@@ -6,12 +6,12 @@ from functions import Functions
 from pymongo import MongoClient
 from textblob.classifiers import NaiveBayesClassifier
 import json
-cgitb.enable()  # for troubleshooting
+#cgitb.enable()  # for troubleshooting
 
 #the cgi library gets vars from html
 data = cgi.FieldStorage()
 #this is the actual output
-debug = True
+debug = False
 writeFile = False
 
 #retrieving data from mongodb 
@@ -44,7 +44,13 @@ i=0
 return_type=[] #dictionary that will store all relevant animes be used to send back
 for anime in classifyData:
     if cl.classify(anime) == "relevant":
-        return_type.append(UpcomingData[AnimeNames[i]])
+        if debug:
+	    print "relevant " + AnimeNames[i].encode("UTF-8")
+	return_type.append(UpcomingData[AnimeNames[i]])
+    elif debug:
+	print "unrelevant"+ AnimeNames[i].encode("UTF-8")
     i+=1
 #send back in json object the dictionary of relevant items
 print json.dumps(return_type).encode("UTF-8")
+
+#cl.show_informative_features()
