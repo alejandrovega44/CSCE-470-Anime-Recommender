@@ -44,5 +44,5 @@ sudo apt-get install python-pip
 pip install simplejson
 pip install -U textblob nltk
 python -m textblob.download_corpora
-move mltk_data to your web folder/ /var/www/ folder depending if you are using apache2 or something else
+move nltk_data to will have to create nltk_data file '/usr/lib/nltk_data'
 
