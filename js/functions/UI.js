@@ -39,6 +39,10 @@ function PopulateWithAnimeData(animelist)
 		}
 	
 	});
+	if(animelist.length == 0 )
+	{
+	 temp+='<td> No recommendations </td></tr>';
+	}
 	$contents.append(temp);
 		
 }

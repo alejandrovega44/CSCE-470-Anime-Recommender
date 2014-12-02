@@ -32,6 +32,7 @@ The file Parse Data Output contains the outputs for the ParseData.py script
 At this stage, the code only calculated tf idf scores will use cosine. Additionally the output score previously mentioned will be multiplied by a given
 alpha value and added together to get a better approximation for the users anime preferences 
 
+install python
 
 http://learn.koding.com/guides/install-mongodb/
 
@@ -39,7 +40,9 @@ http://api.mongodb.org/python/current/installation.html
 
 to populate your datbase you must run your mongodb server
 and then open in your browser the retrieveData.html in your browser and don't recieve an error
-
+sudo apt-get install python-pip
+pip install simplejson
 pip install -U textblob nltk
 python -m textblob.download_corpora
+move mltk_data to your web folder/ /var/www/ folder depending if you are using apache2 or something else
 
