@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 import cgi, cgitb
 import os 
 from functions import Functions
@@ -11,7 +10,7 @@ import json
 #the cgi library gets vars from html
 data = cgi.FieldStorage()
 #this is the actual output
-debug = False
+debug = True
 writeFile = False
 
 #retrieving data from mongodb 
@@ -42,10 +41,16 @@ AnimeNames= UpcomingData.keys()
 classifyData=Functions.newAnime(UpcomingData)
 i=0
 return_type=[] #dictionary that will store all relevant animes be used to send back
+#prob_dist = classifier.prob_classify
+print classifyData
 for anime in classifyData:
     if cl.classify(anime) == "relevant":
         if debug:
 	    print "relevant " + AnimeNames[i].encode("UTF-8")
+	    print anime
+	    prob_dist = cl.prob_classify(anime)
+	    print "relevant " + str(prob_dist.prob("relevant"))
+	    print "unrelevant " + str(prob_dist.prob("unrelevant"))
 	return_type.append(UpcomingData[AnimeNames[i]])
     elif debug:
 	print "unrelevant"+ AnimeNames[i].encode("UTF-8")
@@ -53,4 +58,5 @@ for anime in classifyData:
 #send back in json object the dictionary of relevant items
 print json.dumps(return_type).encode("UTF-8")
 
-#cl.show_informative_features()
+if debug:
+    cl.show_informative_features()
