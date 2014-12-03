@@ -36,9 +36,10 @@ elif debug and not writeFile:
     line=U_f.read()
     UserData= Functions.read_line(line)
 train= Functions.classify(UserData)
+# array of tuples holding a (genre, relevant/nonrelevant)
 cl = NaiveBayesClassifier(train)
 AnimeNames= UpcomingData.keys()
-classifyData=Functions.newAnime(UpcomingData)
+classifyData=Functions.newAnime(UpcomingData) # an array of arrays of single gengres
 i=0
 return_type=[] #dictionary that will store all relevant animes be used to send back
 #prob_dist = classifier.prob_classify
