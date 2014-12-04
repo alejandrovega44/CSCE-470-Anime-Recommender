@@ -28,11 +28,11 @@ if not debug:
     UserData= Functions.read_line( data["UserAnime"].value)
  
 if debug and writeFile:
-    U_f = open('./UserAnime', 'w')
+    U_f = open('./UserAnime2', 'w')
     U_f.write(data["UserAnime"].value)
     U_f.close()
 elif debug and not writeFile:
-    U_f=open('./UserAnime', 'r')
+    U_f=open('./UserAnime2', 'r')
     line=U_f.read()
     UserData= Functions.read_line(line)
 train= Functions.classify(UserData)
@@ -46,19 +46,21 @@ return_type=[] #dictionary that will store all relevant animes be used to send b
 #prob_dist = classifier.prob_classify
 print classifyData
 for anime in classifyData:
+    print anime
+    print cl.classify(anime)
     if cl.classify(anime) == "relevant":
         if debug:
 	    print "relevant " + AnimeNames[i].encode("UTF-8")
 	    print anime
 	    prob_dist = cl.prob_classify(anime)
 	    print "relevant " + str(prob_dist.prob("relevant"))
-	    print "unrelevant " + str(prob_dist.prob("unrelevant"))
+	    print "unrelevant " + str(prob_dist).prob("unrelevant"))
 	return_type.append(UpcomingData[AnimeNames[i]])
     elif debug:
 	print "unrelevant"+ AnimeNames[i].encode("UTF-8")
     i+=1
 #send back in json object the dictionary of relevant items
-print json.dumps(return_type).encode("UTF-8")
+#print json.dumps(return_type).encode("UTF-8")
 
-if debug:
-    cl.show_informative_features()
+#if debug:
+#    cl.show_informative_features()
