@@ -3,7 +3,7 @@ import cgi, cgitb
 import os 
 from functions import Functions
 from pymongo import MongoClient
-from textblob.classifiers import NaiveBayesClassifier
+import nltk
 import json
 #cgitb.enable()  # for troubleshooting
 
@@ -37,8 +37,9 @@ elif debug and not writeFile:
     UserData= Functions.read_line(line)
 train= Functions.classify(UserData)
 # array of tuples holding a (genre, relevant/nonrelevant)
-cl = NaiveBayesClassifier(train)
+cl = nltk.classify.naivebayes.NaiveBayesClassifier.train(train)
 AnimeNames= UpcomingData.keys()
+print train
 classifyData=Functions.newAnime(UpcomingData) # an array of arrays of single gengres
 i=0
 return_type=[] #dictionary that will store all relevant animes be used to send back
