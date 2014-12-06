@@ -148,13 +148,16 @@ function Create_UserAnime_Objects(animelist)
 		 {
 		 	temp.company =RetrieveCompanies(this["credit"]);
 		 }
-		 else if(typeof this["credit"].company != "undefined") 
+		 else if ( typeof this["credit"] !== "undefined")
 		 {
-		 	temp.company =this["credit"].company["#text"]; 
-		 }
-		 else
-		 {
-		 	console.log("no company" +this["credit"]);
+			 if(typeof this["credit"].company !== "undefined") 
+			 {
+				temp.company =this["credit"].company["#text"]; 
+			 }
+			 else
+			 {
+				console.log("no company" +this["credit"]);
+			 }
 		 }
 		 //have to account for mutiple companies
 		  temp.ppl=RetrieveStaff_obj(this["staff"]);

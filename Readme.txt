@@ -46,3 +46,12 @@ pip install -U textblob nltk
 python -m textblob.download_corpora
 move nltk_data to will have to create nltk_data file '/usr/lib/nltk_data'
 
+Some users to test:
+
+OHdamnnn
+zum_bum
+erick
+ann
+SweetKotomi
+LightSpark090
+SerasAshley

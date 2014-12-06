@@ -12,10 +12,12 @@ function callDatabase(UserAnime)
 	    //dataType: 'json',
 	    success: function(response){
 	       console.log("Sucess");
-	       if (debug) document.write(response);
+	       if(debug) console.log(response);
+	       //if (debug) document.write(response);
 	       if(response != null)
 	       {
 	       	relevantNewAnime=JSON.parse(response)
+		console.log("size: "+ String(relevantNewAnime.length))
 	       	console.log(relevantNewAnime);
 		PopulateWithAnimeData(relevantNewAnime);
 	       }

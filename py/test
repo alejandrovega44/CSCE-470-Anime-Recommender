@@ -1,415 +1,171 @@
 Content-Type: text/html
 
-[({'drama': True, 'mystery': True, 'horror': True, 'psychological': True}, 'relevant'), ({'drama': True, 'fantasy': True, 'romance': True, 'adventure': True, 'science fiction': True}, 'unrelevant'), ({'drama': True, 'fantasy': True, 'comedy': True, 'adventure': True, 'thriller': True}, 'relevant'), ({'action': True, 'comedy': True, 'magic': True}, 'relevant'), ({'drama': True, 'romance': True, 'comedy': True}, 'relevant'), ({'action': True, 'drama': True, 'horror': True, 'psychological': True, 'fantasy': True}, 'relevant'), ({'action': True, 'drama': True, 'romance': True, 'supernatural': True}, 'relevant'), ({'action': True, 'fantasy': True, 'horror': True, 'romance': True}, 'relevant'), ({'drama': True, 'mystery': True, 'supernatural': True, 'thriller': True, 'psychological': True}, 'relevant'), ({'drama': True, 'fantasy': True, 'comedy': True, 'adventure': True}, 'unrelevant'), ({'drama': True, 'romance': True, 'comedy': True}, 'relevant'), ({'action': True, 'drama': True, 'supernatural': True}, 'relevant'), ({'drama': True, 'comedy': True, 'supernatural': True, 'adventure': True, 'tournament': True}, 'relevant'), ({'action': True, 'drama': True, 'science fiction': True, 'romance': True, 'fantasy': True}, 'unrelevant'), ({'drama': True, 'romance': True, 'comedy': True, 'science fiction': True}, 'unrelevant'), ({'action': True, 'fantasy': True, 'comedy': True}, 'relevant'), ({'action': True, 'drama': True, 'supernatural': True, 'thriller': True}, 'relevant'), ({'romance': True, 'magic': True, 'tournament': True, 'drama': True, 'action': True, 'comedy': True}, 'unrelevant'), ({'action': True, 'drama': True, 'supernatural': True, 'thriller': True}, 'unrelevant'), ({'drama': True, 'romance': True, 'supernatural': True}, 'unrelevant'), ({'science fiction': True, 'comedy': True}, 'unrelevant'), ({'drama': True, 'romance': True, 'comedy': True}, 'relevant'), ({'fantasy': True, 'comedy': True, 'adventure': True}, 'relevant'), ({'action': True, 'drama': True, 'comedy': True, 'romance': True, 'fantasy': True}, 'relevant'), ({'action': True, 'comedy': True, 'magic': True}, 'relevant'), ({'drama': True, 'comedy': True}, 'relevant')]
-Cross Ange: Tenshi to Ryuu no Rondo
-['Mecha']
-['Mecha']
-{'Mecha': True}
-Hoozuki no Reitetsu OVA
-['Comedy', 'Fantasy', 'Supernatural']
-['Comedy', 'Fantasy', 'Supernatural']
-{'Fantasy': True, 'Comedy': True, 'Supernatural': True}
-Seiken Tsukai no World Break
-['Action', 'Fantasy']
-['Action', 'Fantasy']
-{'Action': True, 'Fantasy': True}
-Soukyuu no Fafner: Dead Aggressor - Exodus
-['Drama', 'Mecha', 'Sci-Fi']
-['Drama', 'Mecha', 'Sci-Fi']
-{'Drama': True, 'Mecha': True, 'Sci-Fi': True}
-THE iDOLM@STER: Cinderella Girls
-['Comedy', 'Music', 'Slice', 'of', 'Life']
-['Comedy', 'Music', 'Slice', 'of', 'Life']
-{'Slice': True, 'of': True, 'Life': True, 'Comedy': True, 'Music': True}
-Yowamushi Pedal: Grande Road
-['Sports', 'Comedy', 'Drama']
-['Sports', 'Comedy', 'Drama']
-{'Drama': True, 'Comedy': True, 'Sports': True}
-Sengoku Musou
-['Action', 'Historical', 'Samurai']
-['Action', 'Historical', 'Samurai']
-{'Action': True, 'Samurai': True, 'Historical': True}
-Tsukimonogatari
-['Mystery', 'Romance', 'Supernatural', 'Comedy']
-['Mystery', 'Romance', 'Supernatural', 'Comedy']
-{'Mystery': True, 'Romance': True, 'Comedy': True, 'Supernatural': True}
-Tantei Opera Milky Holmes TD
-['Comedy', 'Mystery', 'Super', 'Power']
-['Comedy', 'Mystery', 'Super', 'Power']
-{'Mystery': True, 'Comedy': True, 'Super': True, 'Power': True}
-Juuou Mujin no Fafnir
-['Fantasy', 'Romance', 'School']
-['Fantasy', 'Romance', 'School']
-{'Romance': True, 'Fantasy': True, 'School': True}
-Isuca
-['Action', 'Comedy', 'Ecchi', 'Romance', 'School', 'Supernatural']
-['Action', 'Comedy', 'Ecchi', 'Romance', 'School', 'Supernatural']
-{'School': True, 'Ecchi': True, 'Romance': True, 'Supernatural': True, 'Action': True, 'Comedy': True}
-Kamisama Hajimemashita◎
-['Supernatural', 'Shoujo', 'Fantasy', 'Romance']
-['Supernatural', 'Shoujo', 'Fantasy', 'Romance']
-{'Romance': True, 'Fantasy': True, 'Shoujo': True, 'Supernatural': True}
-Aldnoah.Zero 2
-['Action', 'Mecha', 'Sci-Fi']
-['Action', 'Mecha', 'Sci-Fi']
-{'Action': True, 'Mecha': True, 'Sci-Fi': True}
-Log Horizon 2
-['Action', 'Adventure', 'Magic', 'Game', 'Fantasy', 'Shounen']
-['Action', 'Adventure', 'Magic', 'Game', 'Fantasy', 'Shounen']
-{'Magic': True, 'Shounen': True, 'Fantasy': True, 'Game': True, 'Adventure': True, 'Action': True}
-Durarara!!x2 Shou
-['Action', 'Mystery', 'Shounen', 'Supernatural']
-['Action', 'Mystery', 'Shounen', 'Supernatural']
-{'Action': True, 'Mystery': True, 'Supernatural': True, 'Shounen': True}
-Sanzoku no Musume Ronja
-['Adventure']
-['Adventure']
-{'Adventure': True}
-Kuroko no Basket 3
-['Comedy', 'School', 'Shounen', 'Sports']
-['Comedy', 'School', 'Shounen', 'Sports']
-{'School': True, 'Comedy': True, 'Sports': True, 'Shounen': True}
-Shigatsu wa Kimi no Uso
-['Drama', 'Music', 'Romance', 'School', 'Shounen']
-['Drama', 'Music', 'Romance', 'School', 'Shounen']
-{'Drama': True, 'Romance': True, 'School': True, 'Music': True, 'Shounen': True}
-Nanatsu no Taizai
-['Supernatural', 'Shounen', 'Fantasy', 'Adventure', 'Action']
-['Supernatural', 'Shounen', 'Fantasy', 'Adventure', 'Action']
-{'Action': True, 'Fantasy': True, 'Supernatural': True, 'Adventure': True, 'Shounen': True}
-Hyakka Ryouran: Samurai After
-['Comedy', 'Ecchi']
-['Comedy', 'Ecchi']
-{'Comedy': True, 'Ecchi': True}
-Ansatsu Kyoushitsu (TV)
-['Action', 'Comedy', 'School', 'Shounen', 'Supernatural']
-['Action', 'Comedy', 'School', 'Shounen', 'Supernatural']
-{'Action': True, 'School': True, 'Comedy': True, 'Supernatural': True, 'Shounen': True}
-Kiseijuu: Sei no Kakuritsu
-['Action', 'Drama', 'Horror', 'Sci-Fi', 'Psychological', 'Seinen']
-['Action', 'Drama', 'Horror', 'Sci-Fi', 'Psychological', 'Seinen']
-{'Psychological': True, 'Seinen': True, 'Sci-Fi': True, 'Horror': True, 'Drama': True, 'Action': True}
-Koufuku Graffiti
-['Comedy']
-['Comedy']
-{'Comedy': True}
-Tokyo Ghoul 2
-['Mystery', 'Horror', 'Supernatural', 'Psychological', 'Seinen']
-['Mystery', 'Horror', 'Supernatural', 'Psychological', 'Seinen']
-{'Mystery': True, 'Psychological': True, 'Horror': True, 'Supernatural': True, 'Seinen': True}
-Pankis! 2-jigen
-['Music', 'Kids']
-['Music', 'Kids']
-{'Kids': True, 'Music': True}
-JoJo no Kimyou na Bouken: Stardust Crusaders 2
-['Action', 'Adventure', 'Shounen']
-['Action', 'Adventure', 'Shounen']
-{'Action': True, 'Adventure': True, 'Shounen': True}
-Dog Days''
-['Action', 'Adventure', 'Fantasy', 'Magic', 'Shounen']
-['Action', 'Adventure', 'Fantasy', 'Magic', 'Shounen']
-{'Action': True, 'Fantasy': True, 'Magic': True, 'Adventure': True, 'Shounen': True}
-Psycho-Pass Movie
-['Action', 'Sci-Fi', 'Police']
-['Action', 'Sci-Fi', 'Police']
-{'Action': True, 'Police': True, 'Sci-Fi': True}
-Fuusen Inu Tinny
-['Kids', 'Adventure']
-['Kids', 'Adventure']
-{'Kids': True, 'Adventure': True}
-Absolute Duo
-['Action', 'Ecchi', 'Romance', 'School', 'Harem', 'Supernatural']
-['Action', 'Ecchi', 'Romance', 'School', 'Harem', 'Supernatural']
-{'School': True, 'Harem': True, 'Romance': True, 'Supernatural': True, 'Action': True, 'Ecchi': True}
-Saenai Heroine no Sodate-kata
-['Romance', 'Slice', 'of', 'Life', 'School', 'Comedy']
-['Romance', 'Slice', 'of', 'Life', 'School', 'Comedy']
-{'Life': True, 'Slice': True, 'of': True, 'School': True, 'Romance': True, 'Comedy': True}
-Magic Kaito 1412
-['Adventure', 'Shounen']
-['Adventure', 'Shounen']
-{'Adventure': True, 'Shounen': True}
-Kyoukai no Kanata Movie: I'll Be Here - Kako-hen
-['Fantasy', 'Slice', 'of', 'Life', 'Supernatural']
-['Fantasy', 'Slice', 'of', 'Life', 'Supernatural']
-{'Fantasy': True, 'Life': True, 'Slice': True, 'Supernatural': True, 'of': True}
-Pri Para Movie
-['Kids']
-['Kids']
-{'Kids': True}
-Kono Danshi, Sekka ni Nayandemasu.
-['Shounen', 'Ai', 'Romance']
-['Shounen', 'Ai', 'Romance']
-{'Ai': True, 'Romance': True, 'Shounen': True}
-Miritari!
-['Military', 'Comedy']
-['Military', 'Comedy']
-{'Military': True, 'Comedy': True}
-Shinmai Maou no Keiyakusha
-['Action', 'Ecchi', 'Fantasy', 'Romance', 'Shounen']
-['Action', 'Ecchi', 'Fantasy', 'Romance', 'Shounen']
-{'Action': True, 'Fantasy': True, 'Romance': True, 'Ecchi': True, 'Shounen': True}
-Shounen Hollywood: Holly Stage for 50
-['Music', 'Shoujo', 'Slice', 'of', 'Life']
-['Music', 'Shoujo', 'Slice', 'of', 'Life']
-{'of': True, 'Shoujo': True, 'Slice': True, 'Music': True, 'Life': True}
-Aoki Hagane no Arpeggio: Ars Nova - DC
-['Action', 'Sci-Fi']
-['Action', 'Sci-Fi']
-{'Action': True, 'Sci-Fi': True}
-Minna Atsumare! Falcom Gakuen SC
-['Comedy']
-['Comedy']
-{'Comedy': True}
-Date A Live OVA
-['Mecha', 'Romance', 'School', 'Sci-Fi', 'Shounen']
-['Mecha', 'Romance', 'School', 'Sci-Fi', 'Shounen']
-{'Romance': True, 'Mecha': True, 'School': True, 'Sci-Fi': True, 'Shounen': True}
-[{'Mecha': True}, {'Fantasy': True, 'Comedy': True, 'Supernatural': True}, {'Action': True, 'Fantasy': True}, {'Drama': True, 'Mecha': True, 'Sci-Fi': True}, {'Slice': True, 'of': True, 'Life': True, 'Comedy': True, 'Music': True}, {'Drama': True, 'Comedy': True, 'Sports': True}, {'Action': True, 'Samurai': True, 'Historical': True}, {'Mystery': True, 'Romance': True, 'Comedy': True, 'Supernatural': True}, {'Mystery': True, 'Comedy': True, 'Super': True, 'Power': True}, {'Romance': True, 'Fantasy': True, 'School': True}, {'School': True, 'Ecchi': True, 'Romance': True, 'Supernatural': True, 'Action': True, 'Comedy': True}, {'Romance': True, 'Fantasy': True, 'Shoujo': True, 'Supernatural': True}, {'Action': True, 'Mecha': True, 'Sci-Fi': True}, {'Magic': True, 'Shounen': True, 'Fantasy': True, 'Game': True, 'Adventure': True, 'Action': True}, {'Action': True, 'Mystery': True, 'Supernatural': True, 'Shounen': True}, {'Adventure': True}, {'School': True, 'Comedy': True, 'Sports': True, 'Shounen': True}, {'Drama': True, 'Romance': True, 'School': True, 'Music': True, 'Shounen': True}, {'Action': True, 'Fantasy': True, 'Supernatural': True, 'Adventure': True, 'Shounen': True}, {'Comedy': True, 'Ecchi': True}, {'Action': True, 'School': True, 'Comedy': True, 'Supernatural': True, 'Shounen': True}, {'Psychological': True, 'Seinen': True, 'Sci-Fi': True, 'Horror': True, 'Drama': True, 'Action': True}, {'Comedy': True}, {'Mystery': True, 'Psychological': True, 'Horror': True, 'Supernatural': True, 'Seinen': True}, {'Kids': True, 'Music': True}, {'Action': True, 'Adventure': True, 'Shounen': True}, {'Action': True, 'Fantasy': True, 'Magic': True, 'Adventure': True, 'Shounen': True}, {'Action': True, 'Police': True, 'Sci-Fi': True}, {'Kids': True, 'Adventure': True}, {'School': True, 'Harem': True, 'Romance': True, 'Supernatural': True, 'Action': True, 'Ecchi': True}, {'Life': True, 'Slice': True, 'of': True, 'School': True, 'Romance': True, 'Comedy': True}, {'Adventure': True, 'Shounen': True}, {'Fantasy': True, 'Life': True, 'Slice': True, 'Supernatural': True, 'of': True}, {'Kids': True}, {'Ai': True, 'Romance': True, 'Shounen': True}, {'Military': True, 'Comedy': True}, {'Action': True, 'Fantasy': True, 'Romance': True, 'Ecchi': True, 'Shounen': True}, {'of': True, 'Shoujo': True, 'Slice': True, 'Music': True, 'Life': True}, {'Action': True, 'Sci-Fi': True}, {'Comedy': True}, {'Romance': True, 'Mecha': True, 'School': True, 'Sci-Fi': True, 'Shounen': True}]
-{'Mecha': True}
+size of training array:110
+the relevant length 57
+the unrelevant length53
+[({'action': True, 'drama': True, 'comedy': True, 'romance': True, 'fantasy': True}, 'relevant'), ({'romance': True, 'slice of life': True, 'comedy': True, 'supernatural': True}, 'relevant'), ({'psychological': True, 'drama': True, 'science fiction': True, 'romance': True, 'supernatural': True, 'action': True, 'comedy': True}, 'relevant'), ({'slice of life': True, 'comedy': True}, 'unrelevant'), ({'slice of life': True, 'comedy': True}, 'unrelevant'), ({'action': True, 'drama': True, 'comedy': True, 'magic': True}, 'relevant'), ({'romance': True, 'tournament': True, 'drama': True, 'fantasy': True, 'action': True, 'comedy': True}, 'unrelevant'), ({'action': True, 'drama': True}, 'relevant'), ({'drama': True, 'mystery': True, 'supernatural': True, 'thriller': True, 'psychological': True}, 'relevant'), ({'romance': True, 'science fiction': True, 'horror': True, 'psychological': True, 'drama': True, 'fantasy': True, 'action': True}, 'relevant'), ({'drama': True, 'romance': True}, 'unrelevant'), ({'drama': True, 'romance': True, 'comedy': True}, 'relevant'), ({'action': True, 'drama': True, 'comedy': True, 'science fiction': True}, 'relevant'), ({'action': True, 'science fiction': True, 'magic': True}, 'relevant'), ({'slice of life': True, 'comedy': True}, 'relevant'), ({'mystery': True, 'magic': True, 'horror': True, 'romance': True, 'adventure': True, 'comedy': True}, 'unrelevant'), ({'drama': True, 'romance': True, 'supernatural': True}, 'relevant'), ({'action': True, 'psychological': True, 'thriller': True, 'science fiction': True}, 'relevant'), ({'drama': True, 'tournament': True}, 'unrelevant'), ({'slice of life': True, 'comedy': True}, 'relevant'), ({'action': True, 'drama': True, 'comedy': True, 'romance': True}, 'unrelevant'), ({'action': True, 'drama': True, 'science fiction': True, 'comedy': True, 'fantasy': True}, 'relevant'), ({'drama': True, 'fantasy': True, 'mystery': True, 'psychological': True}, 'relevant'), ({'drama': True, 'mystery': True, 'romance': True, 'adventure': True}, 'relevant'), ({'drama': True, 'mystery': True, 'romance': True, 'science fiction': True}, 'relevant'), ({'slice of life': True, 'comedy': True}, 'relevant'), ({'drama': True, 'comedy': True, 'tournament': True}, 'unrelevant'), ({'mystery': True, 'psychological': True, 'horror': True, 'supernatural': True}, 'relevant'), ({'drama': True, 'romance': True, 'comedy': True}, 'unrelevant'), ({'action': True, 'drama': True, 'fantasy': True}, 'unrelevant'), ({'drama': True, 'romance': True, 'adventure': True, 'science fiction': True}, 'unrelevant'), ({'drama': True, 'fantasy': True, 'comedy': True, 'adventure': True, 'thriller': True}, 'unrelevant'), ({'action': True, 'drama': True, 'comedy': True, 'tournament': True, 'fantasy': True}, 'unrelevant'), ({'action': True, 'drama': True, 'horror': True, 'fantasy': True}, 'unrelevant'), ({'slice of life': True, 'science fiction': True, 'comedy': True}, 'relevant'), ({'drama': True, 'comedy': True, 'magic': True}, 'unrelevant'), ({'fantasy': True, 'drama': True, 'science fiction': True, 'adventure': True, 'action': True, 'comedy': True}, 'unrelevant'), ({'action': True, 'drama': True, 'romance': True, 'supernatural': True}, 'relevant'), ({'action': True, 'science fiction': True}, 'unrelevant'), ({'slice of life': True, 'comedy': True}, 'relevant'), ({'drama': True, 'mystery': True, 'romance': True, 'science fiction': True}, 'unrelevant'), ({'science fiction': True, 'comedy': True, 'adventure': True}, 'unrelevant'), ({'drama': True, 'psychological': True, 'romance': True}, 'unrelevant'), ({'action': True, 'drama': True, 'supernatural': True}, 'unrelevant'), ({'romance': True, 'slice of life': True, 'comedy': True}, 'relevant'), ({'drama': True, 'romance': True, 'comedy': True, 'supernatural': True}, 'unrelevant'), ({'romance': True, 'magic': True, 'tournament': True, 'drama': True, 'action': True, 'comedy': True}, 'relevant'), ({'romance': True, 'fantasy': True, 'drama': True, 'science fiction': True, 'action': True, 'comedy': True}, 'relevant'), ({'action': True, 'drama': True, 'supernatural': True, 'thriller': True}, 'unrelevant'), ({'drama': True, 'fantasy': True, 'comedy': True, 'adventure': True, 'science fiction': True}, 'unrelevant'), ({'comedy': True}, 'relevant'), ({'drama': True, 'adventure': True}, 'relevant'), ({'action': True, 'romance': True, 'comedy': True, 'supernatural': True}, 'unrelevant'), ({'slice of life': True, 'comedy': True}, 'relevant'), ({'drama': True, 'romance': True, 'comedy': True}, 'relevant'), ({'psychological': True, 'horror': True, 'drama': True, 'science fiction': True, 'supernatural': True, 'action': True}, 'unrelevant'), ({'romance': True, 'slice of life': True, 'comedy': True}, 'unrelevant'), ({'comedy': True, 'adventure': True}, 'relevant'), ({'action': True, 'romance': True, 'comedy': True}, 'relevant'), ({'action': True, 'drama': True, 'horror': True, 'science fiction': True}, 'unrelevant'), ({'drama': True, 'romance': True, 'comedy': True, 'supernatural': True}, 'unrelevant'), ({'action': True, 'drama': True, 'psychological': True, 'science fiction': True}, 'relevant'), ({'mystery': True, 'supernatural': True}, 'unrelevant'), ({'comedy': True, 'magic': True}, 'unrelevant'), ({'action': True, 'fantasy': True, 'comedy': True, 'romance': True}, 'relevant'), ({'slice of life': True}, 'unrelevant'), ({'romance': True, 'comedy': True}, 'relevant'), ({'action': True, 'comedy': True}, 'relevant'), ({'drama': True, 'psychological': True, 'comedy': True, 'magic': True}, 'unrelevant'), ({'slice of life': True, 'comedy': True, 'tournament': True}, 'relevant'), ({'action': True, 'drama': True, 'romance': True, 'supernatural': True}, 'unrelevant'), ({'action': True, 'drama': True, 'romance': True, 'psychological': True, 'science fiction': True}, 'relevant'), ({'action': True, 'fantasy': True, 'comedy': True}, 'unrelevant'), ({'drama': True, 'mystery': True, 'horror': True, 'supernatural': True, 'psychological': True}, 'relevant'), ({'mystery': True, 'psychological': True, 'drama': True, 'science fiction': True, 'romance': True, 'adventure': True, 'comedy': True, 'thriller': True}, 'relevant'), ({'drama': True, 'fantasy': True, 'comedy': True, 'adventure': True, 'romance': True}, 'unrelevant'), ({'drama': True, 'romance': True, 'comedy': True}, 'relevant'), ({'action': True, 'drama': True, 'horror': True, 'supernatural': True}, 'unrelevant'), ({'action': True, 'fantasy': True, 'science fiction': True}, 'unrelevant'), ({'action': True, 'drama': True, 'comedy': True, 'romance': True, 'fantasy': True}, 'relevant'), ({'action': True, 'drama': True, 'comedy': True, 'romance': True}, 'unrelevant'), ({'slice of life': True, 'comedy': True}, 'relevant'), ({'mystery': True, 'psychological': True, 'drama': True, 'fantasy': True, 'romance': True, 'adventure': True, 'comedy': True}, 'unrelevant'), ({'romance': True, 'fantasy': True, 'adventure': True}, 'relevant'), ({'mystery': True, 'romance': True, 'science fiction': True, 'psychological': True, 'drama': True, 'fantasy': True, 'action': True}, 'relevant'), ({'slice of life': True, 'science fiction': True, 'magic': True}, 'unrelevant'), ({'comedy': True, 'tournament': True}, 'relevant'), ({'action': True, 'drama': True, 'romance': True, 'fantasy': True}, 'unrelevant'), ({'slice of life': True, 'comedy': True, 'magic': True}, 'unrelevant'), ({'mystery': True, 'psychological': True, 'drama': True, 'romance': True, 'supernatural': True, 'adventure': True, 'comedy': True}, 'relevant'), ({'action': True, 'drama': True, 'romance': True, 'supernatural': True}, 'unrelevant'), ({'slice of life': True, 'comedy': True}, 'relevant'), ({'action': True, 'slice of life': True, 'comedy': True, 'tournament': True}, 'relevant'), ({'slice of life': True, 'comedy': True, 'tournament': True}, 'relevant'), ({'drama': True, 'romance': True}, 'relevant'), ({'action': True, 'fantasy': True, 'romance': True}, 'relevant'), ({'action': True, 'fantasy': True, 'horror': True, 'romance': True}, 'unrelevant'), ({'action': True, 'drama': True}, 'relevant'), ({'psychological': True, 'fantasy': True, 'comedy': True, 'romance': True}, 'unrelevant'), ({'action': True, 'drama': True, 'fantasy': True}, 'unrelevant'), ({'romance': True, 'comedy': True, 'supernatural': True}, 'unrelevant'), ({'romance': True, 'comedy': True, 'magic': True}, 'unrelevant'), ({'action': True, 'drama': True, 'horror': True, 'mystery': True, 'thriller': True}, 'unrelevant'), ({'action': True, 'science fiction': True, 'comedy': True}, 'relevant'), ({'action': True, 'science fiction': True, 'comedy': True, 'slice of life': True}, 'relevant'), ({'action': True, 'horror': True, 'comedy': True, 'supernatural': True}, 'unrelevant'), ({'romance': True, 'slice of life': True, 'comedy': True}, 'unrelevant'), ({'mystery': True, 'psychological': True, 'horror': True, 'supernatural': True}, 'relevant'), ({'action': True, 'science fiction': True, 'magic': True}, 'relevant'), ({'action': True, 'drama': True, 'science fiction': True}, 'unrelevant')]
+[{'mecha': True}, {'fantasy': True, 'comedy': True, 'supernatural': True}, {'action': True, 'fantasy': True}, {'drama': True, 'mecha': True, 'sci-fi': True}, {'of': True, 'life': True, 'comedy': True, 'music': True, 'slice': True}, {'drama': True, 'comedy': True, 'sports': True}, {'action': True, 'samurai': True, 'historical': True}, {'mystery': True, 'romance': True, 'comedy': True, 'supernatural': True}, {'mystery': True, 'comedy': True, 'super': True, 'power': True}, {'romance': True, 'fantasy': True, 'school': True}, {'school': True, 'ecchi': True, 'romance': True, 'supernatural': True, 'action': True, 'comedy': True}, {'romance': True, 'fantasy': True, 'shoujo': True, 'supernatural': True}, {'action': True, 'mecha': True, 'sci-fi': True}, {'magic': True, 'shounen': True, 'fantasy': True, 'game': True, 'adventure': True, 'action': True}, {'action': True, 'mystery': True, 'supernatural': True, 'shounen': True}, {'adventure': True}, {'sports': True, 'school': True, 'comedy': True, 'shounen': True}, {'drama': True, 'romance': True, 'school': True, 'music': True, 'shounen': True}, {'action': True, 'fantasy': True, 'supernatural': True, 'adventure': True, 'shounen': True}, {'comedy': True, 'ecchi': True}, {'action': True, 'school': True, 'comedy': True, 'supernatural': True, 'shounen': True}, {'psychological': True, 'seinen': True, 'sci-fi': True, 'horror': True, 'drama': True, 'action': True}, {'comedy': True}, {'mystery': True, 'psychological': True, 'horror': True, 'supernatural': True, 'seinen': True}, {'kids': True, 'music': True}, {'action': True, 'adventure': True, 'shounen': True}, {'action': True, 'fantasy': True, 'magic': True, 'adventure': True, 'shounen': True}, {'action': True, 'police': True, 'sci-fi': True}, {'kids': True, 'adventure': True}, {'school': True, 'harem': True, 'romance': True, 'supernatural': True, 'action': True, 'ecchi': True}, {'life': True, 'slice': True, 'of': True, 'school': True, 'romance': True, 'comedy': True}, {'adventure': True, 'shounen': True}, {'fantasy': True, 'life': True, 'slice': True, 'supernatural': True, 'of': True}, {'kids': True}, {'ai': True, 'romance': True, 'shounen': True}, {'military': True, 'comedy': True}, {'action': True, 'fantasy': True, 'ecchi': True, 'shounen': True, 'romance': True}, {'of': True, 'shoujo': True, 'slice': True, 'music': True, 'life': True}, {'action': True, 'sci-fi': True}, {'comedy': True}, {'romance': True, 'mecha': True, 'school': True, 'sci-fi': True, 'shounen': True}]
 relevant
-relevant Cross Ange: Tenshi to Ryuu no Rondo
-{'Mecha': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Fantasy': True, 'Comedy': True, 'Supernatural': True}
+Name: Cross Ange: Tenshi to Ryuu no Rondo
+relevant 0.518018018018
+unrelevant 0.481981981982
+unrelevant
+unrelevantHoozuki no Reitetsu OVA
+relevant 0.349546598793
+unrelevant 0.650453401207
+unrelevant
+unrelevantSeiken Tsukai no World Break
+relevant 0.396451170358
+unrelevant 0.603548829642
+unrelevant
+unrelevantSoukyuu no Fafner: Dead Aggressor - Exodus
+relevant 0.459837458364
+unrelevant 0.540162541636
 relevant
-relevant Hoozuki no Reitetsu OVA
-{'Fantasy': True, 'Comedy': True, 'Supernatural': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'Fantasy': True}
+Name: THE iDOLM@STER: Cinderella Girls
+relevant 0.546313551342
+unrelevant 0.453686448658
+unrelevant
+unrelevantYowamushi Pedal: Grande Road
+relevant 0.488173817944
+unrelevant 0.511826182056
 relevant
-relevant Seiken Tsukai no World Break
-{'Action': True, 'Fantasy': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Drama': True, 'Mecha': True, 'Sci-Fi': True}
+Name: Sengoku Musou
+relevant 0.510161017004
+unrelevant 0.489838982996
 relevant
-relevant Soukyuu no Fafner: Dead Aggressor - Exodus
-{'Drama': True, 'Mecha': True, 'Sci-Fi': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Slice': True, 'of': True, 'Life': True, 'Comedy': True, 'Music': True}
+Name: Tsukimonogatari
+relevant 0.604745589444
+unrelevant 0.395254410556
 relevant
-relevant THE iDOLM@STER: Cinderella Girls
-{'Slice': True, 'of': True, 'Life': True, 'Comedy': True, 'Music': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Drama': True, 'Comedy': True, 'Sports': True}
+Name: Tantei Opera Milky Holmes TD
+relevant 0.681561030892
+unrelevant 0.318438969108
+unrelevant
+unrelevantJuuou Mujin no Fafnir
+relevant 0.406464273901
+unrelevant 0.593535726099
+unrelevant
+unrelevantIsuca
+relevant 0.454787931709
+unrelevant 0.545212068291
+unrelevant
+unrelevantKamisama Hajimemashita◎
+relevant 0.32640344314
+unrelevant 0.67359655686
 relevant
-relevant Yowamushi Pedal: Grande Road
-{'Drama': True, 'Comedy': True, 'Sports': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'Samurai': True, 'Historical': True}
+Name: Aldnoah.Zero 2
+relevant 0.510161017004
+unrelevant 0.489838982996
+unrelevant
+unrelevantLog Horizon 2
+relevant 0.207135099918
+unrelevant 0.792864900082
 relevant
-relevant Sengoku Musou
-{'Action': True, 'Samurai': True, 'Historical': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Mystery': True, 'Romance': True, 'Comedy': True, 'Supernatural': True}
+Name: Durarara!!x2 Shou
+relevant 0.567073769676
+unrelevant 0.432926230324
+unrelevant
+unrelevantSanzoku no Musume Ronja
+relevant 0.433491558916
+unrelevant 0.566508441084
 relevant
-relevant Tsukimonogatari
-{'Mystery': True, 'Romance': True, 'Comedy': True, 'Supernatural': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Mystery': True, 'Comedy': True, 'Super': True, 'Power': True}
+Name: Kuroko no Basket 3
+relevant 0.546313551342
+unrelevant 0.453686448658
+unrelevant
+unrelevantShigatsu wa Kimi no Uso
+relevant 0.462376761555
+unrelevant 0.537623238445
+unrelevant
+unrelevantNanatsu no Taizai
+relevant 0.248637385323
+unrelevant 0.751362614677
 relevant
-relevant Tantei Opera Milky Holmes TD
-{'Mystery': True, 'Comedy': True, 'Super': True, 'Power': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Romance': True, 'Fantasy': True, 'School': True}
+Name: Hyakka Ryouran: Samurai After
+relevant 0.546313551342
+unrelevant 0.453686448658
+unrelevant
+unrelevantAnsatsu Kyoushitsu (TV)
+relevant 0.452255246268
+unrelevant 0.547744753732
+unrelevant
+unrelevantKiseijuu: Sei no Kakuritsu
+relevant 0.481654301221
+unrelevant 0.518345698779
 relevant
-relevant Juuou Mujin no Fafnir
-{'Romance': True, 'Fantasy': True, 'School': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'School': True, 'Ecchi': True, 'Romance': True, 'Supernatural': True, 'Action': True, 'Comedy': True}
+Name: Koufuku Graffiti
+relevant 0.546313551342
+unrelevant 0.453686448658
 relevant
-relevant Isuca
-{'School': True, 'Ecchi': True, 'Romance': True, 'Supernatural': True, 'Action': True, 'Comedy': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Romance': True, 'Fantasy': True, 'Shoujo': True, 'Supernatural': True}
+Name: Tokyo Ghoul 2
+relevant 0.603581494758
+unrelevant 0.396418505242
 relevant
-relevant Kamisama Hajimemashita◎
-{'Romance': True, 'Fantasy': True, 'Shoujo': True, 'Supernatural': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'Mecha': True, 'Sci-Fi': True}
+Name: Pankis! 2-jigen
+relevant 0.518018018018
+unrelevant 0.481981981982
+unrelevant
+unrelevantJoJo no Kimyou na Bouken: Stardust Crusaders 2
+relevant 0.425784041731
+unrelevant 0.574215958269
+unrelevant
+unrelevantDog Days''
+relevant 0.207135099918
+unrelevant 0.792864900082
 relevant
-relevant Aldnoah.Zero 2
-{'Action': True, 'Mecha': True, 'Sci-Fi': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Magic': True, 'Shounen': True, 'Fantasy': True, 'Game': True, 'Adventure': True, 'Action': True}
+Name: Psycho-Pass Movie
+relevant 0.510161017004
+unrelevant 0.489838982996
+unrelevant
+unrelevantFuusen Inu Tinny
+relevant 0.433491558916
+unrelevant 0.566508441084
+unrelevant
+unrelevantAbsolute Duo
+relevant 0.426773602973
+unrelevant 0.573226397027
 relevant
-relevant Log Horizon 2
-{'Magic': True, 'Shounen': True, 'Fantasy': True, 'Game': True, 'Adventure': True, 'Action': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'Mystery': True, 'Supernatural': True, 'Shounen': True}
+Name: Saenai Heroine no Sodate-kata
+relevant 0.548845178559
+unrelevant 0.451154821441
+unrelevant
+unrelevantMagic Kaito 1412
+relevant 0.433491558916
+unrelevant 0.566508441084
+unrelevant
+unrelevantKyoukai no Kanata Movie: I'll Be Here - Kako-hen
+relevant 0.32416063403
+unrelevant 0.67583936597
 relevant
-relevant Durarara!!x2 Shou
-{'Action': True, 'Mystery': True, 'Supernatural': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Adventure': True}
+Name: Pri Para Movie
+relevant 0.518018018018
+unrelevant 0.481981981982
 relevant
-relevant Sanzoku no Musume Ronja
-{'Adventure': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'School': True, 'Comedy': True, 'Sports': True, 'Shounen': True}
+Name: Kono Danshi, Sekka ni Nayandemasu.
+relevant 0.520568975266
+unrelevant 0.479431024734
 relevant
-relevant Kuroko no Basket 3
-{'School': True, 'Comedy': True, 'Sports': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Drama': True, 'Romance': True, 'School': True, 'Music': True, 'Shounen': True}
+Name: Miritari!
+relevant 0.546313551342
+unrelevant 0.453686448658
+unrelevant
+unrelevantShinmai Maou no Keiyakusha
+relevant 0.398898933454
+unrelevant 0.601101066546
 relevant
-relevant Shigatsu wa Kimi no Uso
-{'Drama': True, 'Romance': True, 'School': True, 'Music': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'Fantasy': True, 'Supernatural': True, 'Adventure': True, 'Shounen': True}
+Name: Shounen Hollywood: Holly Stage for 50
+relevant 0.518018018018
+unrelevant 0.481981981982
 relevant
-relevant Nanatsu no Taizai
-{'Action': True, 'Fantasy': True, 'Supernatural': True, 'Adventure': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Comedy': True, 'Ecchi': True}
+Name: Aoki Hagane no Arpeggio: Ars Nova - DC
+relevant 0.510161017004
+unrelevant 0.489838982996
 relevant
-relevant Hyakka Ryouran: Samurai After
-{'Comedy': True, 'Ecchi': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'School': True, 'Comedy': True, 'Supernatural': True, 'Shounen': True}
+Name: Minna Atsumare! Falcom Gakuen SC
+relevant 0.546313551342
+unrelevant 0.453686448658
 relevant
-relevant Ansatsu Kyoushitsu (TV)
-{'Action': True, 'School': True, 'Comedy': True, 'Supernatural': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Psychological': True, 'Seinen': True, 'Sci-Fi': True, 'Horror': True, 'Drama': True, 'Action': True}
-relevant
-relevant Kiseijuu: Sei no Kakuritsu
-{'Psychological': True, 'Seinen': True, 'Sci-Fi': True, 'Horror': True, 'Drama': True, 'Action': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Comedy': True}
-relevant
-relevant Koufuku Graffiti
-{'Comedy': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Mystery': True, 'Psychological': True, 'Horror': True, 'Supernatural': True, 'Seinen': True}
-relevant
-relevant Tokyo Ghoul 2
-{'Mystery': True, 'Psychological': True, 'Horror': True, 'Supernatural': True, 'Seinen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Kids': True, 'Music': True}
-relevant
-relevant Pankis! 2-jigen
-{'Kids': True, 'Music': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'Adventure': True, 'Shounen': True}
-relevant
-relevant JoJo no Kimyou na Bouken: Stardust Crusaders 2
-{'Action': True, 'Adventure': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'Fantasy': True, 'Magic': True, 'Adventure': True, 'Shounen': True}
-relevant
-relevant Dog Days''
-{'Action': True, 'Fantasy': True, 'Magic': True, 'Adventure': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'Police': True, 'Sci-Fi': True}
-relevant
-relevant Psycho-Pass Movie
-{'Action': True, 'Police': True, 'Sci-Fi': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Kids': True, 'Adventure': True}
-relevant
-relevant Fuusen Inu Tinny
-{'Kids': True, 'Adventure': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'School': True, 'Harem': True, 'Romance': True, 'Supernatural': True, 'Action': True, 'Ecchi': True}
-relevant
-relevant Absolute Duo
-{'School': True, 'Harem': True, 'Romance': True, 'Supernatural': True, 'Action': True, 'Ecchi': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Life': True, 'Slice': True, 'of': True, 'School': True, 'Romance': True, 'Comedy': True}
-relevant
-relevant Saenai Heroine no Sodate-kata
-{'Life': True, 'Slice': True, 'of': True, 'School': True, 'Romance': True, 'Comedy': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Adventure': True, 'Shounen': True}
-relevant
-relevant Magic Kaito 1412
-{'Adventure': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Fantasy': True, 'Life': True, 'Slice': True, 'Supernatural': True, 'of': True}
-relevant
-relevant Kyoukai no Kanata Movie: I'll Be Here - Kako-hen
-{'Fantasy': True, 'Life': True, 'Slice': True, 'Supernatural': True, 'of': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Kids': True}
-relevant
-relevant Pri Para Movie
-{'Kids': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Ai': True, 'Romance': True, 'Shounen': True}
-relevant
-relevant Kono Danshi, Sekka ni Nayandemasu.
-{'Ai': True, 'Romance': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Military': True, 'Comedy': True}
-relevant
-relevant Miritari!
-{'Military': True, 'Comedy': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'Fantasy': True, 'Romance': True, 'Ecchi': True, 'Shounen': True}
-relevant
-relevant Shinmai Maou no Keiyakusha
-{'Action': True, 'Fantasy': True, 'Romance': True, 'Ecchi': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'of': True, 'Shoujo': True, 'Slice': True, 'Music': True, 'Life': True}
-relevant
-relevant Shounen Hollywood: Holly Stage for 50
-{'of': True, 'Shoujo': True, 'Slice': True, 'Music': True, 'Life': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Action': True, 'Sci-Fi': True}
-relevant
-relevant Aoki Hagane no Arpeggio: Ars Nova - DC
-{'Action': True, 'Sci-Fi': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Comedy': True}
-relevant
-relevant Minna Atsumare! Falcom Gakuen SC
-{'Comedy': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-{'Romance': True, 'Mecha': True, 'School': True, 'Sci-Fi': True, 'Shounen': True}
-relevant
-relevant Date A Live OVA
-{'Romance': True, 'Mecha': True, 'School': True, 'Sci-Fi': True, 'Shounen': True}
-relevant 0.685185185185
-unrelevant 0.314814814815
-[{"a_name": "Cross Ange: Tenshi to Ryuu no Rondo", "moreInfo": "http://anilist.co/anime/20806", "company": {"link": "http://en.wikipedia.org/wiki/Sunrise_(company)", "name": "Sunrise"}, "generes": "Mecha", "a_generes": ["Mecha", ",", ",", ",", ",", ","], "ppl": [{"name": "Original", "title": "Source"}, {"name": "Yoshiharu Ashino", "title": "Director"}, {"name": "Tatsuto Higuchi", "title": "Series Comp"}, {"name": "Yuusuke Matsuo", "title": "Char Design"}, {"name": "25", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20806.jpg", "desc": "Due to humanity obtaining the data technology that has evolved to a great amount- called \"Mana\"- the human race is able to subjugate all wars, starvation, pollution, and other problems on Earth by using its power, which is similar to magic. Earth has obtained the utopia of complete peace and no wants.\n              \n              First princess of the Misurugi Empire, Angelize. As with everyone else, she also had no wants or worries. She was celebrated by the people of the empire, and was supposed to wear the crown. However, she realizes the shocking truth that she is a Norma. \"Norma\": An irregular existence that cannot use Mana, and are treated as heretics and as \"things\" rather than people. Having everything stolen from her, she isolates herself on a remote island.\n              \n              What was waiting for her there was a fateful meeting with a group of Norma girls who know nothing but battle. The girls spend their days riding humanoid robot weapons called \"Barameiru\" hunting giant dragons that have come from another dimension to invade. Having her name taken from her, what will soldier Ange see at the end of the fight? What can she believe in? What will she obtain? The story of a single girl's fortitude starts now.\n              \n              (Source: ANN)"}, {"a_name": "Hoozuki no Reitetsu OVA", "moreInfo": "http://anilist.co/anime/20732", "company": {"link": "http://en.wikipedia.org/wiki/Wit_Studio", "name": "Wit Studio"}, "generes": "Comedy Fantasy Supernatural", "a_generes": ["Comedy", ", Fantasy", ", Supernatural", ",", ",", ","], "ppl": [{"name": "Norihiro Naganuma", "title": "Director"}, {"name": "Midori Gotou", "title": "Series Comp"}, {"name": "Hirotaka Katou", "title": "Char Design"}, {"name": "3", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20732.jpg", "desc": "Three Hoozuki no Reitetsu OVAs will be released in limited editions of volume 17 to 19, releasing February 23, 2015, May 22, 2015, and August 21, 2015, respectively."}, {"a_name": "Seiken Tsukai no World Break", "moreInfo": "http://anilist.co/anime/20627", "company": {"link": "http://en.wikipedia.org/wiki/Diomedea_(studio)", "name": "Diomedea"}, "generes": "Action Fantasy", "a_generes": ["Action", ", Fantasy", ",", ",", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Takayuki Inagaki", "title": "Director"}, {"name": "Hiroshi Yamaguchi", "title": "Series Comp"}, {"name": "Refeia", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20627.jpg", "desc": "The story is set in a private high school that brings together \"saviors,\" youths with awakened memories from past lives. Some of them are Shirogane who fight enemies with weapons and techniques gleaned from the Puraana powers from their own bodies. Others are Kuroma who wipe out enemies, with magic to manipulate the Maana powers that surpass physics. A boy named Moroha Haimura enrolls in this school. He is the first person in history with past lives of both Shirogane and Kuroma.\n              \n              (Source: ANN)"}, {"a_name": "Soukyuu no Fafner: Dead Aggressor - Exodus", "moreInfo": "http://anilist.co/anime/17080", "company": {"name": "Xebec Zwei"}, "generes": "Drama Mecha Sci-Fi", "a_generes": ["Drama", ", Mecha", ", Sci-Fi", ",", ",", ","], "ppl": [{"name": "Nobuyoshi Habara", "title": "Director"}, {"name": "Hisashi Hirai", "title": "Char Design"}, {"name": "26", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/17080.jpg", "desc": "Sequel to \n              , set two years after \n              ."}, {"a_name": "THE iDOLM@STER: Cinderella Girls", "moreInfo": "http://anilist.co/anime/20693", "company": {"link": "http://en.wikipedia.org/wiki/A-1_Pictures", "name": "A-1 Pictures"}, "generes": "Comedy Music Slice of Life", "a_generes": ["Comedy", ", Music", ", Slice of Life", ",", ",", ","], "ppl": [{"name": "Video Game", "title": "Source"}, {"name": "Noriko Takao", "title": "Director"}, {"name": "Tatsuya Takahashi", "title": "Series Comp"}, {"name": "Yuusuke Matsuo", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20693.jpg", "desc": "The official website for the The IDOLM@STER franchise announced that a TV anime adaptation of The IDOLM@STER Cinderella Girls mobile game has been green-lit, and will premiere in January 2015. (Source: ANN)"}, {"a_name": "Yowamushi Pedal: Grande Road", "moreInfo": "http://anilist.co/anime/20723", "company": {"link": "http://en.wikipedia.org/wiki/Toho", "name": "Toho Company"}, "generes": "Sports Comedy Drama", "a_generes": ["Sports", ", Comedy", ", Drama", ",", ",", ","], "ppl": [{"name": "Osamu Nabeshima", "title": "Director"}, {"name": "Reiko Yoshida", "title": "Series Comp"}, {"name": "Takahiko Yoshida", "title": "Char Design"}, {"name": "24", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20723.jpg", "desc": "The second season will focus on Inter High bicycle race continuing from the first season of the series! High school students pushing themselves to the limit as they bet everything on their bicycles!\n              \n              (Source: Crunchyroll)"}, {"a_name": "Sengoku Musou", "moreInfo": "http://anilist.co/anime/20944", "company": {"name": "Tezuka Productions"}, "generes": "Action Historical Samurai", "a_generes": ["Action", ", Historical", ", Samurai", ",", ",", ","], "ppl": [{"name": "Video Game", "title": "Source"}, {"name": "Aki Tsunaki", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20944.jpg", "desc": "Toyotomi Hideyoshi is on the verge of unifying the realm, and all that remains is the Odawara Castle protected by the \"Lion of Sagami\" Ujiyasu Houjou. Hideyoshi's personally trained generals \u2014 Ishida Mitsunari, Katou Kiyomasa, and Fukushima Masanori \u2014 as well as \u014ctani Yoshitsugu, Shima Sakon, and Naoe Kanetsugu are all on the frontline of the battle. Amidst the battle formation are the two young warriors of the Sanada household: older brother Nobuyuki and younger brother Yukimura. As the stalemate begins to break down, Sanada Yukimura rides on a lone horse into the fray. His brother follows him right after.\n              \n              (Source: ANN)"}, {"a_name": "Tsukimonogatari", "moreInfo": "http://anilist.co/anime/20918", "company": {"link": "http://en.wikipedia.org/wiki/Shaft_(company)", "name": "Shaft"}, "generes": "Mystery Romance Supernatural Comedy", "a_generes": ["Mystery", ", Romance", ", Supernatural", ", Comedy", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Akio Watanabe", "title": "Director"}, {"name": "Fuyashi Tou", "title": "Series Comp"}, {"name": "4", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20918.jpg", "desc": "All four episode will air consecutively on New Year's Eve."}, {"a_name": "Tantei Opera Milky Holmes TD", "moreInfo": "http://anilist.co/anime/20848", "company": {"link": "http://en.wikipedia.org/wiki/J.C.Staff", "name": "J.C. Staff"}, "generes": "Comedy Mystery Super Power", "a_generes": ["Comedy", ", Mystery", ", Super Power", ",", ",", ","], "ppl": [{"name": "Hiroshi Nishikiori", "title": "Director"}, {"name": "Hideki Shirane", "title": "Series Comp"}, {"name": "Mariko Fujita", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20848.jpg", "desc": "In the story, the Great Era of Detectives \u2014 when detectives and thieves with a power known as \"Toys\" compete \u2014 has given way to the Great Era of Idols. However, someone starts stealing the idols' songs in Yokohama. When super idol Marine Amagi's hit song \"Kiseki no Uta\" (Miracle's Song) is stolen, she enlists the detectives of Milky Holmes.\n              \n              (Source: ANN)"}, {"a_name": "Juuou Mujin no Fafnir", "moreInfo": "http://anilist.co/anime/20758", "company": {"link": "http://en.wikipedia.org/wiki/Diomedea_(studio)", "name": "Diomedea"}, "generes": "Fantasy Romance School", "a_generes": ["Fantasy", ", Romance", ", School", ",", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Keizou Kusakawa", "title": "Director"}, {"name": "Riko Korie", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20758.jpg", "desc": "In the \"unlimited school battle action\" story, the world was transformed by the sudden appearance of monsters known collectively as dragons. Before long, girls known as \"D\" were born with the dragons' powers. A boy named Yuu Mononobe is the world's only male \"D,\" although his existence is kept secret. He is forced to enroll into Midgar, a school for \"D\" girls, where he see a female student Iris naked. Moreover, he is reunited with his long-separated little sister Mitsuki.\n              \n              (Source: ANN)"}, {"a_name": "Isuca", "moreInfo": "http://anilist.co/anime/20746", "company": {"link": "http://en.wikipedia.org/wiki/ARMS_(studio)", "name": "Arms"}, "generes": "Action Comedy Ecchi Romance School Supernatural", "a_generes": ["Action", ", Comedy", ", Ecchi", ", Romance", ", School", ", Supernatural"], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Yukiko Akiyama", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20746.jpg", "desc": "Shinichirou decides to look for a job in order to pay his rent, and his teacher suggests that he work for someone at their house,doing housekeeping. However, the person who hired him was Sakuya, a girl who is the 37th head of the Shimazu family, and her job is to exorcise and eliminate unwanted creatures. Shinichirou accidentally releases one of the creatures that Sakuya captures and they cooperate to catch it. A story of comedic creature hunting begins!"}, {"a_name": "Kamisama Hajimemashita\u25ce", "moreInfo": "http://anilist.co/anime/20801", "company": {"link": "http://en.wikipedia.org/wiki/TMS_Entertainment", "name": "TMS Entertainment"}, "generes": "Supernatural Shoujo Fantasy Romance", "a_generes": ["Supernatural", ", Shoujo", ", Fantasy", ", Romance", ",", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20801.jpg", "desc": "Season two of Kamisama Hajimemashita."}, {"a_name": "Aldnoah.Zero 2", "moreInfo": "http://anilist.co/anime/20853", "company": {"link": "http://en.wikipedia.org/wiki/A-1_Pictures", "name": "A-1 Pictures"}, "generes": "Action Mecha Sci-Fi", "a_generes": ["Action", ", Mecha", ", Sci-Fi", ",", ",", ","], "ppl": [{"name": "Original", "title": "Source"}, {"name": "12", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20853.jpg", "desc": "Second season of Aldnoah.Zero."}, {"a_name": "Log Horizon 2", "moreInfo": "http://anilist.co/anime/20671", "company": {"link": "http://en.wikipedia.org/wiki/Studio_Deen", "name": "Studio Deen"}, "generes": "Action Adventure Magic Game Fantasy Shounen", "a_generes": ["Action", ", Adventure", ", Magic", ", Game", ", Fantasy", ", Shounen"], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Shinji Ishihira", "title": "Director"}, {"name": "Toshizou Nemoto", "title": "Series Comp"}, {"name": "Tetsuya Kumagai", "title": "Char Design"}, {"name": "25", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20671.jpg", "desc": "Veteran gamer Shiroe and other players have been trapped in the world of the online game Elder Tales for six months. The once chaotic city of Akiba has regained its everyday hustle and bustle following the formation of the self-governing organization Round Table Meeting. The earthlings, who are originally from the game world, have gained the trust of Shiroe by waging a defensive war against the Goblins in Zantleaf Region. This has led Princess Rayneshia of the Cowen family, the highest-ranking Earthling Aristocrats, to live in Akiba.\n              \n              It's almost winter, and the Adventurers are thinking about what they're going to do and what their goals are in this other world. Will they remain in Akiba or go to the city of the West? Or will they travel to the land of the North or another faraway country? The opinions of the Adventurers begin to diverge. What adventures await the members of the Shiroe team in this second series of Log Horizon?\n              \n              (Source: ANN)"}, {"a_name": "Durarara!!x2 Shou", "moreInfo": "http://anilist.co/anime/20652", "company": {"name": "Studio Shuka"}, "generes": "Action Mystery Shounen Supernatural", "a_generes": ["Action", ", Mystery", ", Shounen", ", Supernatural", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Takahiro Omori", "title": "Director"}, {"name": "Noboru Takagi", "title": "Series Comp"}, {"name": "Takahiro Kishida", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20652.jpg", "desc": "A second season of Durarara!! is in the works. The story takes place a half year after the first series at Tokyo's Ikebukuro neighborhood. The first part, \"Shou,\" or \"Understanding,\" will air in January 2015.\n              \n              (Source: ANN)"}, {"a_name": "Sanzoku no Musume Ronja", "moreInfo": "http://anilist.co/anime/20617", "company": {"name": "Studio Ghibli"}, "generes": "Adventure", "a_generes": ["Adventure", ",", ",", ",", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Goro Miyazaki", "title": "Director"}, {"name": "Hiroyuki Kawasaki", "title": "Series Comp"}, {"name": "26", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20617.jpg", "desc": "The story is about a girl named Ronja who is the daughter of a chief of a tribe of bandits and lives in a huge castle in the forest with the bandits. The story follows Ronja as she encounters mystical creatures, makes friends with another young child like herself, and experiences life in the forest."}, {"a_name": "Kuroko no Basket 3", "moreInfo": "http://anilist.co/anime/20725", "company": {"name": "Production I.G"}, "generes": "Comedy School Shounen Sports", "a_generes": ["Comedy", ", School", ", Shounen", ", Sports", ",", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Shunsuke Tada", "title": "Director"}, {"name": "Yoko Kikuchi", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20725.jpg", "desc": "The third season of Kuroko no Basket."}, {"a_name": "Shigatsu wa Kimi no Uso", "moreInfo": "http://anilist.co/anime/20665", "company": {"link": "http://en.wikipedia.org/wiki/A-1_Pictures", "name": "A-1 Pictures"}, "generes": "Drama Music Romance School Shounen", "a_generes": ["Drama", ", Music", ", Romance", ", School", ", Shounen", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Jin Aketagawa", "title": "Director"}, {"name": "Takao Yoshioka", "title": "Series Comp"}, {"name": "Yukiko Aikei", "title": "Char Design"}, {"name": "22", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20665.jpg", "desc": "Piano prodigy Arima Kosei dominated the competition and all child musicians knew his name. But after his mother, who was also his instructor, passed away, he had a mental breakdown while performing at a recital that resulted in him no longer being able to hear the sound of his piano even though his hearing was perfectly fine. Even two years later, Kosei hasn\u2019t touched the piano and views the world in monotone, and without any flair or color. He was content at living out his life with his good friends Tsubaki and Watari until, one day, a girl changed everything. Miyazono Kaori is a pretty, free spirited violinist whose playing style reflects her personality. Kaori helps Kosei return to the music world and show that it should be free and mold breaking unlike the structured and rigid style Kosei was used to."}, {"a_name": "Nanatsu no Taizai", "moreInfo": "http://anilist.co/anime/20789", "company": {"link": "http://en.wikipedia.org/wiki/A-1_Pictures", "name": "A-1 Pictures"}, "generes": "Supernatural Shounen Fantasy Adventure Action", "a_generes": ["Supernatural", ", Shounen", ", Fantasy", ", Adventure", ", Action", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Tensai Okamura", "title": "Director"}, {"name": "Shoutarou Suga", "title": "Series Comp"}, {"name": "24", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20789.jpg", "desc": "When they were accused of trying to overthrow the monarchy, the feared warriors the Seven Deadly Sins were sent into exile. Princess Elizabeth discovers the truth - the Sins were framed by the king's guard, the Holy Knights - too late to prevent them from assassinating her father and seizing the throne! Now the princess is on the run, seeking the Sins to help her reclaim the kingdom. But the first Sin she meets, Meliodas, is a little innkeeper with a talking pig. He doesn't even have a real sword! Have the legends of the Sins' strength been exaggerated? (Source: ANN)"}, {"a_name": "Hyakka Ryouran: Samurai After", "moreInfo": "http://anilist.co/anime/20823", "company": {}, "generes": "Comedy Ecchi", "a_generes": ["Comedy", ", Ecchi", ",", ",", ",", ","], "ppl": [{"name": "1", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20823.jpg", "desc": "The \"Samurai Sousenkyo\" (Samurai General Election) episode is set one year after Samurai Bride's story."}, {"a_name": "Ansatsu Kyoushitsu (TV)", "moreInfo": "http://anilist.co/anime/20755", "company": {"link": "http://en.wikipedia.org/wiki/Brains_Base", "name": "Brains Base"}, "generes": "Action Comedy School Shounen Supernatural", "a_generes": ["Action", ", Comedy", ", School", ", Shounen", ", Supernatural", ","], "ppl": [{"name": "Seiji Kishi", "title": "Director"}, {"name": "Kazuaki Morita", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20755.jpg", "desc": "The students of class 3-E have a mission: kill their teacher before graduation. He has already destroyed the moon, and has promised to destroy the Earth if he can not be killed within a year. But how can this class of misfits kill a tentacled monster, capable of reaching Mach 20 speed, who may be the best teacher any of them have ever had?"}, {"a_name": "Kiseijuu: Sei no Kakuritsu", "moreInfo": "http://anilist.co/anime/20623", "company": {"link": "http://en.wikipedia.org/wiki/Madhouse_(company)", "name": "Madhouse Studios"}, "generes": "Action Drama Horror Sci-Fi Psychological Seinen", "a_generes": ["Action", ", Drama", ", Horror", ", Sci-Fi", ", Psychological", ", Seinen"], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Tadashi Hiramatsu", "title": "Char Design"}, {"name": "24", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20623.jpg", "desc": "They arrive in silence and darkness. They descend from the skies. They have a hunger for human flesh. They are everywhere. They are parasites, alien creatures who must invade\u2013and take control of\u2013a human host to survive. And once they have infected their victims, they can assume any deadly form they choose: monsters with giant teeth, winged demons, creatures with blades for hands. But most have chosen to conceal their lethal purpose behind ordinary human faces. So no one knows their secret\u2013except an ordinary high school student. Shin is battling for control of his own body against an alien parasite, but can he find a way to warn humanity of the horrors to come? (Source: Del Rey)"}, {"a_name": "Koufuku Graffiti", "moreInfo": "http://anilist.co/anime/20744", "company": {"link": "http://en.wikipedia.org/wiki/Shaft_(company)", "name": "Shaft"}, "generes": "Comedy", "a_generes": ["Comedy", ",", ",", ",", ",", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Naoyuki Tatsuwa", "title": "Director"}, {"name": "Mari Okada", "title": "Series Comp"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20744.jpg", "desc": "The story follows Ryou, a middle school girl who lives by herself. She has a knack for cooking, and she makes friendships with everyone through her food. The cooking manga is \"full of detailed cuisine art to whet the appetite and slightly erotic meal scenes.\" The \"koufuku\" in the title is a wordplay on two Japanese homonyms \u2014 one which means \"happiness,\" and another that means \"appetite.\"\n              \n              (Source: ANN)"}, {"a_name": "Tokyo Ghoul 2", "moreInfo": "http://anilist.co/anime/20850", "company": {"link": "http://en.wikipedia.org/wiki/Pierrot_(company)", "name": "Studio Pierrot"}, "generes": "Mystery Horror Supernatural Psychological Seinen", "a_generes": ["Mystery", ", Horror", ", Supernatural", ", Psychological", ", Seinen", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20850.jpg", "desc": "The second season of Tokyo Ghoul."}, {"a_name": "Pankis! 2-jigen", "moreInfo": "http://anilist.co/anime/20961", "company": {"name": "DLE"}, "generes": "Music Kids", "a_generes": ["Music", ", Kids", ",", ",", ",", ","], "ppl": [{"name": "Original", "title": "Source"}, {"name": "24", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20961.jpg", "desc": "The story takes place at the school for the \"spirits of sound,\" St. Muse Academy. The students at the academy train to one day control and tune the sounds of the world so that humans can live comfortably with sound. Five students at the school who are failing are given a special mission.\n              \n              (Source: ANN)"}, {"a_name": "JoJo no Kimyou na Bouken: Stardust Crusaders 2", "moreInfo": "http://anilist.co/anime/20799", "company": {"link": "http://en.wikipedia.org/wiki/David_Production", "name": "David Production"}, "generes": "Action Adventure Shounen", "a_generes": ["Action", ", Adventure", ", Shounen", ",", ",", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Naokatsu Tsuda", "title": "Director"}, {"name": "Masahiko Tanaka", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20799.jpg", "desc": "The continuation will adapt the Egyptian phase of the battle against Dio."}, {"a_name": "Dog Days''", "moreInfo": "http://anilist.co/anime/16385", "company": {"name": "Seven Arcs"}, "generes": "Action Adventure Fantasy Magic Shounen", "a_generes": ["Action", ", Adventure", ", Fantasy", ", Magic", ", Shounen", ","], "ppl": [{"name": "Toshiki Kameyama", "title": "Director"}, {"name": "Masaki Tsuzuki", "title": "Series Comp"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/16385.jpg", "desc": "Third season of Dog Days. It takes place two to three months after the second season during fall vacation."}, {"a_name": "Psycho-Pass Movie", "moreInfo": "http://anilist.co/anime/20514", "company": {"name": "Production I.G"}, "generes": "Action Sci-Fi Police", "a_generes": ["Action", ", Sci-Fi", ", Police", ",", ",", ","], "ppl": [{"name": "Original", "title": "Source"}, {"name": "Yoshikazu Iwanami", "title": "Director"}, {"name": "Naoyuki Onda", "title": "Char Design"}, {"name": "1", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20514.jpg", "desc": "Year 2116 \u2013 The Japanese government begins to export the Sibyl System unmanned drone robots to troubled countries, and the system spreads throughout the world. A state in the midst of a civil war, SEAUn (the South East Asia Union), brings in the Sibyl System as an experiment. Under the new system, the coastal town of Shambala Float achieves temporary peace and safety. But then SEAUn sends terrorists to Japan. They slip through the Sibyl System and then attack from within. The shadow of a certain man falls on this incident. In charge of the police, Tsunemori travels to Shambala Float to investigate. The truth of justice on this new ground will become clear."}, {"a_name": "Fuusen Inu Tinny", "moreInfo": "http://anilist.co/anime/20865", "company": {}, "generes": "Kids Adventure", "a_generes": ["Kids", ", Adventure", ",", ",", ",", ","], "ppl": [{"name": "26", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20865.jpg", "desc": "Based on a picture book series, it follows a dog who flies above the clouds with a balloon."}, {"a_name": "Absolute Duo", "moreInfo": "http://anilist.co/anime/20785", "company": {"link": "http://www.animenewsnetwork.co.uk/encyclopedia/company.php?id=8071", "name": "8bit"}, "generes": "Action Ecchi Romance School Harem Supernatural", "a_generes": ["Action", ", Ecchi", ", Romance", ", School", ", Harem", ", Supernatural"], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Atsushi Nakayama", "title": "Director"}, {"name": "Takamitsu Kouno", "title": "Series Comp"}, {"name": "Yuu Asaba", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20785.jpg", "desc": "The story begins with Blaze \u2014 a weapon that is the manifestation of a human's soul. Tooru Kokonoe happens to be qualified for this, but for some reason his Blaze is not a weapon, but a shield. Moreover, he enrolled in a school that teaches combat skills, and thanks to the school's Duo partner system, he ends up living with a beautiful silver-haired girl.\n              \n              (Source: ANN)"}, {"a_name": "Saenai Heroine no Sodate-kata", "moreInfo": "http://anilist.co/anime/20657", "company": {"link": "http://en.wikipedia.org/wiki/A-1_Pictures", "name": "A-1 Pictures"}, "generes": "Romance Slice of Life School Comedy", "a_generes": ["Romance", ", Slice of Life", ", School", ", Comedy", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Kurehito Misaki", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20657.jpg", "desc": "The life of Tomoyo Aki, a highschool otaku working part time to support his BD hording. With remarkable luck, he bumps head-first into, Megumi Kato, the most beautiful girl he has ever seen. Naturally, the meeting twists his life into a complicated torrent of relationships. Eriri Spencer Sawamura, his half-foreigner childhood friend who\u2019s always valued her relationship with MC. Kasumigaoka Utaha, a cold, composed renowned literary genius who shoves everyone aside from our protagonist. What is this? An eroge introduction?\n              \n              The tale of a small not quite doujin circle, but not quite indie studio\u2019s journey through the tough territory of comiket and beyond."}, {"a_name": "Magic Kaito 1412", "moreInfo": "http://anilist.co/anime/20790", "company": {"link": "http://en.wikipedia.org/wiki/A-1_Pictures", "name": "A-1 Pictures"}, "generes": "Adventure Shounen", "a_generes": ["Adventure", ", Shounen", ",", ",", ",", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "24", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20790.jpg", "desc": "Kaito Kuroba, a normal teenage student whose father is often absent. When his father dies under mysterious circumstances, he is made aware of his father's secret identity; a famous international criminal known as International Criminal 1412: the Phantom Thief, and that he was murdered by a mysterious organization for refusing to aid them in retrieving the \"Pandora Gem\"; a mystical stone said to shed a \"tear\" during the passing of a particular comet (often called the 'Volley Comet'), the consumption of which bestows immortality.\n              \n              He vows to prevent the organization from gaining immortality, and assumes his father's identity as he begins his quest for the gem. His only clues as to the gem's location are that it glows red under the full moon and that it is a doublet: a gem hidden within a larger gem. Thus, it would have to be a relatively large one with a bizarre history, and always stored in a place that never receives moonlight. He thus researches and steals famous priceless gems with odd histories from incredibly well-defended areas, and always returns them after the very next full moon.\n              \n              (Source: Wikipedia)"}, {"a_name": "Kyoukai no Kanata Movie: I'll Be Here - Kako-hen", "moreInfo": "http://anilist.co/anime/20768", "company": {"link": "http://en.wikipedia.org/wiki/Kyoto_Animation", "name": "Kyoto Animation"}, "generes": "Fantasy Slice of Life Supernatural", "a_generes": ["Fantasy", ", Slice of Life", ", Supernatural", ",", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Chise Kamoi", "title": "Char Design"}, {"name": "1", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20768.jpg", "desc": "A compilation of the television anime adapatation of the Kyoukai no Kanata novels."}, {"a_name": "Pri Para Movie", "moreInfo": "http://anilist.co/anime/20917", "company": {"link": "http://en.wikipedia.org/wiki/Tatsunoko_Production", "name": "Tatsunoko Productions"}, "generes": "Kids", "ppl": [{"name": "Original", "title": "Source"}, {"name": "1", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20917.jpg"}, {"a_name": "Kono Danshi, Sekka ni Nayandemasu.", "moreInfo": "http://anilist.co/anime/20781", "company": {}, "generes": "Shounen Ai Romance", "a_generes": ["Shounen Ai", ", Romance", ",", ",", ",", ","], "ppl": [{"name": "1", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20781.jpg", "desc": "The story revolves around high school boy Ayumu Banri, who has an illness that makes him start to turn to stone when he's stressed. Since he couldn't fit in with his class, after repeating a year, he declared that he wanted to have a \"Sparkly youth\" as well. To do this, he changed his hair and clothes to be more fashionable, and constantly checked for popular topics to stay in the know. In the midst of Ayumu's life of making a facade, his homeroom teacher and stone-loving geology teacher Kouya Onihara says that Ayumu's stone transformation is beautiful. Ayumu begins to become attracted to Kouya, who starts to give him advice.\n              \n              (Source: ANN)"}, {"a_name": "Miritari!", "moreInfo": "http://anilist.co/anime/20793", "company": {"name": "Dream Creation"}, "generes": "Military Comedy", "a_generes": ["Military", ", Comedy", ",", ",", ",", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Hiroshi Kimura", "title": "Director"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20793.jpg", "desc": "The story takes place during a conflict between the Krakozhia Dukedom and the Grania Republic. In the midst of the fighting, a savior appears to the Krakozhia Dukedom, and it is a high school student named Souhei Yano. Two female soldiers, First Lieutenant Ruto and Second Lieutenant Haruka, appear in tanks to intrude on Souhei's everyday life, followed by the enemy soldier Shachirofu, all of whom use firearms without hesitation at his house.\n              \n              (Source: ANN)"}, {"a_name": "Shinmai Maou no Keiyakusha", "moreInfo": "http://anilist.co/anime/20678", "company": {"link": "http://www.animenewsnetwork.com/encyclopedia/company.php?id=12168", "name": "Production IMS"}, "generes": "Action Ecchi Fantasy Romance Shounen", "a_generes": ["Action", ", Ecchi", ", Fantasy", ", Romance", ", Shounen", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Hisashi Saitou", "title": "Director"}, {"name": "Nekosuke Ookuma", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20678.jpg", "desc": "\u201cHey, you said you wanted a sister, right?\u201d First year highschool student, Toujo Basara, was suddenly asked by his father and fell into a state of panic. On top of that, the eccentric father told him he will be getting remarried. He then departed overseas after bringing Basara two beautiful step-sisters. But Mio and Maria\u2019s true forms are actually the newbie Demon Lord and a succubus!? Basara was almost entered into a master and servant contract with Mio, but a \u201creversed\u201d contract was formed by mistake, and Basara is now the master!? Moreover, Basara is being hit by ecchi situation one after another due to the contract, but Mio\u2019s life is being pursued by other demon tribes and hero tribes!! The most powerful contractor\u2019s desire action drama begins!"}, {"a_name": "Shounen Hollywood: Holly Stage for 50", "moreInfo": "http://anilist.co/anime/20868", "company": {}, "generes": "Music Shoujo Slice of Life", "a_generes": ["Music", ", Shoujo", ", Slice of Life", ",", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20868.jpg", "desc": "The 13th episode of the Shounen Hollywood: Holly Stage for 49 television anime ended with an announcement that the second season will premiere next January.\n              \n              (Source: ANN)"}, {"a_name": "Aoki Hagane no Arpeggio: Ars Nova - DC", "moreInfo": "http://anilist.co/anime/20763", "company": {"link": "http://en.wikipedia.org/wiki/Sanzigen", "name": "SANZIGEN"}, "generes": "Action Sci-Fi", "a_generes": ["Action", ", Sci-Fi", ",", ",", ",", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Seiji Kishi", "title": "Director"}, {"name": "Makoto Uezu", "title": "Series Comp"}, {"name": "Ark Performance", "title": "Char Design"}, {"name": "1", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20763.jpg", "desc": "This is one of the movies announced in the August issue of Shonengahosha's Young King Ours magazine. This movie will be a compilation of last year's television anime series with new story sequences.\n              \n              (Source: ANN)"}, {"a_name": "Minna Atsumare! Falcom Gakuen SC", "moreInfo": "http://anilist.co/anime/20822", "company": {"link": "http://www.animenewsnetwork.com/encyclopedia/company.php?id=2915", "name": "DAX Production"}, "generes": "Comedy", "a_generes": ["Comedy", ",", ",", ",", ",", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20822.jpg", "desc": "Season 2 of Minna Atsumare! Falcom Gakuen."}, {"a_name": "Date A Live OVA", "moreInfo": "http://anilist.co/anime/17641", "company": {"link": "http://en.wikipedia.org/wiki/Anime_International_Company", "name": "AIC Plus+"}, "generes": "Mecha Romance School Sci-Fi Shounen", "a_generes": ["Mecha", ", Romance", ", School", ", Sci-Fi", ", Shounen", ","], "ppl": [{"name": "Keitarou Motonaga", "title": "Director"}, {"name": "Tsunako", "title": "Char Design"}, {"name": "1", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/17641.jpg", "desc": "Bundled with the 9th volume of the original novel. It will be the unaired 13th episode of the TV series."}]
+Name: Date A Live OVA
+relevant 0.520568975266
+unrelevant 0.479431024734

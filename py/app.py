@@ -10,7 +10,7 @@ import json
 #the cgi library gets vars from html
 data = cgi.FieldStorage()
 #this is the actual output
-debug = True
+debug = False
 writeFile = False
 
 #retrieving data from mongodb 
@@ -28,39 +28,56 @@ if not debug:
     UserData= Functions.read_line( data["UserAnime"].value)
  
 if debug and writeFile:
-    U_f = open('./UserAnime2', 'w')
+    U_f = open('./UserAnime', 'w')
     U_f.write(data["UserAnime"].value)
     U_f.close()
 elif debug and not writeFile:
-    U_f=open('./UserAnime2', 'r')
+    U_f=open('./UserAnime', 'r')
     line=U_f.read()
     UserData= Functions.read_line(line)
 train= Functions.classify(UserData)
-# array of tuples holding a (genre, relevant/nonrelevant)
+# array of tuples holding a (dict of genres genre:true, relevant/nonrelevant)
+if debug: 
+    print "size of training array:" +str(len(train))
+    rel=[]
+    unrelev=[]
+    for tup in train:
+        if tup[1] == "relevant":
+    	    rel.append(tup)
+        else: 
+	    unrelev.append(tup)
+    print "the relevant length "+str(len(rel))
+    print "the unrelevant length" +str(len(unrelev))
 cl = nltk.classify.naivebayes.NaiveBayesClassifier.train(train)
 AnimeNames= UpcomingData.keys()
-print train
 classifyData=Functions.newAnime(UpcomingData) # an array of arrays of single gengres
 i=0
 return_type=[] #dictionary that will store all relevant animes be used to send back
-#prob_dist = classifier.prob_classify
-print classifyData
+relv_amount={}
 for anime in classifyData:
-    print anime
-    print cl.classify(anime)
-    if cl.classify(anime) == "relevant":
+    if (cl.classify(anime) == "relevant"):
         if debug:
-	    print "relevant " + AnimeNames[i].encode("UTF-8")
-	    print anime
-	    prob_dist = cl.prob_classify(anime)
-	    print "relevant " + str(prob_dist.prob("relevant"))
-	    print "unrelevant " + str(prob_dist).prob("unrelevant"))
-	return_type.append(UpcomingData[AnimeNames[i]])
+	    print "Name: " + AnimeNames[i].encode("UTF-8")
+        relv_amount[i]=cl.prob_classify(anime).prob("relevant")
     elif debug:
-	print "unrelevant"+ AnimeNames[i].encode("UTF-8")
+	if debug:
+	    print "unrelevant"+ AnimeNames[i].encode("UTF-8")
+    if debug:
+        prob_dist = cl.prob_classify(anime)
+        print "relevant " + str(prob_dist.prob("relevant"))
+        print "unrelevant " + str(prob_dist.prob("unrelevant"))
     i+=1
+sorted_relevances = sorted(relv_amount, key=relv_amount.get, reverse=True)
+if debug:
+    print sorted_relevances
+for i in sorted_relevances[:6]:
+    return_type.append(UpcomingData[AnimeNames[i]])
+    if debug:
+        print AnimeNames[i].encode("UTF-8")
 #send back in json object the dictionary of relevant items
-#print json.dumps(return_type).encode("UTF-8")
+if debug:
+    print "number of relevant animes:" +str(len(return_type))
+print json.dumps(return_type).encode("UTF-8")
 
 #if debug:
 #    cl.show_informative_features()

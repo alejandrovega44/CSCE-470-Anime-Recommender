@@ -32,10 +32,6 @@ class Functions(object):
 	    else:
 	        train_t.append(( Functions.stringData(UserData[Anime]) , 'unrelevant'))
 		#classify as unrelevant
-	#train={}
-	#for animeList in train_t:
-	#    for tuples in animeList:
-	#        train.append(tuples)
 	return train_t
 	#return array of strings [("featueres,"relevant/unrelevant")]
     @staticmethod
@@ -43,7 +39,7 @@ class Functions(object):
 	#currently only taking to account genres
          featurelist={}
          for genre in Anime["a_genres"]:
-	        featurelist[genre.encode("UTF-8")] =True
+	        featurelist[genre.encode("UTF-8").lower()] =True
 	 return featurelist
     @staticmethod
     def newAnime(NewAnime):
@@ -53,9 +49,8 @@ class Functions(object):
 	       genrelist= NewAnime[Anime]["generes"].encode("UTF-8").split()
 	       temp={}
 	       for genre in genrelist:
-	           temp[genre]=  True
-               test.append(temp)
-
+	           temp[genre.lower()]=  True
+	       test.append(temp)
         return test
 if __name__ == '__main__':
     pass
