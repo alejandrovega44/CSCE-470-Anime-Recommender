@@ -10,7 +10,7 @@ import json
 #the cgi library gets vars from html
 data = cgi.FieldStorage()
 #this is the actual output
-debug = False
+debug = True
 writeFile = False
 
 #retrieving data from mongodb 
@@ -69,14 +69,14 @@ for anime in classifyData:
     i+=1
 sorted_relevances = sorted(relv_amount, key=relv_amount.get, reverse=True)
 if debug:
+    print "number of relevant animes:" +str(len(sorted_relevances))
+if debug:
     print sorted_relevances
 for i in sorted_relevances[:6]:
     return_type.append(UpcomingData[AnimeNames[i]])
     if debug:
         print AnimeNames[i].encode("UTF-8")
 #send back in json object the dictionary of relevant items
-if debug:
-    print "number of relevant animes:" +str(len(return_type))
 print json.dumps(return_type).encode("UTF-8")
 
 #if debug:

@@ -1,0 +1,137 @@
+Content-Type: text/html
+
+size of training array:26
+the relevant length 18
+the unrelevant length8
+Name: Cross Ange: Tenshi to Ryuu no Rondo
+relevant 0.75567322239
+unrelevant 0.24432677761
+Name: Hoozuki no Reitetsu OVA
+relevant 0.707200795395
+unrelevant 0.292799204605
+Name: Seiken Tsukai no World Break
+relevant 0.711122873622
+unrelevant 0.288877126378
+Name: Soukyuu no Fafner: Dead Aggressor - Exodus
+relevant 0.725054657539
+unrelevant 0.274945342461
+Name: THE iDOLM@STER: Cinderella Girls
+relevant 0.789207941197
+unrelevant 0.210792058803
+Name: Yowamushi Pedal: Grande Road
+relevant 0.841783110035
+unrelevant 0.158216889965
+Name: Sengoku Musou
+relevant 0.736725663717
+unrelevant 0.263274336283
+Name: Tsukimonogatari
+relevant 0.784496668607
+unrelevant 0.215503331393
+unrelevantTantei Opera Milky Holmes TD
+relevant 0.456542152591
+unrelevant 0.543457847409
+unrelevantJuuou Mujin no Fafnir
+relevant 0.336742369062
+unrelevant 0.663257630938
+Name: Isuca
+relevant 0.663996850988
+unrelevant 0.336003149012
+Name: Kamisama Hajimemashita◎
+relevant 0.527624844002
+unrelevant 0.472375155998
+Name: Aldnoah.Zero 2
+relevant 0.736725663717
+unrelevant 0.263274336283
+Name: Log Horizon 2
+relevant 0.81036884425
+unrelevant 0.18963115575
+Name: Durarara!!x2 Shou
+relevant 0.95196869324
+unrelevant 0.0480313067604
+Name: Sanzoku no Musume Ronja
+relevant 0.590724784592
+unrelevant 0.409275215408
+Name: Kuroko no Basket 3
+relevant 0.724872231687
+unrelevant 0.275127768313
+unrelevantShigatsu wa Kimi no Uso
+relevant 0.114650008494
+unrelevant 0.885349991506
+unrelevantNanatsu no Taizai
+relevant 0.446241149295
+unrelevant 0.553758850705
+Name: Hyakka Ryouran: Samurai After
+relevant 0.724872231687
+unrelevant 0.275127768313
+Name: Ansatsu Kyoushitsu (TV)
+relevant 0.833787998279
+unrelevant 0.166212001721
+Name: Kiseijuu: Sei no Kakuritsu
+relevant 0.973874755569
+unrelevant 0.0261252444305
+Name: Koufuku Graffiti
+relevant 0.789207941197
+unrelevant 0.210792058803
+Name: Tokyo Ghoul 2
+relevant 0.98335012507
+unrelevant 0.01664987493
+Name: Pankis! 2-jigen
+relevant 0.685185185185
+unrelevant 0.314814814815
+Name: JoJo no Kimyou na Bouken: Stardust Crusaders 2
+relevant 0.649826539462
+unrelevant 0.350173460538
+Name: Dog Days''
+relevant 0.563090150351
+unrelevant 0.436909849649
+unrelevantPsycho-Pass Movie
+relevant 0.442993693339
+unrelevant 0.557006306661
+Name: Fuusen Inu Tinny
+relevant 0.590724784592
+unrelevant 0.409275215408
+unrelevantAbsolute Duo
+relevant 0.204935971816
+unrelevant 0.795064028184
+Name: Saenai Heroine no Sodate-kata
+relevant 0.595945509176
+unrelevant 0.404054490824
+Name: Magic Kaito 1412
+relevant 0.590724784592
+unrelevant 0.409275215408
+Name: Kyoukai no Kanata Movie: I'll Be Here - Kako-hen
+relevant 0.6661387142
+unrelevant 0.3338612858
+Name: Pri Para Movie
+relevant 0.685185185185
+unrelevant 0.314814814815
+Name: Kono Danshi, Sekka ni Nayandemasu.
+relevant 0.54922608475
+unrelevant 0.45077391525
+Name: Miritari!
+relevant 0.555160916208
+unrelevant 0.444839083792
+Name: Shinmai Maou no Keiyakusha
+relevant 0.579490813955
+unrelevant 0.420509186045
+Name: Shounen Hollywood: Holly Stage for 50
+relevant 0.685185185185
+unrelevant 0.314814814815
+Name: Aoki Hagane no Arpeggio: Ars Nova - DC
+relevant 0.799057945254
+unrelevant 0.200942054746
+Name: Minna Atsumare! Falcom Gakuen SC
+relevant 0.724872231687
+unrelevant 0.275127768313
+Name: Date A Live OVA
+relevant 0.54922608475
+unrelevant 0.45077391525
+number of relevant animes:35
+[23, 21, 14, 5, 20, 13, 38, 4, 22, 7, 0, 6, 12, 3, 16, 19, 39, 2, 1, 24, 33, 37, 32, 10, 25, 30, 15, 28, 31, 36, 26, 35, 34, 40, 11]
+Tokyo Ghoul 2
+Kiseijuu: Sei no Kakuritsu
+Durarara!!x2 Shou
+Yowamushi Pedal: Grande Road
+Ansatsu Kyoushitsu (TV)
+Log Horizon 2
+[{"a_name": "Tokyo Ghoul 2", "moreInfo": "http://anilist.co/anime/20850", "company": {"link": "http://en.wikipedia.org/wiki/Pierrot_(company)", "name": "Studio Pierrot"}, "generes": "Mystery Horror Supernatural Psychological Seinen", "a_generes": ["Mystery", ", Horror", ", Supernatural", ", Psychological", ", Seinen", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20850.jpg", "desc": "The second season of Tokyo Ghoul."}, {"a_name": "Kiseijuu: Sei no Kakuritsu", "moreInfo": "http://anilist.co/anime/20623", "company": {"link": "http://en.wikipedia.org/wiki/Madhouse_(company)", "name": "Madhouse Studios"}, "generes": "Action Drama Horror Sci-Fi Psychological Seinen", "a_generes": ["Action", ", Drama", ", Horror", ", Sci-Fi", ", Psychological", ", Seinen"], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Tadashi Hiramatsu", "title": "Char Design"}, {"name": "24", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20623.jpg", "desc": "They arrive in silence and darkness. They descend from the skies. They have a hunger for human flesh. They are everywhere. They are parasites, alien creatures who must invade\u2013and take control of\u2013a human host to survive. And once they have infected their victims, they can assume any deadly form they choose: monsters with giant teeth, winged demons, creatures with blades for hands. But most have chosen to conceal their lethal purpose behind ordinary human faces. So no one knows their secret\u2013except an ordinary high school student. Shin is battling for control of his own body against an alien parasite, but can he find a way to warn humanity of the horrors to come? (Source: Del Rey)"}, {"a_name": "Durarara!!x2 Shou", "moreInfo": "http://anilist.co/anime/20652", "company": {"name": "Studio Shuka"}, "generes": "Action Mystery Shounen Supernatural", "a_generes": ["Action", ", Mystery", ", Shounen", ", Supernatural", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Takahiro Omori", "title": "Director"}, {"name": "Noboru Takagi", "title": "Series Comp"}, {"name": "Takahiro Kishida", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20652.jpg", "desc": "A second season of Durarara!! is in the works. The story takes place a half year after the first series at Tokyo's Ikebukuro neighborhood. The first part, \"Shou,\" or \"Understanding,\" will air in January 2015.\n              \n              (Source: ANN)"}, {"a_name": "Yowamushi Pedal: Grande Road", "moreInfo": "http://anilist.co/anime/20723", "company": {"link": "http://en.wikipedia.org/wiki/Toho", "name": "Toho Company"}, "generes": "Sports Comedy Drama", "a_generes": ["Sports", ", Comedy", ", Drama", ",", ",", ","], "ppl": [{"name": "Osamu Nabeshima", "title": "Director"}, {"name": "Reiko Yoshida", "title": "Series Comp"}, {"name": "Takahiko Yoshida", "title": "Char Design"}, {"name": "24", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20723.jpg", "desc": "The second season will focus on Inter High bicycle race continuing from the first season of the series! High school students pushing themselves to the limit as they bet everything on their bicycles!\n              \n              (Source: Crunchyroll)"}, {"a_name": "Ansatsu Kyoushitsu (TV)", "moreInfo": "http://anilist.co/anime/20755", "company": {"link": "http://en.wikipedia.org/wiki/Brains_Base", "name": "Brains Base"}, "generes": "Action Comedy School Shounen Supernatural", "a_generes": ["Action", ", Comedy", ", School", ", Shounen", ", Supernatural", ","], "ppl": [{"name": "Seiji Kishi", "title": "Director"}, {"name": "Kazuaki Morita", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20755.jpg", "desc": "The students of class 3-E have a mission: kill their teacher before graduation. He has already destroyed the moon, and has promised to destroy the Earth if he can not be killed within a year. But how can this class of misfits kill a tentacled monster, capable of reaching Mach 20 speed, who may be the best teacher any of them have ever had?"}, {"a_name": "Log Horizon 2", "moreInfo": "http://anilist.co/anime/20671", "company": {"link": "http://en.wikipedia.org/wiki/Studio_Deen", "name": "Studio Deen"}, "generes": "Action Adventure Magic Game Fantasy Shounen", "a_generes": ["Action", ", Adventure", ", Magic", ", Game", ", Fantasy", ", Shounen"], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Shinji Ishihira", "title": "Director"}, {"name": "Toshizou Nemoto", "title": "Series Comp"}, {"name": "Tetsuya Kumagai", "title": "Char Design"}, {"name": "25", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20671.jpg", "desc": "Veteran gamer Shiroe and other players have been trapped in the world of the online game Elder Tales for six months. The once chaotic city of Akiba has regained its everyday hustle and bustle following the formation of the self-governing organization Round Table Meeting. The earthlings, who are originally from the game world, have gained the trust of Shiroe by waging a defensive war against the Goblins in Zantleaf Region. This has led Princess Rayneshia of the Cowen family, the highest-ranking Earthling Aristocrats, to live in Akiba.\n              \n              It's almost winter, and the Adventurers are thinking about what they're going to do and what their goals are in this other world. Will they remain in Akiba or go to the city of the West? Or will they travel to the land of the North or another faraway country? The opinions of the Adventurers begin to diverge. What adventures await the members of the Shiroe team in this second series of Log Horizon?\n              \n              (Source: ANN)"}]
