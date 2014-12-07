@@ -1,0 +1,137 @@
+Content-Type: text/html
+
+size of training array:26
+the relevant length 18
+the unrelevant length8
+Name: Cross Ange: Tenshi to Ryuu no Rondo
+relevant 0.685185185185
+unrelevant 0.314814814815
+Name: Hoozuki no Reitetsu OVA
+relevant 0.707200795395
+unrelevant 0.292799204605
+Name: Seiken Tsukai no World Break
+relevant 0.711122873622
+unrelevant 0.288877126378
+Name: Soukyuu no Fafner: Dead Aggressor - Exodus
+relevant 0.649826539462
+unrelevant 0.350173460538
+Name: THE iDOLM@STER: Cinderella Girls
+relevant 0.724872231687
+unrelevant 0.275127768313
+Name: Yowamushi Pedal: Grande Road
+relevant 0.691967153871
+unrelevant 0.308032846129
+Name: Sengoku Musou
+relevant 0.736725663717
+unrelevant 0.263274336283
+Name: Tsukimonogatari
+relevant 0.784496668607
+unrelevant 0.215503331393
+Name: Tantei Opera Milky Holmes TD
+relevant 0.861878826071
+unrelevant 0.138121173929
+Name: Juuou Mujin no Fafnir
+relevant 0.5173353135
+unrelevant 0.4826646865
+Name: Isuca
+relevant 0.663996850988
+unrelevant 0.336003149012
+Name: Kamisama Hajimemashita◎
+relevant 0.527624844002
+unrelevant 0.472375155998
+Name: Aldnoah.Zero 2
+relevant 0.736725663717
+unrelevant 0.263274336283
+Name: Log Horizon 2
+relevant 0.563090150351
+unrelevant 0.436909849649
+Name: Durarara!!x2 Shou
+relevant 0.873524268243
+unrelevant 0.126475731757
+Name: Sanzoku no Musume Ronja
+relevant 0.590724784592
+unrelevant 0.409275215408
+Name: Kuroko no Basket 3
+relevant 0.724872231687
+unrelevant 0.275127768313
+Name: Shigatsu wa Kimi no Uso
+relevant 0.509527975076
+unrelevant 0.490472024924
+Name: Nanatsu no Taizai
+relevant 0.629796663179
+unrelevant 0.370203336821
+Name: Hyakka Ryouran: Samurai After
+relevant 0.724872231687
+unrelevant 0.275127768313
+Name: Ansatsu Kyoushitsu (TV)
+relevant 0.779252771737
+unrelevant 0.220747228263
+Name: Kiseijuu: Sei no Kakuritsu
+relevant 0.96327859192
+unrelevant 0.0367214080805
+Name: Koufuku Graffiti
+relevant 0.724872231687
+unrelevant 0.275127768313
+Name: Tokyo Ghoul 2
+relevant 0.98335012507
+unrelevant 0.01664987493
+Name: Pankis! 2-jigen
+relevant 0.685185185185
+unrelevant 0.314814814815
+Name: JoJo no Kimyou na Bouken: Stardust Crusaders 2
+relevant 0.649826539462
+unrelevant 0.350173460538
+Name: Dog Days''
+relevant 0.563090150351
+unrelevant 0.436909849649
+Name: Psycho-Pass Movie
+relevant 0.736725663717
+unrelevant 0.263274336283
+Name: Fuusen Inu Tinny
+relevant 0.590724784592
+unrelevant 0.409275215408
+Name: Absolute Duo
+relevant 0.620130375422
+unrelevant 0.379869624578
+Name: Saenai Heroine no Sodate-kata
+relevant 0.595945509176
+unrelevant 0.404054490824
+Name: Magic Kaito 1412
+relevant 0.590724784592
+unrelevant 0.409275215408
+Name: Kyoukai no Kanata Movie: I'll Be Here - Kako-hen
+relevant 0.6661387142
+unrelevant 0.3338612858
+Name: Pri Para Movie
+relevant 0.685185185185
+unrelevant 0.314814814815
+Name: Kono Danshi, Sekka ni Nayandemasu.
+relevant 0.54922608475
+unrelevant 0.45077391525
+Name: Miritari!
+relevant 0.724872231687
+unrelevant 0.275127768313
+Name: Shinmai Maou no Keiyakusha
+relevant 0.579490813955
+unrelevant 0.420509186045
+Name: Shounen Hollywood: Holly Stage for 50
+relevant 0.685185185185
+unrelevant 0.314814814815
+Name: Aoki Hagane no Arpeggio: Ars Nova - DC
+relevant 0.736725663717
+unrelevant 0.263274336283
+Name: Minna Atsumare! Falcom Gakuen SC
+relevant 0.724872231687
+unrelevant 0.275127768313
+Name: Date A Live OVA
+relevant 0.54922608475
+unrelevant 0.45077391525
+[23, 21, 14, 8, 7, 20, 6, 12, 27, 38, 4, 16, 19, 22, 35, 39, 2, 1, 5, 0, 24, 33, 37, 32, 10, 3, 25, 18, 29, 30, 15, 28, 31, 36, 13, 26, 34, 40, 11, 9, 17]
+Tokyo Ghoul 2
+Kiseijuu: Sei no Kakuritsu
+Durarara!!x2 Shou
+Tantei Opera Milky Holmes TD
+Tsukimonogatari
+Ansatsu Kyoushitsu (TV)
+number of relevant animes:6
+[{"a_name": "Tokyo Ghoul 2", "moreInfo": "http://anilist.co/anime/20850", "company": {"link": "http://en.wikipedia.org/wiki/Pierrot_(company)", "name": "Studio Pierrot"}, "generes": "Mystery Horror Supernatural Psychological Seinen", "a_generes": ["Mystery", ", Horror", ", Supernatural", ", Psychological", ", Seinen", ","], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20850.jpg", "desc": "The second season of Tokyo Ghoul."}, {"a_name": "Kiseijuu: Sei no Kakuritsu", "moreInfo": "http://anilist.co/anime/20623", "company": {"link": "http://en.wikipedia.org/wiki/Madhouse_(company)", "name": "Madhouse Studios"}, "generes": "Action Drama Horror Sci-Fi Psychological Seinen", "a_generes": ["Action", ", Drama", ", Horror", ", Sci-Fi", ", Psychological", ", Seinen"], "ppl": [{"name": "Manga", "title": "Source"}, {"name": "Tadashi Hiramatsu", "title": "Char Design"}, {"name": "24", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20623.jpg", "desc": "They arrive in silence and darkness. They descend from the skies. They have a hunger for human flesh. They are everywhere. They are parasites, alien creatures who must invade\u2013and take control of\u2013a human host to survive. And once they have infected their victims, they can assume any deadly form they choose: monsters with giant teeth, winged demons, creatures with blades for hands. But most have chosen to conceal their lethal purpose behind ordinary human faces. So no one knows their secret\u2013except an ordinary high school student. Shin is battling for control of his own body against an alien parasite, but can he find a way to warn humanity of the horrors to come? (Source: Del Rey)"}, {"a_name": "Durarara!!x2 Shou", "moreInfo": "http://anilist.co/anime/20652", "company": {"name": "Studio Shuka"}, "generes": "Action Mystery Shounen Supernatural", "a_generes": ["Action", ", Mystery", ", Shounen", ", Supernatural", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Takahiro Omori", "title": "Director"}, {"name": "Noboru Takagi", "title": "Series Comp"}, {"name": "Takahiro Kishida", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20652.jpg", "desc": "A second season of Durarara!! is in the works. The story takes place a half year after the first series at Tokyo's Ikebukuro neighborhood. The first part, \"Shou,\" or \"Understanding,\" will air in January 2015.\n              \n              (Source: ANN)"}, {"a_name": "Tantei Opera Milky Holmes TD", "moreInfo": "http://anilist.co/anime/20848", "company": {"link": "http://en.wikipedia.org/wiki/J.C.Staff", "name": "J.C. Staff"}, "generes": "Comedy Mystery Super Power", "a_generes": ["Comedy", ", Mystery", ", Super Power", ",", ",", ","], "ppl": [{"name": "Hiroshi Nishikiori", "title": "Director"}, {"name": "Hideki Shirane", "title": "Series Comp"}, {"name": "Mariko Fujita", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20848.jpg", "desc": "In the story, the Great Era of Detectives \u2014 when detectives and thieves with a power known as \"Toys\" compete \u2014 has given way to the Great Era of Idols. However, someone starts stealing the idols' songs in Yokohama. When super idol Marine Amagi's hit song \"Kiseki no Uta\" (Miracle's Song) is stolen, she enlists the detectives of Milky Holmes.\n              \n              (Source: ANN)"}, {"a_name": "Tsukimonogatari", "moreInfo": "http://anilist.co/anime/20918", "company": {"link": "http://en.wikipedia.org/wiki/Shaft_(company)", "name": "Shaft"}, "generes": "Mystery Romance Supernatural Comedy", "a_generes": ["Mystery", ", Romance", ", Supernatural", ", Comedy", ",", ","], "ppl": [{"name": "Light Novel", "title": "Source"}, {"name": "Akio Watanabe", "title": "Director"}, {"name": "Fuyashi Tou", "title": "Series Comp"}, {"name": "4", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20918.jpg", "desc": "All four episode will air consecutively on New Year's Eve."}, {"a_name": "Ansatsu Kyoushitsu (TV)", "moreInfo": "http://anilist.co/anime/20755", "company": {"link": "http://en.wikipedia.org/wiki/Brains_Base", "name": "Brains Base"}, "generes": "Action Comedy School Shounen Supernatural", "a_generes": ["Action", ", Comedy", ", School", ", Shounen", ", Supernatural", ","], "ppl": [{"name": "Seiji Kishi", "title": "Director"}, {"name": "Kazuaki Morita", "title": "Char Design"}, {"name": "0", "title": "Episodes"}], "picUrl": "http://anilist.co/img/dir/anime/reg/20755.jpg", "desc": "The students of class 3-E have a mission: kill their teacher before graduation. He has already destroyed the moon, and has promised to destroy the Earth if he can not be killed within a year. But how can this class of misfits kill a tentacled monster, capable of reaching Mach 20 speed, who may be the best teacher any of them have ever had?"}]

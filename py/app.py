@@ -10,7 +10,7 @@ import json
 #the cgi library gets vars from html
 data = cgi.FieldStorage()
 #this is the actual output
-debug = False
+debug = True
 writeFile = False
 
 #retrieving data from mongodb 
