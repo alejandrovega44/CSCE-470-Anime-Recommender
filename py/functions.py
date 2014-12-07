@@ -40,17 +40,28 @@ class Functions(object):
          featurelist={}
          for genre in Anime["a_genres"]:
 	        featurelist[genre.encode("UTF-8").lower()] =True
+	 for values in Anime["ppl"]:
+		featurelist[values["name"]]=True
 	 return featurelist
     @staticmethod
     def newAnime(NewAnime):
         test=[]
+	filter = ["Light Novel", "TV", "Show", "Manga", "Original", "Video Game"]
 	for Anime in NewAnime: 
+	    temp={}
 	    if not NewAnime[Anime]["generes"] == "":
 	       genrelist= NewAnime[Anime]["generes"].encode("UTF-8").split()
-	       temp={}
 	       for genre in genrelist:
 	           temp[genre.lower()]=  True
-	       test.append(temp)
+	    if "ppl" in NewAnime[Anime].keys():
+	        staff_list = NewAnime[Anime]["ppl"]
+	        for i in staff_list:
+	            staff_dict = i
+	            if "name" in staff_dict.keys():
+                        if staff_dict["name"].isdigit() == False and staff_dict["name"] not in filter:
+                            temp[staff_dict["name"]] = True      
+	           
+	    test.append(temp)
         return test
 if __name__ == '__main__':
     pass
