@@ -67,6 +67,8 @@ for anime in classifyData:
         print "relevant " + str(prob_dist.prob("relevant"))
         print "unrelevant " + str(prob_dist.prob("unrelevant"))
     i+=1
+Descrip_scores_NB=Functions.classifyDescription(UserData,UpcomingData)
+print Descrip_scores_NB
 sorted_relevances = sorted(relv_amount, key=relv_amount.get, reverse=True)
 if debug:
     print "number of relevant animes:" +str(len(sorted_relevances))
