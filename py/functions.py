@@ -23,7 +23,7 @@ class Functions(object):
     @staticmethod
     def classify(UserData):
 	train_t=[]
-        temp=Functions.findAvg(UserData)
+    temp=Functions.findAvg(UserData)
 	UserData=temp["dic"]
 	for Anime in UserData:
 	    if UserData[Anime]["userRating"]-temp["score"]>= 0:
@@ -65,16 +65,43 @@ class Functions(object):
         return test
     @staticmethod
     def classifyDescription(UserData,NewAnime):
-	pass	
-        #return an array of tuples with [(index, relevant score)...]
+    	featureVector=extractDesc(UserData,True)
+    	cl = NaiveBayesClassifier(featureVector)
+    	NewAnimeDescList=extractDesc(NewAnime, False)
+    	relv_amount={}
+    	i=0
+    	for anime in NewAnimeDescList:
+    		if (cl.classify(anime) == "relevant"):
+    			relv_amount[i]=cl.prob_classify(anime).prob("relevant")
+    	i+=1	
+        #return an dict of  index : relevant score
+        return relv_amount
     @staticmethod
     #takes in the data list of animes from user or upcoming and a bolean indicating if its the user data
     def extractDesc(Data,User):
-	for anime in Data:
-	    if "desc" in anime.keys():
-	        desc=anime["desc"].lower()	
-		
-        #return an array of tuples with [(desc in lower case, relevant/unrelevant)..]
-        pass
+    featureVector=[]
+    if User: #create feature vector and classify
+    	temp=Functions.findAvg(UserData)
+		UserData=temp["dic"]
+   		for anime in UserData:
+		    if "desc" in anime.keys():
+		        desc=anime["desc"].lower()
+		    else:
+		    	desc="none"
+		    if UserData[Anime]["userRating"]-temp["score"]>= 0:
+		    	#classify as relevant
+	        	featureVector.append(( desc , 'relevant'))
+		    else:
+		        featureVector.append(( desc , 'unrelevant'))
+    else: #create a vector with all descriptions for upcoming anime
+    	for anime in Data:
+		    if "desc" in anime.keys():
+		        desc=anime["desc"].lower()
+		    else:
+		    	desc="none"
+    		featureVector.append(desc)	
+        #return an array of tuples with [(desc in lower case, relevant/unrelevant)..] if User
+        #else return an array of desc [desc, desc, desc]
+    return featureVector
 if __name__ == '__main__':
     pass
