@@ -69,11 +69,7 @@ class Functions(object):
         #return an array of tuples with [(index, relevant score)...]
     @staticmethod
     #takes in the data list of animes from user or upcoming and a bolean indicating if its the user data
-    def extractDesc(Data,User):
-	for anime in Data:
-	    if "desc" in anime.keys():
-	        desc=anime["desc"].lower()	
-		
+    def extractDesc(Data,User):	
         #return an array of tuples with [(desc in lower case, relevant/unrelevant)..]
         pass
 if __name__ == '__main__':
