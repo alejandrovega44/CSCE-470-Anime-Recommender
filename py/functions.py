@@ -23,7 +23,7 @@ class Functions(object):
     @staticmethod
     def classify(UserData):
 	train_t=[]
-    temp=Functions.findAvg(UserData)
+        temp=Functions.findAvg(UserData)
 	UserData=temp["dic"]
 	for Anime in UserData:
 	    if UserData[Anime]["userRating"]-temp["score"]>= 0:
