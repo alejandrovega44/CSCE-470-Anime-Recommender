@@ -16,7 +16,8 @@ class Functions(object):
 	totalScore=0
 	numScores=0
 	for Anime in UserData:
-    	    UserData[Anime]["userRating"] =int(UserData[Anime]["userRating"].encode("UTF-8"))
+	    if isinstance(UserData[Anime]["userRating"], basestring):
+	        UserData[Anime]["userRating"] =int(UserData[Anime]["userRating"].encode("UTF-8"))
    	    totalScore+= UserData[Anime]["userRating"]
     	    numScores+=1
 	return {"score": totalScore/numScores, "dic": UserData}   
@@ -65,15 +66,21 @@ class Functions(object):
         return test
     @staticmethod
     def classifyDescription(UserData,NewAnime):
-    	featureVector=extractDesc(UserData,True)
+    	featureVector=Functions.extractDesc(UserData,True)
     	cl = NaiveBayesClassifier(featureVector)
-    	NewAnimeDescList=extractDesc(NewAnime, False)
+    	NewAnimeDescList=Functions.extractDesc(NewAnime, False)
     	relv_amount={}
     	i=0
+	print "description classifications"
+	print NewAnimeDescList
     	for anime in NewAnimeDescList:
     		if (cl.classify(anime) == "relevant"):
     			relv_amount[i]=cl.prob_classify(anime).prob("relevant")
+		else:
+		    print cl.prob_classify(anime).prob("relevant")
+		    print cl.prob_classify(anime).prob("unrelevant")
     	i+=1	
+        print "end of description classification"
         #return an dict of  index : relevant score
         return relv_amount
     @staticmethod
@@ -81,25 +88,25 @@ class Functions(object):
     def extractDesc(Data,User):
 	    featureVector=[]
 	    if User: #create feature vector and classify
-	    	temp=Functions.findAvg(UserData)
+	    	        temp=Functions.findAvg(Data)
 			UserData=temp["dic"]
 	   		for anime in UserData:
-			    if "desc" in anime.keys():
-			        desc=anime["desc"].lower()
+			    if "desc" in UserData[anime].keys():
+			        desc=UserData[anime]["desc"].lower().encode("UTF-8")
 			    else:
 			    	desc="none"
-			    if UserData[Anime]["userRating"]-temp["score"]>= 0:
+			    if UserData[anime]["userRating"]-temp["score"]>= 0:
 			    	#classify as relevant
 		        	featureVector.append(( desc , 'relevant'))
 			    else:
 			        featureVector.append(( desc , 'unrelevant'))
 	    else: #create a vector with all descriptions for upcoming anime
 	    	for anime in Data:
-			    if "desc" in anime.keys():
-			        desc=anime["desc"].lower()
+			    if "desc" in Data[anime].keys():
+			        desc=Data[anime]["desc"].lower().encode("UTF-8")
 			    else:
 			    	desc="none"
-	    		featureVector.append(desc)	
+	    		    featureVector.append(desc)	
 	        #return an array of tuples with [(desc in lower case, relevant/unrelevant)..] if User
 	        #else return an array of desc [desc, desc, desc]
 	    return featureVector
