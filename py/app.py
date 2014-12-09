@@ -44,9 +44,9 @@ if len(UserData) >0:
         unrelev=[]
         for tup in train:
             if tup[1] == "relevant":
-        	    rel.append(tup)
+        	rel.append(tup)
             else: 
-    	    unrelev.append(tup)
+    	        unrelev.append(tup)
         print "the relevant length "+str(len(rel))
         print "the unrelevant length" +str(len(unrelev))
     cl = nltk.classify.naivebayes.NaiveBayesClassifier.train(train)
