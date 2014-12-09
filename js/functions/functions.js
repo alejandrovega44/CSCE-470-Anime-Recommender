@@ -16,6 +16,7 @@ function callDatabase(UserAnime)
 	       //if (debug) document.write(response);
 	       if(response != null)
 	       {
+		
 	       	relevantNewAnime=JSON.parse(response)
 		console.log("size: "+ String(relevantNewAnime.length))
 	       	console.log(relevantNewAnime);

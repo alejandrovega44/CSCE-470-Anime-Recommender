@@ -29,14 +29,17 @@ if not debug:
     UserData= Functions.read_line( data["UserAnime"].value)
  
 if debug and writeFile:
-    U_f = open('./UserAnime', 'w')
+    U_f = open('./UserAnimei', 'w')
     U_f.write(data["UserAnime"].value)
     U_f.close()
 elif debug and not writeFile:
-    U_f=open('./UserAnime', 'r')
+    U_f=open('./UserAnimei', 'r')
     line=U_f.read()
     UserData= Functions.read_line(line)
+
+return_type=[] #a list that will store all relevant animes be used to send back
 if len(UserData) >0:
+    train= Functions.classify(UserData)
     # array of tuples holding a (dict of genres genre:true, relevant/nonrelevant)
     if debug: 
         print "size of training array:" +str(len(train))
@@ -53,20 +56,18 @@ if len(UserData) >0:
     AnimeNames= UpcomingData.keys()
     classifyData=Functions.newAnime(UpcomingData) # an array of arrays of single gengres
     i=0
-    return_type=[] #a list that will store all relevant animes be used to send back
     relv_amount={}
     for anime in classifyData:
         if (cl.classify(anime) == "relevant"):
             if debug:
-    	       print "Name: " + AnimeNames[i].encode("UTF-8")
+    	        print "Name: " + AnimeNames[i].encode("UTF-8")
             relv_amount[i]=cl.prob_classify(anime).prob("relevant")
         elif debug:
         	if debug:
         	    print "unrelevant"+ AnimeNames[i].encode("UTF-8")
-            if debug:
-                prob_dist = cl.prob_classify(anime)
-                print "relevant " + str(prob_dist.prob("relevant"))
-                print "unrelevant " + str(prob_dist.prob("unrelevant"))
+                    prob_dist = cl.prob_classify(anime)
+                    print "relevant " + str(prob_dist.prob("relevant"))
+                    print "unrelevant " + str(prob_dist.prob("unrelevant"))
         i+=1
     sorted_relevances = sorted(relv_amount, key=relv_amount.get, reverse=True)
     if debug:
@@ -78,7 +79,10 @@ if len(UserData) >0:
         if debug:
             print AnimeNames[i].encode("UTF-8")
 else:
-    return_type=[]
+    random_keys=random.sample(UpcomingData, 6)
+    for key in random_keys:
+        return_type.append(UpcomingData[key])
+if len(return_type)== 0:
     random_keys=random.sample(UpcomingData, 6)
     for key in random_keys:
         return_type.append(UpcomingData[key])
