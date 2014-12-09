@@ -59,6 +59,7 @@
 		    //call get userlist function which does assyncronous call to yql api to get users list
 		    //then pass in a second function for it to do when its done geting the information sucessfully
 			getUserList(username, function(data){
+				
 				if (debug) console.log(JSON.stringify(data));
 				var animeRequests=[];
 				var animeList="";

@@ -13,11 +13,16 @@ function getUserList(username, callback)
 	  })
 	.success(function(r){
 	  console.log("sucess")
-	  //console.log(r.query.results);
+	  console.log(r.query.results);
 	  if (typeof r.query.results.myanimelist == 'undefined') 
 	  {
 	  	//add throw an error
-	  	console.log("returned null: data wasn't found for specific user")
+	  	alert("returned null: data wasn't found for specific user");
+	  }
+	  if (typeof r.query.results.myanimelist.anime == "undefined")
+	  {
+		console.log("User has no watched anime");
+		callback([]);
 	  }
 	  else
 	  	callback(r.query.results.myanimelist)
