@@ -19,12 +19,15 @@ http://learn.koding.com/guides/install-mongodb/
 http://api.mongodb.org/python/current/installation.html
 
 to populate your datbase you must run your mongodb server
-and then open in your browser the retrieveData.html in your browser and don't recieve an error
+and then open in your browser the retrieveData.html in your browser and don't recieve an error, if do refresh
+but first you must do the following: 
+
 sudo apt-get install python-pip
 pip install simplejson
 pip install -U textblob nltk
 python -m textblob.download_corpora
-move nltk_data to will have to create nltk_data file '/usr/lib/nltk_data'
+create nltk_data folder in  '/usr/lib/ 
+move nltk_data folder to '/usr/lib/nltk_data'
 
 Some users to test:
 
