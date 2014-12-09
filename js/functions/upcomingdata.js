@@ -25,6 +25,8 @@ function retrieveAnimeChart (callback)
 	.success(function(r){
 	  if(debug) console.log(r.query.results.div); //r.content is html of website 
 	  						//r.pageContentPlainText retursn the text of website
+	  if(r.query.results === null)
+	     alert("error refresh");
 	  callback(parseData(r.query.results.div));
 	  
 	})  
