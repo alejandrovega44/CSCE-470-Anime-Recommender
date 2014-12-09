@@ -41,7 +41,7 @@ function PopulateDatabase(RetrievedAnime)
 	    data: {"RetrievedAnime": JSON.stringify(RetrievedAnime)},
 	    success: function(response){
 	       console.log("Sucess");
-	      if(response == "Db created succesfully")
+	      if(response.trim() == "Db created succesfully")
 		alert(response);
 	      else
 		{
