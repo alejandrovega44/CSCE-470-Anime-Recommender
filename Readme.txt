@@ -1,7 +1,12 @@
 CSCE-470 Project 
 
 Anime Recommender that will recommend user new anime seasons 
-Currently using:
+This uses content based recommendation with the use of NaiveBayes
+returning the top 6 relevant animes to the user
+the features currently used are:
+genres and staff
+
+Technologies Currently using:
 	MongoDB
 	Phython
 	nltk
