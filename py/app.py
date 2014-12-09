@@ -5,6 +5,7 @@ from functions import Functions
 from pymongo import MongoClient
 import nltk
 import json
+import random
 #cgitb.enable()  # for troubleshooting
 
 #the cgi library gets vars from html
@@ -35,47 +36,52 @@ elif debug and not writeFile:
     U_f=open('./UserAnime', 'r')
     line=U_f.read()
     UserData= Functions.read_line(line)
-train= Functions.classify(UserData)
-# array of tuples holding a (dict of genres genre:true, relevant/nonrelevant)
-if debug: 
-    print "size of training array:" +str(len(train))
-    rel=[]
-    unrelev=[]
-    for tup in train:
-        if tup[1] == "relevant":
-    	    rel.append(tup)
-        else: 
-	    unrelev.append(tup)
-    print "the relevant length "+str(len(rel))
-    print "the unrelevant length" +str(len(unrelev))
-cl = nltk.classify.naivebayes.NaiveBayesClassifier.train(train)
-AnimeNames= UpcomingData.keys()
-classifyData=Functions.newAnime(UpcomingData) # an array of arrays of single gengres
-i=0
-return_type=[] #dictionary that will store all relevant animes be used to send back
-relv_amount={}
-for anime in classifyData:
-    if (cl.classify(anime) == "relevant"):
+if len(UserData) >0:
+    # array of tuples holding a (dict of genres genre:true, relevant/nonrelevant)
+    if debug: 
+        print "size of training array:" +str(len(train))
+        rel=[]
+        unrelev=[]
+        for tup in train:
+            if tup[1] == "relevant":
+        	    rel.append(tup)
+            else: 
+    	    unrelev.append(tup)
+        print "the relevant length "+str(len(rel))
+        print "the unrelevant length" +str(len(unrelev))
+    cl = nltk.classify.naivebayes.NaiveBayesClassifier.train(train)
+    AnimeNames= UpcomingData.keys()
+    classifyData=Functions.newAnime(UpcomingData) # an array of arrays of single gengres
+    i=0
+    return_type=[] #a list that will store all relevant animes be used to send back
+    relv_amount={}
+    for anime in classifyData:
+        if (cl.classify(anime) == "relevant"):
+            if debug:
+    	    print "Name: " + AnimeNames[i].encode("UTF-8")
+            relv_amount[i]=cl.prob_classify(anime).prob("relevant")
+        elif debug:
+    	if debug:
+    	    print "unrelevant"+ AnimeNames[i].encode("UTF-8")
         if debug:
-	    print "Name: " + AnimeNames[i].encode("UTF-8")
-        relv_amount[i]=cl.prob_classify(anime).prob("relevant")
-    elif debug:
-	if debug:
-	    print "unrelevant"+ AnimeNames[i].encode("UTF-8")
+            prob_dist = cl.prob_classify(anime)
+            print "relevant " + str(prob_dist.prob("relevant"))
+            print "unrelevant " + str(prob_dist.prob("unrelevant"))
+        i+=1
+    sorted_relevances = sorted(relv_amount, key=relv_amount.get, reverse=True)
     if debug:
-        prob_dist = cl.prob_classify(anime)
-        print "relevant " + str(prob_dist.prob("relevant"))
-        print "unrelevant " + str(prob_dist.prob("unrelevant"))
-    i+=1
-sorted_relevances = sorted(relv_amount, key=relv_amount.get, reverse=True)
-if debug:
-    print "number of relevant animes:" +str(len(sorted_relevances))
-if debug:
-    print sorted_relevances
-for i in sorted_relevances[:6]:
-    return_type.append(UpcomingData[AnimeNames[i]])
+        print "number of relevant animes:" +str(len(sorted_relevances))
     if debug:
-        print AnimeNames[i].encode("UTF-8")
+        print sorted_relevances
+    for i in sorted_relevances[:6]:
+        return_type.append(UpcomingData[AnimeNames[i]])
+        if debug:
+            print AnimeNames[i].encode("UTF-8")
+else:
+    return_type=[]
+    random_keys=random.sample(UpcomingData, 6)
+    for key in random_keys:
+        return_type.append(UpcomingData[key])
 #send back in json object the dictionary of relevant items
 print json.dumps(return_type).encode("UTF-8")
 
