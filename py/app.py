@@ -58,15 +58,15 @@ if len(UserData) >0:
     for anime in classifyData:
         if (cl.classify(anime) == "relevant"):
             if debug:
-    	    print "Name: " + AnimeNames[i].encode("UTF-8")
+    	       print "Name: " + AnimeNames[i].encode("UTF-8")
             relv_amount[i]=cl.prob_classify(anime).prob("relevant")
         elif debug:
-    	if debug:
-    	    print "unrelevant"+ AnimeNames[i].encode("UTF-8")
-        if debug:
-            prob_dist = cl.prob_classify(anime)
-            print "relevant " + str(prob_dist.prob("relevant"))
-            print "unrelevant " + str(prob_dist.prob("unrelevant"))
+        	if debug:
+        	    print "unrelevant"+ AnimeNames[i].encode("UTF-8")
+            if debug:
+                prob_dist = cl.prob_classify(anime)
+                print "relevant " + str(prob_dist.prob("relevant"))
+                print "unrelevant " + str(prob_dist.prob("unrelevant"))
         i+=1
     sorted_relevances = sorted(relv_amount, key=relv_amount.get, reverse=True)
     if debug:
